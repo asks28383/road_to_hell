@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    private Vector2 mousePos;    // 存储鼠标的世界坐标位置
     public float movementSpeed = 3.0f;
     Vector2 movement = new Vector2();
 
@@ -24,6 +25,7 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         UpdateState();
+        UpdateRotation();
     }
 
     private void FixedUpdate()
@@ -31,7 +33,24 @@ public class MovementController : MonoBehaviour
         MoveCharacter();
     }
 
+    // 更新角色朝向（根据鼠标位置）
+    void UpdateRotation()
+    {
+        // 将鼠标屏幕坐标转换为世界坐标
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        // 根据鼠标X位置决定角色朝向
+        if (mousePos.x > transform.position.x)
+        {
+            // 鼠标在右侧：保持默认旋转（0度）
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+        else
+        {
+            // 鼠标在左侧：绕Y轴旋转180度（镜像翻转）
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+    }
 
     private void MoveCharacter()
     {

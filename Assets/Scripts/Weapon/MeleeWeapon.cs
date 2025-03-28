@@ -126,14 +126,43 @@ public class MeleeWeapon : Weapon
         float swingProgress = Mathf.PingPong(swingTimer / swingDuration * 2, 1f);
         float easedProgress = EaseOutQuad(swingProgress);
 
-        // 根据方向调整旋转
-        float currentAngle = easedProgress * swingAngle ;
-        swordTransform.localRotation = originalSwordRotation * Quaternion.Euler(0, 0, currentAngle);
+        // 基础挥刀角度（永远向上）
+        float baseAngle = easedProgress * swingAngle;
+
+        // 关键修改：使用固定局部旋转轴
+        if (transform.rotation.eulerAngles.x < 0f) // 面向左侧
+        {
+            // 左侧时反向旋转（补偿父物体180度翻转）
+            swordTransform.localRotation = originalSwordRotation * Quaternion.Euler(0, 0, -baseAngle);
+
+            // 强制武器贴图不翻转
+            if (swordTransform.TryGetComponent<SpriteRenderer>(out var renderer))
+            {
+                renderer.flipX = true; // 补偿父物体翻转
+                renderer.flipY = false;
+            }
+        }
+        else // 面向右侧
+        {
+            // 右侧正常旋转
+            swordTransform.localRotation = originalSwordRotation * Quaternion.Euler(0, 0, baseAngle);
+
+            if (swordTransform.TryGetComponent<SpriteRenderer>(out var renderer))
+            {
+                renderer.flipX = false;
+                renderer.flipY = false;
+            }
+        }
 
         if (swingTimer >= swingDuration)
         {
             isSwinging = false;
+            // 重置旋转状态
             swordTransform.localRotation = originalSwordRotation;
+            if (swordTransform.TryGetComponent<SpriteRenderer>(out var resetRenderer))
+            {
+                resetRenderer.flipX = false;
+            }
         }
     }
 
