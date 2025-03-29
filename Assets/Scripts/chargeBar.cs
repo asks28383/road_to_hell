@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class chargeBar : MonoBehaviour
 {
+    // 添加武器引用
+    public RangedWeapon weapon;
     private Slider slider;
     public Sprite cdimage;
     public Sprite punishimage;
@@ -106,7 +108,7 @@ public class chargeBar : MonoBehaviour
     /// <summary>
     /// 检查是否进入过热状态
     /// </summary>
-    private void CheckOverheat()
+    public void CheckOverheat()
     {
         if (percent >= 1f)
         {
@@ -130,6 +132,14 @@ public class chargeBar : MonoBehaviour
     private void UpdateBar()
     {
         slide.value = percent;
+    }
+    public bool IsWeaponOverheated()
+    {
+        return isOverheated;
+    }
+    public float get_percent()
+    {
+        return percent;
     }
 
 }
