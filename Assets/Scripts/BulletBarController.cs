@@ -95,9 +95,10 @@ public class BulletBarController : MonoBehaviour
             if (Mathf.Abs(percent - bonuspercent) < 0.1f)
             {
                 percent = 0;
-                canbeBonus = false;
-                BonusClock.SetActive(false);
+
             }
+            canbeBonus = false;
+            BonusClock.SetActive(false);
         }
         if (isOverheated)
             return; // 过热时不增加
@@ -146,7 +147,8 @@ public class BulletBarController : MonoBehaviour
 
         // 计算对齐位置 (基于 SurroundingBox)
         float baseX = SurroundingBox.transform.localPosition.x - width / 2;
-        float newPositionX = (baseX + scaledWidth /2)/2;
+        print(baseX);
+        float newPositionX = (baseX + scaledWidth /2);
 
         // 更新 UnderHeat（正常加热状态）
         underHeatSprite.transform.localScale = new Vector3(scaleFactor, 1, 1);
