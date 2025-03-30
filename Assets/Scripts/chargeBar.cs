@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,10 +40,11 @@ public class chargeBar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            IncreaseHeat(0.15f);
-        }
+
+        //if (weapon.get_flag())
+        //{
+        //    IncreaseHeat(0.15f);
+        //}
         if (isOverheated)
         {
             // 过热时，OverHeat 缓慢减少

@@ -16,7 +16,6 @@ public class RangedWeapon : Weapon
     public Renderer weaponRenderer;
     public Color normalColor = Color.white;
     public Color overheatColor = Color.red;
-
     // 私有状态变量
     private bool isOverheated = false;
 
@@ -47,8 +46,6 @@ public class RangedWeapon : Weapon
             }
         }
         float percent = heatBar.get_percent();
-        Debug.Log(percent);
-        Debug.Log(isOverheated);
         //只在非过热状态下处理攻击
         if (!isOverheated)
         {
@@ -60,6 +57,7 @@ public class RangedWeapon : Weapon
     {
         if (Input.GetButton("Fire1") && timer == 0)
         {
+            heatBar.IncreaseHeat(0.15f);
             timer = interval;
             Fire();
         }
