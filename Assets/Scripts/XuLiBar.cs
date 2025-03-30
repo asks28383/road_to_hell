@@ -3,40 +3,59 @@ using UnityEngine.UI;
 
 public class XuLiBar : MonoBehaviour
 {
-    public Slider slider;
-    public Color start = new Color(0, 1, 0, 1); // 显式设置Alpha
-    public Color end = new Color(1, 0, 0, 1);   // RGBA(255,0,0,255)
-    public Image fillImage;
+    [Header("Charge Settings")]
+    [SerializeField] private float maxChargeDuration = 2f;  // 最大蓄力时间
+    [SerializeField] private Gradient colorGradient;        // 颜色渐变配置
+    [SerializeField] private AnimationCurve fillCurve;      // 填充曲线控制
 
-    void Start()
+
+    [Header("References")]
+    [SerializeField] private Image fillImage;               // 圆形填充图像
+
+
+    private float _currentCharge;      // 当前蓄力值（0-1）
+
+
+    /// <summary>
+    /// 外部调用更新蓄力状态
+    /// </summary>
+    /// <param name="chargeTime">当前蓄力时间（单位：秒）</param>
+    public void UpdateCharge(float chargeTime)
     {
-        // 确保Slider范围正确
-        slider.minValue = 0;
-        slider.maxValue = 1;
-        slider.value = 0;
+        // 计算标准化进度（0-1）
+        _currentCharge = Mathf.Clamp01(chargeTime / maxChargeDuration);
 
-        // 初始化颜色
-        fillImage.color = start;
+        // 更新视觉表现
+        UpdateFillAmount();
+        UpdateColor();
     }
 
-    void Update()
+    /// <summary>
+    /// 重置蓄力状态
+    /// </summary>
+    public void ResetCharge()
     {
-        ContinueChangingcolor();
-        DebugVisualCheck();
+        _currentCharge = 0f;
+        UpdateFillAmount();
+        UpdateColor();
     }
 
-    public void ContinueChangingcolor()
+    private void UpdateFillAmount()
     {
-        // 添加范围保护
-        float clampedValue = Mathf.Clamp01(slider.value);
-        fillImage.color = Color.Lerp(start, end, clampedValue);
+        // 应用曲线控制填充进度
+        float curvedProgress = fillCurve.Evaluate(_currentCharge);
+        fillImage.fillAmount = curvedProgress;
+
     }
 
-    void DebugVisualCheck()
+    private void UpdateColor()
     {
-        // 在场景视图中绘制调试方块
-        Debug.DrawRay(fillImage.rectTransform.position,
-                     Vector3.right * 50,
-                     fillImage.color);
+        // 渐变颜色控制
+        Color targetColor = colorGradient.Evaluate(_currentCharge);
+        fillImage.color = targetColor;
+    }
+    public void Active(bool active)
+    {
+        gameObject.SetActive(active);
     }
 }
