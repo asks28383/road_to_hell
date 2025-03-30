@@ -47,7 +47,7 @@ public class MeleeWeapon : Weapon
     protected override void Update()
     {
         base.Update();
-        if (isHolding) bar.Active(true);
+        if (isHolding&&holdTimer>=0.3f) bar.Active(true);
         else bar.Active(false);
         bar.UpdateCharge(holdTimer);
         // 根据鼠标位置确定方向
