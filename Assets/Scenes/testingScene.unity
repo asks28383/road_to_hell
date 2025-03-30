@@ -282,7 +282,9 @@ MonoBehaviour:
   bar: {fileID: 1448114466}
   meleeHitBox: {fileID: 0}
   rangedSlashPrefab: {fileID: 9079160179782498895, guid: d3e256df24169044996970d450e8e85b, type: 3}
+  poweredSlashPrefab: {fileID: 49650137077513239, guid: 21fe1d7b28fc2e84eab0725b4489a2fd, type: 3}
   holdTimeForRanged: 2
+  perfectChargeThreshold: 0.15
   meleeRange: 1.5
   swordTransform: {fileID: 346234922}
   swingAngle: 90
