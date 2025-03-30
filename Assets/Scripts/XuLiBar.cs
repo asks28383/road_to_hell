@@ -7,6 +7,7 @@ public class XuLiBar : MonoBehaviour
     public Vector3 offset = new Vector3(0, 2f, 0); // 头顶偏移量
     [Header("Charge Settings")]
     [SerializeField] private float maxChargeDuration = 2f;  // 最大蓄力时间
+    [SerializeField] private float minChargeDuration = .3f;  // 最小蓄力时间
     [SerializeField] private Gradient colorGradient;        // 颜色渐变配置
     [SerializeField] private AnimationCurve fillCurve;      // 填充曲线控制
 
@@ -32,6 +33,13 @@ public class XuLiBar : MonoBehaviour
     public void UpdateCharge(float chargeTime)
     {
         // 计算标准化进度（0-1）
+        if(chargeTime >= minChargeDuration) { 
+            chargeTime -= minChargeDuration; 
+        }
+        else
+        {
+            return;
+        }
         _currentCharge = Mathf.Clamp01(chargeTime / maxChargeDuration);
 
         // 更新视觉表现
