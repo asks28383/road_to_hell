@@ -72,7 +72,7 @@ public abstract class Weapon : MonoBehaviour
             if (timer <= 0) timer = 0;
         }
         // 调用攻击处理逻辑（由子类具体实现）
-        HandleAttack();
+        
     }
 
     // ========== 抽象方法 ==========

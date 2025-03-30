@@ -8,7 +8,6 @@ public class chargeBar : MonoBehaviour
 {
     // 添加武器引用
     public RangedWeapon weapon;
-    private Slider slider;
     public Sprite cdimage;
     public Sprite punishimage;
     private Sprite oldimage;
@@ -42,7 +41,7 @@ public class chargeBar : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            IncreaseHeat(0.2f);
+            IncreaseHeat(0.15f);
         }
         if (isOverheated)
         {
@@ -57,6 +56,15 @@ public class chargeBar : MonoBehaviour
                 //滑动条变绿
                 slide.fillRect.GetComponent<Image>().sprite = oldimage;
             }
+            // 新增：只在过热时检测空格键校准
+            if(canbeBonus)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    TryCalibrate();
+                }
+            }
+            
         }
         else
         {
@@ -75,6 +83,27 @@ public class chargeBar : MonoBehaviour
         UpdateBar();
     }
 
+    private void TryCalibrate()
+    {
+        // 检查是否在校准区域内
+        if (Mathf.Abs(percent - bonuspercent) < 0.1f)
+        {
+            // 成功校准
+            percent = 0;
+            isOverheated = false;
+            BonusClock.gameObject.SetActive(false);
+            canbeBonus = true;
+            slide.fillRect.GetComponent<Image>().sprite = oldimage;
+        }
+        else
+        {
+            // 校准失败惩罚
+            canbeBonus = false;
+            slide.fillRect.GetComponent<Image>().sprite = punishimage;
+            BonusClock.gameObject.SetActive(false);
+        }
+    }
+
     /// <summary>
     /// 增加热量
     /// </summary>
@@ -82,15 +111,7 @@ public class chargeBar : MonoBehaviour
     {
         if (isOverheated && canbeBonus)
         {
-            // 过热时，检查是否触发奖励，两者进度相近时触发奖励
-            if (Mathf.Abs(percent - bonuspercent) < 0.1f)
-            {
-                percent = 0;
-
-            }
-            canbeBonus = false;
-            slide.fillRect.GetComponent<Image>().sprite = punishimage;
-            BonusClock.gameObject.SetActive(false);
+            ;
         }
         if (isOverheated)
             return; // 过热时不增加
@@ -121,7 +142,7 @@ public class chargeBar : MonoBehaviour
 
     private void SetBonusClock()
     {
-        bonuspercent = Random.Range(0.25f, 0.75f);
+        bonuspercent = Random.Range(0.45f, 0.8f);
         BonusClock.gameObject.transform.localPosition = new Vector3((bonuspercent - 0.5f) * width, 0, 0);
         BonusClock.gameObject.SetActive(true);
     }

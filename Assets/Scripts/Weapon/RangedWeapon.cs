@@ -12,52 +12,52 @@ public class RangedWeapon : Weapon
     [Header("武器参数")]
     public float heatPerShot = 0.2f; // 每次射击增加的百分比(0-1)
 
-    // 从UI获取的状态
-    public bool IsOverheated => heatBar != null && heatBar.IsWeaponOverheated();
-    public float CurrentHeatPercent => heatBar != null ? heatBar.get_percent() : 0f;
+    [Header("过热视觉效果")]
+    public Renderer weaponRenderer;
+    public Color normalColor = Color.white;
+    public Color overheatColor = Color.red;
+
+    // 私有状态变量
+    private bool isOverheated = false;
 
     protected override void Start()
     {
         base.Start();
         muzzlePos = transform.Find("Muzzle");
+
+        // 初始化武器颜色
+        if (weaponRenderer != null)
+        {
+            weaponRenderer.material.color = normalColor;
+        }
     }
 
     protected override void Update()
     {
         base.Update();
-        HandleAttack();
-        UpdateUIOrientation();
-    }
-    // 新增方法：控制UI方向
-    private void UpdateUIOrientation()
-    {
-        if (heatBar == null) return;
 
-        // 获取武器当前的左右方向
-        bool isFacingLeft = transform.localScale.y < 0;
-
-        // 获取UI的RectTransform
-        RectTransform uiRect = heatBar.GetComponent<RectTransform>();
-
-        // 根据武器方向调整UI
-        if (isFacingLeft)
+        // 从UI同步过热状态
+        if (heatBar != null)
         {
-            // 人物朝左时UI需要镜像翻转
-            uiRect.localScale = new Vector3(-1, 1, 1);
-            // 调整位置偏移（根据需要微调）
-            uiRect.anchoredPosition = new Vector2(-10, 0);
+            isOverheated = heatBar.IsWeaponOverheated();
+            // 更新武器颜色
+            if (weaponRenderer != null)
+            {
+                weaponRenderer.material.color = isOverheated ? overheatColor : normalColor;
+            }
         }
-        else
+        float percent = heatBar.get_percent();
+        Debug.Log(percent);
+        Debug.Log(isOverheated);
+        //只在非过热状态下处理攻击
+        if (!isOverheated)
         {
-            // 人物朝右时恢复正常
-            uiRect.localScale = Vector3.one;
-            uiRect.anchoredPosition = Vector2.zero;
+            HandleAttack();
         }
     }
+
     protected override void HandleAttack()
     {
-        if (IsOverheated) return;
-
         if (Input.GetButton("Fire1") && timer == 0)
         {
             timer = interval;
@@ -76,11 +76,5 @@ public class RangedWeapon : Weapon
         bullet.GetComponent<Bullet>().SetSpeed(shotDirection);
 
         TriggerAttackAnimation("Shoot");
-    }
-
-    // 提供给UI获取当前热量值的方法
-    public float GetCurrentHeatForUI()
-    {
-        return CurrentHeatPercent * 100f; // 转换为0-100范围
     }
 }
