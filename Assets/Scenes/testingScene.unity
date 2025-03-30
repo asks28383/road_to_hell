@@ -1187,6 +1187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465435257621625531, guid: 72348c0abc41c124b8ad059e76bd7590, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4821402147782549902, guid: 72348c0abc41c124b8ad059e76bd7590, type: 3}
       propertyPath: m_Name
       value: Xulibar
