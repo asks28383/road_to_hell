@@ -13,13 +13,6 @@ public class MeleeWeapon : Weapon
     protected bool isHolding;           // 是否正在长按
     protected Transform slashPoint;     // 剑气生成点
 
-    // 新增蓄力条UI参数
-    [Header("Charge UI Settings")]
-    public Slider chargeSlider;          // 蓄力条Slider组件
-    public Image chargeFillImage;        // 蓄力条填充图像
-    public Color minChargeColor = Color.white; // 最小蓄力颜色
-    public Color maxChargeColor = Color.blue;  // 最大蓄力颜色
-    public GameObject chargeUI;          // 整个蓄力条UI对象
 
     // 新增剑挥动参数
     [Header("Sword Swing Settings")]
@@ -31,12 +24,19 @@ public class MeleeWeapon : Weapon
     private float swingTimer = 0f;
     private int swingDirection = 1; // 1为右，-1为左
 
+    public bool get_isHolding()
+    {
+        return isHolding;
+    }
+    public float get_holdTime()
+    {
+        return holdTimer;
+    }
     protected override void Start()
     {
         base.Start();
         //meleeHitBox.SetActive(false);
         slashPoint = transform.Find("SlashPoint");
-        InitializeChargeUI();
         // 记录剑的初始旋转
         if (swordTransform != null)
         {
@@ -52,42 +52,30 @@ public class MeleeWeapon : Weapon
             swingDirection = -1;
         else if (direction.x > 0) // 向右
             swingDirection = 1;
-
+        HandleAttack();
+        Debug.Log(holdTimer);
         if (isSwinging)
             UpdateSwordSwing();
     }
 
-    /// <summary>
-    /// 初始化蓄力条UI
-    /// </summary>
-    void InitializeChargeUI()
-    {
-        if (chargeSlider != null)
-        {
-            chargeSlider.minValue = 0;
-            chargeSlider.maxValue = holdTimeForRanged;
-            chargeSlider.value = 0;
-            chargeUI.SetActive(false); // 默认隐藏
-        }
-    }
     protected override void HandleAttack()
     {
         if (Input.GetButtonDown("Fire1") && timer == 0)
         {
-            StartCharging();
-
+            isHolding = true;
+            holdTimer = 0f;
         }
         // 持续按住攻击键
         if (Input.GetButton("Fire1") && isHolding)
         {
-            UpdateCharging();
+            holdTimer += Time.deltaTime;
 
             // 长按足够时间触发远程攻击
             if (holdTimer >= holdTimeForRanged)
             {
                 ReleaseRangedSlash();
-                ResetCharging();
                 isHolding = false;
+                holdTimer = 0f;
                 timer = interval;
             }
         }
@@ -99,7 +87,8 @@ public class MeleeWeapon : Weapon
                 PerformMeleeAttack();
                 timer = interval;
             }
-            ResetCharging();
+            isHolding = false;
+            holdTimer = 0f;
         }
     }
 
@@ -172,44 +161,6 @@ public class MeleeWeapon : Weapon
     float EaseOutQuad(float t)
     {
         return t * (2 - t);
-    }
-
-    /// <summary>
-    /// 开始蓄力
-    /// </summary>
-    void StartCharging()
-    {
-        isHolding = true;
-        holdTimer = 0f;
-        if (chargeUI != null) chargeUI.SetActive(true);
-    }
-
-    /// <summary>
-    /// 更新蓄力状态
-    /// </summary>
-    void UpdateCharging()
-    {
-        holdTimer += Time.deltaTime;
-
-        // 更新UI
-        if (chargeSlider != null)
-        {
-            chargeSlider.value = holdTimer;
-            // 蓄力条颜色渐变
-            float chargePercent = holdTimer / holdTimeForRanged;
-            chargeFillImage.color = Color.Lerp(minChargeColor, maxChargeColor, chargePercent);
-        }
-    }
-
-    /// <summary>
-    /// 重置蓄力状态
-    /// </summary>
-    void ResetCharging()
-    {
-        isHolding = false;
-        holdTimer = 0f;
-        if (chargeSlider != null) chargeSlider.value = 0;
-        if (chargeUI != null) chargeUI.SetActive(false);
     }
 
     // 执行近战攻击
