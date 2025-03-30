@@ -285,7 +285,7 @@ MonoBehaviour:
   holdTimeForRanged: 2
   meleeRange: 1.5
   swordTransform: {fileID: 346234922}
-  swingAngle: 60
+  swingAngle: 90
   swingDuration: 0.3
 --- !u!1 &392538770
 GameObject:

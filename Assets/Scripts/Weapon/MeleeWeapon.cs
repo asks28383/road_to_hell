@@ -195,6 +195,7 @@ public class MeleeWeapon : Weapon
     protected virtual void ReleaseRangedSlash()
     {
         TriggerAttackAnimation("Melee");
+        StartSwordSwing();
         // 从对象池获取剑气实例
         GameObject slash = ObjectPool.Instance.GetObject(rangedSlashPrefab);
         slash.transform.position = slashPoint.position;
