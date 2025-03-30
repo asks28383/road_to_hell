@@ -3,9 +3,10 @@ using UnityEngine.UI;
 public class MeleeWeapon : Weapon
 {
     // 特有配置参数
+    public XuLiBar bar;//蓄力条
     public GameObject meleeHitBox;      // 近战攻击判定区域
     public GameObject rangedSlashPrefab; // 远程剑气预制体
-    public float holdTimeForRanged = 1f; // 长按多久触发远程攻击
+    public float holdTimeForRanged = 3f; // 长按多久触发远程攻击
     public float meleeRange = 1.5f;     // 近战攻击范围
 
     // 特有状态变量
@@ -46,7 +47,9 @@ public class MeleeWeapon : Weapon
     protected override void Update()
     {
         base.Update();
-
+        if (isHolding) bar.Active(true);
+        else bar.Active(false);
+        bar.UpdateCharge(holdTimer);
         // 根据鼠标位置确定方向
         if (direction.x < 0) // 向左
             swingDirection = -1;
