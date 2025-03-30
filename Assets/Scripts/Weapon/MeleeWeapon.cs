@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class MeleeWeapon : Weapon
 {
     // 特有配置参数
@@ -12,8 +13,8 @@ public class MeleeWeapon : Weapon
     // 特有状态变量
     protected float holdTimer;          // 长按计时器
     protected bool isHolding;           // 是否正在长按
+    protected bool isFullyCharged;      // 是否已蓄力完成
     protected Transform slashPoint;     // 剑气生成点
-
 
     // 新增剑挥动参数
     [Header("Sword Swing Settings")]
@@ -33,10 +34,10 @@ public class MeleeWeapon : Weapon
     {
         return holdTimer;
     }
+
     protected override void Start()
     {
         base.Start();
-        //meleeHitBox.SetActive(false);
         slashPoint = transform.Find("SlashPoint");
         // 记录剑的初始旋转
         if (swordTransform != null)
@@ -44,19 +45,27 @@ public class MeleeWeapon : Weapon
             originalSwordRotation = swordTransform.localRotation;
         }
     }
+
     protected override void Update()
     {
         base.Update();
-        if (isHolding&&holdTimer>=0.3f) bar.Active(true);
-        else bar.Active(false);
+
+        // 更新蓄力条显示
+        if (isHolding && holdTimer >= 0.3f)
+            bar.Active(true);
+        else
+            bar.Active(false);
+
         bar.UpdateCharge(holdTimer);
+
         // 根据鼠标位置确定方向
         if (direction.x < 0) // 向左
             swingDirection = -1;
         else if (direction.x > 0) // 向右
             swingDirection = 1;
+
         HandleAttack();
-        Debug.Log(holdTimer);
+
         if (isSwinging)
             UpdateSwordSwing();
     }
@@ -66,35 +75,44 @@ public class MeleeWeapon : Weapon
         if (Input.GetButtonDown("Fire1") && timer == 0)
         {
             isHolding = true;
+            isFullyCharged = false;
             holdTimer = 0f;
         }
+
         // 持续按住攻击键
         if (Input.GetButton("Fire1") && isHolding)
         {
             holdTimer += Time.deltaTime;
 
-            // 长按足够时间触发远程攻击
-            if (holdTimer >= holdTimeForRanged)
+            // 检查是否达到完全蓄力
+            if (holdTimer >= holdTimeForRanged && !isFullyCharged)
             {
-                ReleaseRangedSlash();
-                isHolding = false;
-                holdTimer = 0f;
-                timer = interval;
+                isFullyCharged = true;
+                // 这里可以添加完全蓄力的视觉反馈
             }
         }
+
         // 松开攻击键
         if (Input.GetButtonUp("Fire1") && isHolding)
         {
-            if (holdTimer < holdTimeForRanged)
+            if (isFullyCharged)
             {
-                PerformMeleeAttack();
-                timer = interval;
+                // 完全蓄力后释放远程剑气
+                ReleaseRangedSlash();
             }
+            else
+            {
+                // 未完全蓄力执行近战攻击
+                PerformMeleeAttack();
+            }
+
+            // 重置状态
             isHolding = false;
+            isFullyCharged = false;
             holdTimer = 0f;
+            timer = interval;
         }
     }
-
 
     /// <summary>
     /// 开始剑的挥动动画
@@ -171,16 +189,7 @@ public class MeleeWeapon : Weapon
     {
         TriggerAttackAnimation("Melee");
         StartSwordSwing();
-        //// 激活近战判定区域
-        //meleeHitBox.SetActive(true);
-        //// 可以根据需要在这里添加一个协程来延迟关闭判定区域
-        //Invoke("DisableMeleeHitBox", 0.2f);
     }
-
-    //protected void DisableMeleeHitBox()
-    //{
-    //    meleeHitBox.SetActive(false);
-    //}
 
     // 释放远程剑气
     protected virtual void ReleaseRangedSlash()
