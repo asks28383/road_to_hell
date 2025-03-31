@@ -9,7 +9,7 @@ public class MeleeWeapon : Weapon
     public GameObject rangedSlashPrefab; // 普通剑气
     public GameObject poweredSlashPrefab; // 强力剑气
     public float holdTimeForRanged = 3f;
-    public float perfectChargeThreshold = 0.15f; // 完美蓄力允许的误差范围
+    public float perfectChargeThreshold = 0.3f; // 完美蓄力允许的误差范围
     public float meleeRange = 1.5f;
 
     // 状态变量
