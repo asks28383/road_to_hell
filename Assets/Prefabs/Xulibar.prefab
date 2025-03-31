@@ -47,25 +47,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 4821402147782549902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fb90c851849d4b48a0c3139d0163140, type: 3}
+  m_Script: {fileID: 11500000, guid: eeed97060a643fc4aa01623345b3504e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isfull: 0
   target: {fileID: 0}
   offset: {x: 0, y: 2, z: 0}
   maxChargeDuration: 2
   minChargeDuration: 0.3
   colorGradient:
     serializedVersion: 2
-    key0: {r: 0.79622644, g: 0.17399131, b: 0.10065503, a: 1}
-    key1: {r: 0.947681, g: 0.9547169, b: 0.14230676, a: 1}
-    key2: {r: 0.13513811, g: 0.8037735, b: 0.047013126, a: 0}
+    key0: {r: 0.9529412, g: 0.19153763, b: 0.113725476, a: 1}
+    key1: {r: 0.9297312, g: 0.93207544, b: 0.06858658, a: 1}
+    key2: {r: 0.16417198, g: 0.93207544, b: 0.14596646, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 32768
+    ctime0: 694
+    ctime1: 31534
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -110,6 +111,14 @@ MonoBehaviour:
     m_RotationOrder: 4
   fillImage: {fileID: 678315318683411652}
   widerBar: {fileID: 8359381889001674787}
+  _currentCharge: 0
+  chargeAnimator: {fileID: 0}
+  flashSpeed: 2
+  minAlpha: 0.3
+  maxAlpha: 1
+  flashColor1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  flashColor2: {r: 1, g: 0, b: 0, a: 1}
+  _isFlashing: 0
 --- !u!1 &8034334984790933694
 GameObject:
   m_ObjectHideFlags: 0
