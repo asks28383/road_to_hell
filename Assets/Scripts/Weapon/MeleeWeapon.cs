@@ -3,43 +3,36 @@ using UnityEngine.UI;
 
 public class MeleeWeapon : Weapon
 {
-    // 特有配置参数
-    public XuLiBar bar;//蓄力条
-    public GameObject meleeHitBox;      // 近战攻击判定区域
-    public GameObject rangedSlashPrefab; // 远程剑气预制体
-    public float holdTimeForRanged = 3f; // 长按多久触发远程攻击
-    public float meleeRange = 1.5f;     // 近战攻击范围
+    // 配置参数
+    public XuLiBar bar;
+    public GameObject meleeHitBox;
+    public GameObject rangedSlashPrefab; // 普通剑气
+    public GameObject poweredSlashPrefab; // 强力剑气
+    public float holdTimeForRanged = 2f;
+    public float perfectChargeThreshold = 0.8f; // 完美蓄力允许的误差范围
+    public float meleeRange = 1.5f;
 
-    // 特有状态变量
-    protected float holdTimer;          // 长按计时器
-    protected bool isHolding;           // 是否正在长按
-    protected bool isFullyCharged;      // 是否已蓄力完成
-    protected Transform slashPoint;     // 剑气生成点
+    // 状态变量
+    protected float holdTimer;
+    protected bool isHolding;
+    protected bool isInPerfectWindow; // 是否处于完美蓄力窗口期
+    protected Transform slashPoint;
 
-    // 新增剑挥动参数
     [Header("Sword Swing Settings")]
-    public Transform swordTransform; // 剑的Transform组件
-    public float swingAngle = 90f;   // 挥剑角度
-    public float swingDuration = 0.3f; // 挥剑持续时间
-    private Quaternion originalSwordRotation; // 剑的初始旋转
+    public Transform swordTransform;
+    public float swingAngle = 90f;
+    public float swingDuration = 0.3f;
+    private Quaternion originalSwordRotation;
     private bool isSwinging = false;
     private float swingTimer = 0f;
-    private int swingDirection = 1; // 1为右，-1为左
 
-    public bool get_isHolding()
-    {
-        return isHolding;
-    }
-    public float get_holdTime()
-    {
-        return holdTimer;
-    }
+    public bool get_isHolding() => isHolding;
+    public float get_holdTime() => holdTimer;
 
     protected override void Start()
     {
         base.Start();
         slashPoint = transform.Find("SlashPoint");
-        // 记录剑的初始旋转
         if (swordTransform != null)
         {
             originalSwordRotation = swordTransform.localRotation;
@@ -51,21 +44,11 @@ public class MeleeWeapon : Weapon
         base.Update();
 
         // 更新蓄力条显示
-        if (isHolding && holdTimer >= 0.3f)
-            bar.Active(true);
-        else
-            bar.Active(false);
-
+        bar.Active(isHolding && holdTimer >= 0.3f);
         bar.UpdateCharge(holdTimer);
 
-        // 根据鼠标位置确定方向
-        if (direction.x < 0) // 向左
-            swingDirection = -1;
-        else if (direction.x > 0) // 向右
-            swingDirection = 1;
-
         HandleAttack();
-
+        Debug.Log(holdTimer);
         if (isSwinging)
             UpdateSwordSwing();
     }
@@ -75,59 +58,56 @@ public class MeleeWeapon : Weapon
         if (Input.GetButtonDown("Fire1") && timer == 0)
         {
             isHolding = true;
-            isFullyCharged = false;
             holdTimer = 0f;
+            isInPerfectWindow = false;
         }
 
-        // 持续按住攻击键
         if (Input.GetButton("Fire1") && isHolding)
         {
             holdTimer += Time.deltaTime;
 
-            // 检查是否达到完全蓄力
-            if (holdTimer >= holdTimeForRanged && !isFullyCharged)
+            // 检查是否进入完美蓄力窗口
+            if (!isInPerfectWindow &&
+                holdTimer >= holdTimeForRanged+perfectChargeThreshold/2 &&
+                holdTimer <= holdTimeForRanged + perfectChargeThreshold)
             {
-                isFullyCharged = true;
-                // 这里可以添加完全蓄力的视觉反馈
+                isInPerfectWindow = true;
+                // 可以在这里添加进入完美蓄力的视觉效果
+            }
+            // 检查是否已经超过完美蓄力窗口
+            else if (isInPerfectWindow && holdTimer > holdTimeForRanged + perfectChargeThreshold)
+            {
+                isInPerfectWindow = false;
+                // 可以在这里添加退出完美蓄力的视觉效果
             }
         }
 
-        // 松开攻击键
         if (Input.GetButtonUp("Fire1") && isHolding)
         {
-            if (isFullyCharged)
+            if (holdTimer >= holdTimeForRanged) // 达到蓄力要求
             {
-                // 完全蓄力后释放远程剑气
-                ReleaseRangedSlash();
+                // 根据是否在完美窗口内决定释放哪种剑气
+                ReleaseRangedSlash(isInPerfectWindow);
             }
-            else
+            else // 未达到蓄力要求
             {
-                // 未完全蓄力执行近战攻击
                 PerformMeleeAttack();
             }
 
             // 重置状态
             isHolding = false;
-            isFullyCharged = false;
             holdTimer = 0f;
+            isInPerfectWindow = false;
             timer = interval;
         }
     }
-
-    /// <summary>
-    /// 开始剑的挥动动画
-    /// </summary>
     void StartSwordSwing()
     {
         if (swordTransform == null) return;
-
         isSwinging = true;
         swingTimer = 0f;
     }
 
-    /// <summary>
-    /// 更新剑的挥动动画
-    /// </summary>
     void UpdateSwordSwing()
     {
         if (swordTransform == null) return;
@@ -135,28 +115,20 @@ public class MeleeWeapon : Weapon
         swingTimer += Time.deltaTime;
         float swingProgress = Mathf.PingPong(swingTimer / swingDuration * 2, 1f);
         float easedProgress = EaseOutQuad(swingProgress);
-
-        // 基础挥刀角度（永远向上）
         float baseAngle = easedProgress * swingAngle;
 
-        // 关键修改：使用固定局部旋转轴
         if (transform.rotation.eulerAngles.x < 0f) // 面向左侧
         {
-            // 左侧时反向旋转（补偿父物体180度翻转）
             swordTransform.localRotation = originalSwordRotation * Quaternion.Euler(0, 0, -baseAngle);
-
-            // 强制武器贴图不翻转
             if (swordTransform.TryGetComponent<SpriteRenderer>(out var renderer))
             {
-                renderer.flipX = true; // 补偿父物体翻转
+                renderer.flipX = true;
                 renderer.flipY = false;
             }
         }
         else // 面向右侧
         {
-            // 右侧正常旋转
             swordTransform.localRotation = originalSwordRotation * Quaternion.Euler(0, 0, baseAngle);
-
             if (swordTransform.TryGetComponent<SpriteRenderer>(out var renderer))
             {
                 renderer.flipX = false;
@@ -167,7 +139,6 @@ public class MeleeWeapon : Weapon
         if (swingTimer >= swingDuration)
         {
             isSwinging = false;
-            // 重置旋转状态
             swordTransform.localRotation = originalSwordRotation;
             if (swordTransform.TryGetComponent<SpriteRenderer>(out var resetRenderer))
             {
@@ -176,32 +147,35 @@ public class MeleeWeapon : Weapon
         }
     }
 
-    /// <summary>
-    /// 二次缓出函数，使动作更自然
-    /// </summary>
-    float EaseOutQuad(float t)
-    {
-        return t * (2 - t);
-    }
+    float EaseOutQuad(float t) => t * (2 - t);
 
-    // 执行近战攻击
     protected virtual void PerformMeleeAttack()
     {
         TriggerAttackAnimation("Melee");
         StartSwordSwing();
     }
 
-    // 释放远程剑气
-    protected virtual void ReleaseRangedSlash()
+
+    // 修改后的释放剑气方法，增加isPerfect参数
+
+    protected virtual void ReleaseRangedSlash(bool isPerfect)
     {
         TriggerAttackAnimation("Melee");
         StartSwordSwing();
-        // 从对象池获取剑气实例
-        GameObject slash = ObjectPool.Instance.GetObject(rangedSlashPrefab);
+
+        GameObject slashPrefab = isPerfect ? poweredSlashPrefab : rangedSlashPrefab;
+        GameObject slash = ObjectPool.Instance.GetObject(slashPrefab);
+
         slash.transform.position = slashPoint.position;
-        // 设置剑气方向和速度
         slash.GetComponent<Bullet>().SetSpeed(direction);
-        // 设置剑气的旋转方向（朝向鼠标方向）
         slash.transform.right = direction;
+
+        if (isPerfect)
+        {
+            // 设置强力剑气属性
+            //var bullet = slash.GetComponent<Bullet>();
+            //bullet.damage *= 2f; // 双倍伤害
+            //bullet.speed *= 1.2f; // 更快速度
+        }
     }
 }

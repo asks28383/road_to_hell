@@ -406,7 +406,9 @@ MonoBehaviour:
   bar: {fileID: 1448114466}
   meleeHitBox: {fileID: 0}
   rangedSlashPrefab: {fileID: 9079160179782498895, guid: d3e256df24169044996970d450e8e85b, type: 3}
+  poweredSlashPrefab: {fileID: 49650137077513239, guid: ffd46799a0bc832418834f4b0dc187e5, type: 3}
   holdTimeForRanged: 2
+  perfectChargeThreshold: 0.8
   meleeRange: 1.5
   swordTransform: {fileID: 346234922}
   swingAngle: 90
@@ -976,7 +978,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fb90c851849d4b48a0c3139d0163140, type: 3}
+  m_Script: {fileID: 11500000, guid: eeed97060a643fc4aa01623345b3504e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1448114467 stripped
