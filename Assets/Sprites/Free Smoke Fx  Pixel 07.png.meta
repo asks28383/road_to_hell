@@ -428,8 +428,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1152
+        x: 960
+        y: 1216
         width: 64
         height: 64
       alignment: 0
@@ -449,7 +449,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_16
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 1152
         width: 64
         height: 64
@@ -470,7 +470,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_17
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 1152
         width: 64
         height: 64
@@ -491,7 +491,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_18
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 1152
         width: 64
         height: 64
@@ -512,7 +512,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_19
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 1152
         width: 64
         height: 64
@@ -533,7 +533,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_20
       rect:
         serializedVersion: 2
-        x: 320
+        x: 256
         y: 1152
         width: 64
         height: 64
@@ -554,7 +554,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_21
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 1152
         width: 64
         height: 64
@@ -575,7 +575,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_22
       rect:
         serializedVersion: 2
-        x: 448
+        x: 384
         y: 1152
         width: 64
         height: 64
@@ -596,7 +596,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_23
       rect:
         serializedVersion: 2
-        x: 512
+        x: 448
         y: 1152
         width: 64
         height: 64
@@ -617,7 +617,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_24
       rect:
         serializedVersion: 2
-        x: 576
+        x: 512
         y: 1152
         width: 64
         height: 64
@@ -638,7 +638,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_25
       rect:
         serializedVersion: 2
-        x: 640
+        x: 576
         y: 1152
         width: 64
         height: 64
@@ -659,7 +659,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_26
       rect:
         serializedVersion: 2
-        x: 704
+        x: 640
         y: 1152
         width: 64
         height: 64
@@ -680,7 +680,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_27
       rect:
         serializedVersion: 2
-        x: 768
+        x: 704
         y: 1152
         width: 64
         height: 64
@@ -701,7 +701,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_28
       rect:
         serializedVersion: 2
-        x: 832
+        x: 768
         y: 1152
         width: 64
         height: 64
@@ -722,7 +722,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_29
       rect:
         serializedVersion: 2
-        x: 896
+        x: 832
         y: 1152
         width: 64
         height: 64
@@ -743,8 +743,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1088
+        x: 896
+        y: 1152
         width: 64
         height: 64
       alignment: 0
@@ -764,8 +764,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_31
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1088
+        x: 960
+        y: 1152
         width: 64
         height: 64
       alignment: 0
@@ -785,7 +785,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_32
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 1088
         width: 64
         height: 64
@@ -806,7 +806,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_33
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 1088
         width: 64
         height: 64
@@ -827,7 +827,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_34
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 1088
         width: 64
         height: 64
@@ -848,7 +848,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_35
       rect:
         serializedVersion: 2
-        x: 320
+        x: 192
         y: 1088
         width: 64
         height: 64
@@ -869,7 +869,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_36
       rect:
         serializedVersion: 2
-        x: 384
+        x: 256
         y: 1088
         width: 64
         height: 64
@@ -890,7 +890,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_37
       rect:
         serializedVersion: 2
-        x: 448
+        x: 320
         y: 1088
         width: 64
         height: 64
@@ -911,7 +911,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_38
       rect:
         serializedVersion: 2
-        x: 512
+        x: 384
         y: 1088
         width: 64
         height: 64
@@ -932,7 +932,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_39
       rect:
         serializedVersion: 2
-        x: 576
+        x: 448
         y: 1088
         width: 64
         height: 64
@@ -953,7 +953,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_40
       rect:
         serializedVersion: 2
-        x: 640
+        x: 512
         y: 1088
         width: 64
         height: 64
@@ -974,7 +974,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_41
       rect:
         serializedVersion: 2
-        x: 704
+        x: 576
         y: 1088
         width: 64
         height: 64
@@ -995,7 +995,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_42
       rect:
         serializedVersion: 2
-        x: 768
+        x: 640
         y: 1088
         width: 64
         height: 64
@@ -1016,7 +1016,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_43
       rect:
         serializedVersion: 2
-        x: 832
+        x: 704
         y: 1088
         width: 64
         height: 64
@@ -1037,7 +1037,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_44
       rect:
         serializedVersion: 2
-        x: 896
+        x: 768
         y: 1088
         width: 64
         height: 64
@@ -1058,8 +1058,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_45
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1024
+        x: 832
+        y: 1088
         width: 64
         height: 64
       alignment: 0
@@ -1079,8 +1079,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_46
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1024
+        x: 896
+        y: 1088
         width: 64
         height: 64
       alignment: 0
@@ -1100,8 +1100,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_47
       rect:
         serializedVersion: 2
-        x: 128
-        y: 1024
+        x: 960
+        y: 1088
         width: 64
         height: 64
       alignment: 0
@@ -1121,7 +1121,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_48
       rect:
         serializedVersion: 2
-        x: 192
+        x: 0
         y: 1024
         width: 64
         height: 64
@@ -1142,7 +1142,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_49
       rect:
         serializedVersion: 2
-        x: 256
+        x: 64
         y: 1024
         width: 64
         height: 64
@@ -1163,7 +1163,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_50
       rect:
         serializedVersion: 2
-        x: 320
+        x: 128
         y: 1024
         width: 64
         height: 64
@@ -1184,7 +1184,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_51
       rect:
         serializedVersion: 2
-        x: 384
+        x: 192
         y: 1024
         width: 64
         height: 64
@@ -1205,7 +1205,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_52
       rect:
         serializedVersion: 2
-        x: 448
+        x: 256
         y: 1024
         width: 64
         height: 64
@@ -1226,7 +1226,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_53
       rect:
         serializedVersion: 2
-        x: 512
+        x: 320
         y: 1024
         width: 64
         height: 64
@@ -1247,7 +1247,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_54
       rect:
         serializedVersion: 2
-        x: 576
+        x: 384
         y: 1024
         width: 64
         height: 64
@@ -1268,7 +1268,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_55
       rect:
         serializedVersion: 2
-        x: 640
+        x: 448
         y: 1024
         width: 64
         height: 64
@@ -1289,7 +1289,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_56
       rect:
         serializedVersion: 2
-        x: 704
+        x: 512
         y: 1024
         width: 64
         height: 64
@@ -1310,7 +1310,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_57
       rect:
         serializedVersion: 2
-        x: 768
+        x: 576
         y: 1024
         width: 64
         height: 64
@@ -1331,7 +1331,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_58
       rect:
         serializedVersion: 2
-        x: 832
+        x: 640
         y: 1024
         width: 64
         height: 64
@@ -1352,7 +1352,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_59
       rect:
         serializedVersion: 2
-        x: 896
+        x: 704
         y: 1024
         width: 64
         height: 64
@@ -1373,8 +1373,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_60
       rect:
         serializedVersion: 2
-        x: 0
-        y: 960
+        x: 768
+        y: 1024
         width: 64
         height: 64
       alignment: 0
@@ -1394,8 +1394,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_61
       rect:
         serializedVersion: 2
-        x: 64
-        y: 960
+        x: 832
+        y: 1024
         width: 64
         height: 64
       alignment: 0
@@ -1415,8 +1415,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_62
       rect:
         serializedVersion: 2
-        x: 128
-        y: 960
+        x: 896
+        y: 1024
         width: 64
         height: 64
       alignment: 0
@@ -1436,8 +1436,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_63
       rect:
         serializedVersion: 2
-        x: 192
-        y: 960
+        x: 960
+        y: 1024
         width: 64
         height: 64
       alignment: 0
@@ -1457,7 +1457,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_64
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 960
         width: 64
         height: 64
@@ -1478,7 +1478,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_65
       rect:
         serializedVersion: 2
-        x: 320
+        x: 64
         y: 960
         width: 64
         height: 64
@@ -1499,7 +1499,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_66
       rect:
         serializedVersion: 2
-        x: 384
+        x: 128
         y: 960
         width: 64
         height: 64
@@ -1520,7 +1520,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_67
       rect:
         serializedVersion: 2
-        x: 448
+        x: 192
         y: 960
         width: 64
         height: 64
@@ -1541,7 +1541,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_68
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 960
         width: 64
         height: 64
@@ -1562,7 +1562,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_69
       rect:
         serializedVersion: 2
-        x: 576
+        x: 320
         y: 960
         width: 64
         height: 64
@@ -1583,7 +1583,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_70
       rect:
         serializedVersion: 2
-        x: 640
+        x: 384
         y: 960
         width: 64
         height: 64
@@ -1604,7 +1604,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_71
       rect:
         serializedVersion: 2
-        x: 704
+        x: 448
         y: 960
         width: 64
         height: 64
@@ -1625,7 +1625,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_72
       rect:
         serializedVersion: 2
-        x: 768
+        x: 512
         y: 960
         width: 64
         height: 64
@@ -1646,7 +1646,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_73
       rect:
         serializedVersion: 2
-        x: 832
+        x: 576
         y: 960
         width: 64
         height: 64
@@ -1667,7 +1667,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_74
       rect:
         serializedVersion: 2
-        x: 896
+        x: 640
         y: 960
         width: 64
         height: 64
@@ -1688,8 +1688,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_75
       rect:
         serializedVersion: 2
-        x: 0
-        y: 896
+        x: 704
+        y: 960
         width: 64
         height: 64
       alignment: 0
@@ -1709,8 +1709,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_76
       rect:
         serializedVersion: 2
-        x: 64
-        y: 896
+        x: 768
+        y: 960
         width: 64
         height: 64
       alignment: 0
@@ -1730,8 +1730,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_77
       rect:
         serializedVersion: 2
-        x: 128
-        y: 896
+        x: 832
+        y: 960
         width: 64
         height: 64
       alignment: 0
@@ -1751,8 +1751,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_78
       rect:
         serializedVersion: 2
-        x: 192
-        y: 896
+        x: 896
+        y: 960
         width: 64
         height: 64
       alignment: 0
@@ -1772,8 +1772,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_79
       rect:
         serializedVersion: 2
-        x: 256
-        y: 896
+        x: 960
+        y: 960
         width: 64
         height: 64
       alignment: 0
@@ -1793,7 +1793,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_80
       rect:
         serializedVersion: 2
-        x: 320
+        x: 0
         y: 896
         width: 64
         height: 64
@@ -1814,7 +1814,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_81
       rect:
         serializedVersion: 2
-        x: 384
+        x: 64
         y: 896
         width: 64
         height: 64
@@ -1835,7 +1835,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_82
       rect:
         serializedVersion: 2
-        x: 448
+        x: 128
         y: 896
         width: 64
         height: 64
@@ -1856,7 +1856,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_83
       rect:
         serializedVersion: 2
-        x: 512
+        x: 192
         y: 896
         width: 64
         height: 64
@@ -1877,7 +1877,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_84
       rect:
         serializedVersion: 2
-        x: 576
+        x: 256
         y: 896
         width: 64
         height: 64
@@ -1898,7 +1898,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_85
       rect:
         serializedVersion: 2
-        x: 640
+        x: 320
         y: 896
         width: 64
         height: 64
@@ -1919,7 +1919,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_86
       rect:
         serializedVersion: 2
-        x: 704
+        x: 384
         y: 896
         width: 64
         height: 64
@@ -1940,7 +1940,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_87
       rect:
         serializedVersion: 2
-        x: 768
+        x: 448
         y: 896
         width: 64
         height: 64
@@ -1961,7 +1961,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_88
       rect:
         serializedVersion: 2
-        x: 832
+        x: 512
         y: 896
         width: 64
         height: 64
@@ -1982,7 +1982,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_89
       rect:
         serializedVersion: 2
-        x: 896
+        x: 576
         y: 896
         width: 64
         height: 64
@@ -2003,8 +2003,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_90
       rect:
         serializedVersion: 2
-        x: 0
-        y: 832
+        x: 640
+        y: 896
         width: 64
         height: 64
       alignment: 0
@@ -2024,8 +2024,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_91
       rect:
         serializedVersion: 2
-        x: 64
-        y: 832
+        x: 704
+        y: 896
         width: 64
         height: 64
       alignment: 0
@@ -2045,8 +2045,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_92
       rect:
         serializedVersion: 2
-        x: 128
-        y: 832
+        x: 768
+        y: 896
         width: 64
         height: 64
       alignment: 0
@@ -2066,8 +2066,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_93
       rect:
         serializedVersion: 2
-        x: 192
-        y: 832
+        x: 832
+        y: 896
         width: 64
         height: 64
       alignment: 0
@@ -2087,8 +2087,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_94
       rect:
         serializedVersion: 2
-        x: 256
-        y: 832
+        x: 896
+        y: 896
         width: 64
         height: 64
       alignment: 0
@@ -2108,8 +2108,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_95
       rect:
         serializedVersion: 2
-        x: 320
-        y: 832
+        x: 960
+        y: 896
         width: 64
         height: 64
       alignment: 0
@@ -2129,7 +2129,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_96
       rect:
         serializedVersion: 2
-        x: 384
+        x: 0
         y: 832
         width: 64
         height: 64
@@ -2150,7 +2150,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_97
       rect:
         serializedVersion: 2
-        x: 448
+        x: 64
         y: 832
         width: 64
         height: 64
@@ -2171,7 +2171,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_98
       rect:
         serializedVersion: 2
-        x: 512
+        x: 128
         y: 832
         width: 64
         height: 64
@@ -2192,7 +2192,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_99
       rect:
         serializedVersion: 2
-        x: 576
+        x: 192
         y: 832
         width: 64
         height: 64
@@ -2213,7 +2213,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_100
       rect:
         serializedVersion: 2
-        x: 640
+        x: 256
         y: 832
         width: 64
         height: 64
@@ -2234,7 +2234,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_101
       rect:
         serializedVersion: 2
-        x: 704
+        x: 320
         y: 832
         width: 64
         height: 64
@@ -2255,7 +2255,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_102
       rect:
         serializedVersion: 2
-        x: 768
+        x: 384
         y: 832
         width: 64
         height: 64
@@ -2276,7 +2276,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_103
       rect:
         serializedVersion: 2
-        x: 832
+        x: 448
         y: 832
         width: 64
         height: 64
@@ -2297,7 +2297,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_104
       rect:
         serializedVersion: 2
-        x: 896
+        x: 512
         y: 832
         width: 64
         height: 64
@@ -2318,8 +2318,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_105
       rect:
         serializedVersion: 2
-        x: 0
-        y: 768
+        x: 576
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2339,8 +2339,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_106
       rect:
         serializedVersion: 2
-        x: 64
-        y: 768
+        x: 640
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2360,8 +2360,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_107
       rect:
         serializedVersion: 2
-        x: 128
-        y: 768
+        x: 704
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2381,8 +2381,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_108
       rect:
         serializedVersion: 2
-        x: 192
-        y: 768
+        x: 768
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2402,8 +2402,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_109
       rect:
         serializedVersion: 2
-        x: 256
-        y: 768
+        x: 832
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2423,8 +2423,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_110
       rect:
         serializedVersion: 2
-        x: 320
-        y: 768
+        x: 896
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2444,8 +2444,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_111
       rect:
         serializedVersion: 2
-        x: 384
-        y: 768
+        x: 960
+        y: 832
         width: 64
         height: 64
       alignment: 0
@@ -2465,7 +2465,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_112
       rect:
         serializedVersion: 2
-        x: 448
+        x: 0
         y: 768
         width: 64
         height: 64
@@ -2486,7 +2486,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_113
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 768
         width: 64
         height: 64
@@ -2507,7 +2507,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_114
       rect:
         serializedVersion: 2
-        x: 576
+        x: 128
         y: 768
         width: 64
         height: 64
@@ -2528,7 +2528,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_115
       rect:
         serializedVersion: 2
-        x: 640
+        x: 192
         y: 768
         width: 64
         height: 64
@@ -2549,7 +2549,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_116
       rect:
         serializedVersion: 2
-        x: 704
+        x: 256
         y: 768
         width: 64
         height: 64
@@ -2570,7 +2570,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_117
       rect:
         serializedVersion: 2
-        x: 768
+        x: 320
         y: 768
         width: 64
         height: 64
@@ -2591,7 +2591,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_118
       rect:
         serializedVersion: 2
-        x: 832
+        x: 384
         y: 768
         width: 64
         height: 64
@@ -2612,7 +2612,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_119
       rect:
         serializedVersion: 2
-        x: 896
+        x: 448
         y: 768
         width: 64
         height: 64
@@ -2633,8 +2633,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_120
       rect:
         serializedVersion: 2
-        x: 0
-        y: 704
+        x: 512
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2654,8 +2654,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_121
       rect:
         serializedVersion: 2
-        x: 64
-        y: 704
+        x: 576
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2675,8 +2675,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_122
       rect:
         serializedVersion: 2
-        x: 128
-        y: 704
+        x: 640
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2696,8 +2696,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_123
       rect:
         serializedVersion: 2
-        x: 192
-        y: 704
+        x: 704
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2717,8 +2717,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_124
       rect:
         serializedVersion: 2
-        x: 256
-        y: 704
+        x: 768
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2738,8 +2738,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_125
       rect:
         serializedVersion: 2
-        x: 320
-        y: 704
+        x: 832
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2759,8 +2759,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_126
       rect:
         serializedVersion: 2
-        x: 384
-        y: 704
+        x: 896
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2780,8 +2780,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_127
       rect:
         serializedVersion: 2
-        x: 448
-        y: 704
+        x: 960
+        y: 768
         width: 64
         height: 64
       alignment: 0
@@ -2801,7 +2801,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_128
       rect:
         serializedVersion: 2
-        x: 512
+        x: 0
         y: 704
         width: 64
         height: 64
@@ -2822,7 +2822,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_129
       rect:
         serializedVersion: 2
-        x: 576
+        x: 64
         y: 704
         width: 64
         height: 64
@@ -2843,7 +2843,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_130
       rect:
         serializedVersion: 2
-        x: 640
+        x: 128
         y: 704
         width: 64
         height: 64
@@ -2864,7 +2864,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_131
       rect:
         serializedVersion: 2
-        x: 704
+        x: 192
         y: 704
         width: 64
         height: 64
@@ -2885,7 +2885,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_132
       rect:
         serializedVersion: 2
-        x: 768
+        x: 256
         y: 704
         width: 64
         height: 64
@@ -2906,7 +2906,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_133
       rect:
         serializedVersion: 2
-        x: 832
+        x: 320
         y: 704
         width: 64
         height: 64
@@ -2927,8 +2927,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_134
       rect:
         serializedVersion: 2
-        x: 0
-        y: 640
+        x: 384
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -2948,8 +2948,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_135
       rect:
         serializedVersion: 2
-        x: 64
-        y: 640
+        x: 448
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -2969,8 +2969,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_136
       rect:
         serializedVersion: 2
-        x: 128
-        y: 640
+        x: 512
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -2990,8 +2990,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_137
       rect:
         serializedVersion: 2
-        x: 192
-        y: 640
+        x: 576
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3011,8 +3011,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_138
       rect:
         serializedVersion: 2
-        x: 256
-        y: 640
+        x: 640
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3032,8 +3032,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_139
       rect:
         serializedVersion: 2
-        x: 320
-        y: 640
+        x: 704
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3053,8 +3053,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_140
       rect:
         serializedVersion: 2
-        x: 384
-        y: 640
+        x: 768
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3074,8 +3074,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_141
       rect:
         serializedVersion: 2
-        x: 448
-        y: 640
+        x: 832
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3095,8 +3095,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_142
       rect:
         serializedVersion: 2
-        x: 512
-        y: 640
+        x: 896
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3116,8 +3116,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_143
       rect:
         serializedVersion: 2
-        x: 576
-        y: 640
+        x: 960
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -3137,7 +3137,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_144
       rect:
         serializedVersion: 2
-        x: 640
+        x: 0
         y: 640
         width: 64
         height: 64
@@ -3158,7 +3158,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_145
       rect:
         serializedVersion: 2
-        x: 704
+        x: 64
         y: 640
         width: 64
         height: 64
@@ -3179,7 +3179,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_146
       rect:
         serializedVersion: 2
-        x: 768
+        x: 128
         y: 640
         width: 64
         height: 64
@@ -3200,7 +3200,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_147
       rect:
         serializedVersion: 2
-        x: 832
+        x: 192
         y: 640
         width: 64
         height: 64
@@ -3221,8 +3221,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_148
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
+        x: 256
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3242,8 +3242,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_149
       rect:
         serializedVersion: 2
-        x: 64
-        y: 576
+        x: 320
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3263,8 +3263,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_150
       rect:
         serializedVersion: 2
-        x: 128
-        y: 576
+        x: 384
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3284,8 +3284,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_151
       rect:
         serializedVersion: 2
-        x: 192
-        y: 576
+        x: 448
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3305,8 +3305,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_152
       rect:
         serializedVersion: 2
-        x: 256
-        y: 576
+        x: 512
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3326,8 +3326,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_153
       rect:
         serializedVersion: 2
-        x: 320
-        y: 576
+        x: 576
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3347,8 +3347,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_154
       rect:
         serializedVersion: 2
-        x: 384
-        y: 576
+        x: 640
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3368,8 +3368,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_155
       rect:
         serializedVersion: 2
-        x: 448
-        y: 576
+        x: 704
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3389,8 +3389,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_156
       rect:
         serializedVersion: 2
-        x: 512
-        y: 576
+        x: 768
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3410,8 +3410,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_157
       rect:
         serializedVersion: 2
-        x: 576
-        y: 576
+        x: 832
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3431,8 +3431,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_158
       rect:
         serializedVersion: 2
-        x: 640
-        y: 576
+        x: 896
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3452,8 +3452,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_159
       rect:
         serializedVersion: 2
-        x: 704
-        y: 576
+        x: 960
+        y: 640
         width: 64
         height: 64
       alignment: 0
@@ -3473,7 +3473,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_160
       rect:
         serializedVersion: 2
-        x: 768
+        x: 0
         y: 576
         width: 64
         height: 64
@@ -3494,7 +3494,7 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_161
       rect:
         serializedVersion: 2
-        x: 832
+        x: 64
         y: 576
         width: 64
         height: 64
@@ -3515,8 +3515,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_162
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
+        x: 128
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3536,8 +3536,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_163
       rect:
         serializedVersion: 2
-        x: 64
-        y: 512
+        x: 192
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3557,8 +3557,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_164
       rect:
         serializedVersion: 2
-        x: 128
-        y: 512
+        x: 256
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3578,8 +3578,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_165
       rect:
         serializedVersion: 2
-        x: 192
-        y: 512
+        x: 320
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3599,8 +3599,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_166
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 384
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3620,8 +3620,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_167
       rect:
         serializedVersion: 2
-        x: 320
-        y: 512
+        x: 448
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3641,8 +3641,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_168
       rect:
         serializedVersion: 2
-        x: 384
-        y: 512
+        x: 512
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3662,8 +3662,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_169
       rect:
         serializedVersion: 2
-        x: 448
-        y: 512
+        x: 576
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3683,8 +3683,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_170
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
+        x: 640
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3704,8 +3704,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_171
       rect:
         serializedVersion: 2
-        x: 576
-        y: 512
+        x: 704
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3725,8 +3725,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_172
       rect:
         serializedVersion: 2
-        x: 640
-        y: 512
+        x: 768
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3746,8 +3746,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_173
       rect:
         serializedVersion: 2
-        x: 704
-        y: 512
+        x: 832
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3767,8 +3767,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_174
       rect:
         serializedVersion: 2
-        x: 768
-        y: 512
+        x: 896
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3788,8 +3788,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_175
       rect:
         serializedVersion: 2
-        x: 832
-        y: 512
+        x: 960
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -3810,7 +3810,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3831,7 +3831,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3852,7 +3852,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3873,7 +3873,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3894,7 +3894,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3915,7 +3915,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3936,7 +3936,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3957,7 +3957,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3978,7 +3978,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -3999,7 +3999,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4020,7 +4020,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4041,7 +4041,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 704
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4062,7 +4062,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4082,8 +4082,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_189
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 832
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4103,8 +4103,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_190
       rect:
         serializedVersion: 2
-        x: 64
-        y: 384
+        x: 896
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4124,8 +4124,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_191
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
+        x: 960
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -4145,8 +4145,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_192
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
+        x: 0
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4166,8 +4166,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_193
       rect:
         serializedVersion: 2
-        x: 256
-        y: 384
+        x: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4187,8 +4187,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_194
       rect:
         serializedVersion: 2
-        x: 320
-        y: 384
+        x: 128
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4208,8 +4208,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_195
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
+        x: 192
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4229,8 +4229,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_196
       rect:
         serializedVersion: 2
-        x: 448
-        y: 384
+        x: 256
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4250,8 +4250,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_197
       rect:
         serializedVersion: 2
-        x: 512
-        y: 384
+        x: 320
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4271,8 +4271,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_198
       rect:
         serializedVersion: 2
-        x: 576
-        y: 384
+        x: 384
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4292,8 +4292,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_199
       rect:
         serializedVersion: 2
-        x: 640
-        y: 384
+        x: 448
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4313,8 +4313,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_200
       rect:
         serializedVersion: 2
-        x: 704
-        y: 384
+        x: 512
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4334,8 +4334,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_201
       rect:
         serializedVersion: 2
-        x: 768
-        y: 384
+        x: 576
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4355,8 +4355,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_202
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
+        x: 640
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4376,8 +4376,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_203
       rect:
         serializedVersion: 2
-        x: 64
-        y: 320
+        x: 704
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4397,8 +4397,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_204
       rect:
         serializedVersion: 2
-        x: 128
-        y: 320
+        x: 768
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4418,8 +4418,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_205
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
+        x: 832
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4439,8 +4439,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_206
       rect:
         serializedVersion: 2
-        x: 256
-        y: 320
+        x: 896
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4460,8 +4460,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_207
       rect:
         serializedVersion: 2
-        x: 320
-        y: 320
+        x: 960
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -4481,8 +4481,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_208
       rect:
         serializedVersion: 2
-        x: 384
-        y: 320
+        x: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4502,8 +4502,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_209
       rect:
         serializedVersion: 2
-        x: 448
-        y: 320
+        x: 64
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4523,8 +4523,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_210
       rect:
         serializedVersion: 2
-        x: 512
-        y: 320
+        x: 128
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4544,8 +4544,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_211
       rect:
         serializedVersion: 2
-        x: 576
-        y: 320
+        x: 192
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4565,8 +4565,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_212
       rect:
         serializedVersion: 2
-        x: 640
-        y: 320
+        x: 256
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4586,8 +4586,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_213
       rect:
         serializedVersion: 2
-        x: 704
-        y: 320
+        x: 320
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4607,8 +4607,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_214
       rect:
         serializedVersion: 2
-        x: 768
-        y: 320
+        x: 384
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4628,8 +4628,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_215
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 448
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4649,8 +4649,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_216
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 512
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4670,8 +4670,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_217
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 576
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4691,8 +4691,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_218
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 640
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4712,8 +4712,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_219
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 704
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4733,8 +4733,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_220
       rect:
         serializedVersion: 2
-        x: 320
-        y: 256
+        x: 768
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4754,8 +4754,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_221
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 832
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4775,8 +4775,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_222
       rect:
         serializedVersion: 2
-        x: 448
-        y: 256
+        x: 896
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4796,8 +4796,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_223
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 960
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -4817,8 +4817,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_224
       rect:
         serializedVersion: 2
-        x: 576
-        y: 256
+        x: 0
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4838,8 +4838,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_225
       rect:
         serializedVersion: 2
-        x: 640
-        y: 256
+        x: 64
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4859,8 +4859,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_226
       rect:
         serializedVersion: 2
-        x: 704
-        y: 256
+        x: 128
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4880,8 +4880,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_227
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
+        x: 192
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4901,8 +4901,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_228
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4922,8 +4922,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_229
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 320
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4943,8 +4943,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_230
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4964,8 +4964,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_231
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 448
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -4985,8 +4985,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_232
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
+        x: 512
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5006,8 +5006,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_233
       rect:
         serializedVersion: 2
-        x: 320
-        y: 192
+        x: 576
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5027,8 +5027,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_234
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
+        x: 640
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5048,8 +5048,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_235
       rect:
         serializedVersion: 2
-        x: 448
-        y: 192
+        x: 704
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5069,8 +5069,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_236
       rect:
         serializedVersion: 2
-        x: 512
-        y: 192
+        x: 768
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5090,8 +5090,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_237
       rect:
         serializedVersion: 2
-        x: 576
-        y: 192
+        x: 832
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5111,8 +5111,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_238
       rect:
         serializedVersion: 2
-        x: 640
-        y: 192
+        x: 896
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5132,8 +5132,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_239
       rect:
         serializedVersion: 2
-        x: 704
-        y: 192
+        x: 960
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -5153,8 +5153,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_240
       rect:
         serializedVersion: 2
-        x: 768
-        y: 192
+        x: 0
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5174,8 +5174,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_241
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 64
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5195,8 +5195,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_242
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 128
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5216,8 +5216,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_243
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 192
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5237,8 +5237,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_244
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 256
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5258,8 +5258,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_245
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5279,8 +5279,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_246
       rect:
         serializedVersion: 2
-        x: 320
-        y: 128
+        x: 384
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5300,8 +5300,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_247
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 448
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5321,8 +5321,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_248
       rect:
         serializedVersion: 2
-        x: 448
-        y: 128
+        x: 512
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5342,8 +5342,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_249
       rect:
         serializedVersion: 2
-        x: 512
-        y: 128
+        x: 576
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5363,8 +5363,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_250
       rect:
         serializedVersion: 2
-        x: 576
-        y: 128
+        x: 640
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5384,8 +5384,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_251
       rect:
         serializedVersion: 2
-        x: 640
-        y: 128
+        x: 704
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5405,8 +5405,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_252
       rect:
         serializedVersion: 2
-        x: 704
-        y: 128
+        x: 768
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5426,8 +5426,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_253
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 832
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5447,8 +5447,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_254
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 896
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5468,8 +5468,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_255
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 960
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -5489,8 +5489,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_256
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5510,8 +5510,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_257
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 64
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5531,8 +5531,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_258
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
+        x: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5552,8 +5552,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_259
       rect:
         serializedVersion: 2
-        x: 384
-        y: 64
+        x: 192
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5573,8 +5573,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_260
       rect:
         serializedVersion: 2
-        x: 448
-        y: 64
+        x: 256
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5594,8 +5594,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_261
       rect:
         serializedVersion: 2
-        x: 512
-        y: 64
+        x: 320
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5615,8 +5615,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_262
       rect:
         serializedVersion: 2
-        x: 576
-        y: 64
+        x: 384
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5636,8 +5636,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_263
       rect:
         serializedVersion: 2
-        x: 640
-        y: 64
+        x: 448
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5657,8 +5657,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_264
       rect:
         serializedVersion: 2
-        x: 704
-        y: 64
+        x: 512
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5678,8 +5678,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_265
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 576
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5699,8 +5699,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_266
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 640
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5720,8 +5720,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_267
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 704
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5741,8 +5741,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_268
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 768
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5762,8 +5762,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_269
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
+        x: 832
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5783,8 +5783,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_270
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
+        x: 896
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5804,8 +5804,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_271
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 960
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -5825,8 +5825,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_272
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5846,8 +5846,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_273
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
+        x: 64
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5867,8 +5867,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_274
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
+        x: 128
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5888,8 +5888,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_275
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
+        x: 192
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5909,8 +5909,8 @@ TextureImporter:
       name: Free Smoke Fx  Pixel 07_276
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
+        x: 256
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -5922,6 +5922,909 @@ TextureImporter:
       bones: []
       spriteID: de01140d0c914914fa4c094e00c686af
       internalID: -1520229934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_277
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1cfeb283c51444bb620c5df11174fe
+      internalID: 1161642108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_278
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdc8a4acb7c48f4690bd1983f3a221e
+      internalID: -1663363343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_279
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a50dd8138059743a87f5e8f338e47b
+      internalID: -1449975187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_280
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32493811b458b8446b3a30f5f621a22c
+      internalID: -1409581747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_281
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d13db66d19632c4a8d6432ed4555609
+      internalID: 1642223273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_282
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b2a1a37fc1016459d95380b2e3a56e
+      internalID: -375325312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_283
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42961b2059a77a44e90ae4ac195e2d17
+      internalID: -385106138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_284
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3db0f2763d61945b86c33473165c53
+      internalID: -43695118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_285
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc7cb3e169b7f6468f9bd017918a650
+      internalID: -1473153735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_286
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6a712b1f382c64c9c87ed553cfabac
+      internalID: -436543220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_287
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9922d4d7cdaae40b25458d41c5fb77
+      internalID: 233586857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_288
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90cf83e94b08444ebffc5400402f875
+      internalID: 1737142012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_289
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1affd5e3c6aa0fc438958168e1cefe3e
+      internalID: 629207912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_290
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733e4700d8a6a474a9347583502efa56
+      internalID: 1826753921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_291
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6969b1207eb214a4e9a3e65a970585e8
+      internalID: 1241829638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_292
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f1516bf902bd442ae23f8a9f84e3cd
+      internalID: -1420511546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_293
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2393519a86fb54cbf9a486ed684af2
+      internalID: -259549010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_294
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe62b27afcd8b94da388278d7134c02
+      internalID: 1675831702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_295
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ac0cf422a494c43a910846cedff444
+      internalID: 787467661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_296
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4368580c8eac2240a73548e77e26d07
+      internalID: 1963312413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_297
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183dc4c7100a4b446b0bda589d5d052e
+      internalID: 1016154107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_298
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffce132adca5b747bdc15e3280f6926
+      internalID: 352152092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_299
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edb2ee1d4bab1546b3ebc902c77568f
+      internalID: 1987167082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_300
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42de2261b30b6ff43aa1e544ed7e7207
+      internalID: 1587888094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_301
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394be1f7f45c4854b8fb8c35f82328ed
+      internalID: 968482232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_302
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4066d427acce5c54e8a0227cf6b890dc
+      internalID: 1313454887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_303
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd28a2fa072b22498d6aac75f8efadd
+      internalID: 433869843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_304
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2addd26c6274aa4c84dfc5e3fafb6b0
+      internalID: -1137938788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_305
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b60b6f0325b6844abad09a19da36eb
+      internalID: 567434891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_306
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0d232d149ec7546997e277c0034130
+      internalID: -38795868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_307
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30df875f8fc54a041a258ce9f3f8b096
+      internalID: 529780341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_308
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5b9eec65bfe1549b9de2970a42b8d2
+      internalID: 1797770392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_309
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8af76851732784590a328986c9d33b
+      internalID: 229830967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_310
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60286296075e7244bd9c7a54788307a
+      internalID: 1015347071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_311
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ef6dbb6205c7e46b2b73529c2d86a6
+      internalID: 1091826955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_312
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0335b7d5267e45c4294b1680725976b9
+      internalID: 1909458495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_313
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c4651e2daad27449e3a16f44ffe259
+      internalID: -255237167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_314
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0739a3ef750848244b08f2a4b21a6a41
+      internalID: -1185157400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_315
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d911b5371656707459ce629fb5feea8e
+      internalID: -2086366958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_316
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf9760030afc054b8700a278646f166
+      internalID: -1684736531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_317
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c91460d205d914a8ba6585062e8bc3
+      internalID: -242079725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_318
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4e16ff157c4124f87736d693f8ba05
+      internalID: -75843218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 07_319
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684fdc36c5cf2ed4494fdaca9bab2d23
+      internalID: 1703369823
       vertices: []
       indices: 
       edges: []
@@ -6135,11 +7038,54 @@ TextureImporter:
       Free Smoke Fx  Pixel 07_274: 469913846
       Free Smoke Fx  Pixel 07_275: 1831793022
       Free Smoke Fx  Pixel 07_276: -1520229934
+      Free Smoke Fx  Pixel 07_277: 1161642108
+      Free Smoke Fx  Pixel 07_278: -1663363343
+      Free Smoke Fx  Pixel 07_279: -1449975187
       Free Smoke Fx  Pixel 07_28: -2050080643
+      Free Smoke Fx  Pixel 07_280: -1409581747
+      Free Smoke Fx  Pixel 07_281: 1642223273
+      Free Smoke Fx  Pixel 07_282: -375325312
+      Free Smoke Fx  Pixel 07_283: -385106138
+      Free Smoke Fx  Pixel 07_284: -43695118
+      Free Smoke Fx  Pixel 07_285: -1473153735
+      Free Smoke Fx  Pixel 07_286: -436543220
+      Free Smoke Fx  Pixel 07_287: 233586857
+      Free Smoke Fx  Pixel 07_288: 1737142012
+      Free Smoke Fx  Pixel 07_289: 629207912
       Free Smoke Fx  Pixel 07_29: 1056635887
+      Free Smoke Fx  Pixel 07_290: 1826753921
+      Free Smoke Fx  Pixel 07_291: 1241829638
+      Free Smoke Fx  Pixel 07_292: -1420511546
+      Free Smoke Fx  Pixel 07_293: -259549010
+      Free Smoke Fx  Pixel 07_294: 1675831702
+      Free Smoke Fx  Pixel 07_295: 787467661
+      Free Smoke Fx  Pixel 07_296: 1963312413
+      Free Smoke Fx  Pixel 07_297: 1016154107
+      Free Smoke Fx  Pixel 07_298: 352152092
+      Free Smoke Fx  Pixel 07_299: 1987167082
       Free Smoke Fx  Pixel 07_3: 1479812572
       Free Smoke Fx  Pixel 07_30: 145614040
+      Free Smoke Fx  Pixel 07_300: 1587888094
+      Free Smoke Fx  Pixel 07_301: 968482232
+      Free Smoke Fx  Pixel 07_302: 1313454887
+      Free Smoke Fx  Pixel 07_303: 433869843
+      Free Smoke Fx  Pixel 07_304: -1137938788
+      Free Smoke Fx  Pixel 07_305: 567434891
+      Free Smoke Fx  Pixel 07_306: -38795868
+      Free Smoke Fx  Pixel 07_307: 529780341
+      Free Smoke Fx  Pixel 07_308: 1797770392
+      Free Smoke Fx  Pixel 07_309: 229830967
       Free Smoke Fx  Pixel 07_31: -1892626657
+      Free Smoke Fx  Pixel 07_310: 1015347071
+      Free Smoke Fx  Pixel 07_311: 1091826955
+      Free Smoke Fx  Pixel 07_312: 1909458495
+      Free Smoke Fx  Pixel 07_313: -255237167
+      Free Smoke Fx  Pixel 07_314: -1185157400
+      Free Smoke Fx  Pixel 07_315: -2086366958
+      Free Smoke Fx  Pixel 07_316: -1684736531
+      Free Smoke Fx  Pixel 07_317: -242079725
+      Free Smoke Fx  Pixel 07_318: -75843218
+      Free Smoke Fx  Pixel 07_319: 1703369823
       Free Smoke Fx  Pixel 07_32: 746715254
       Free Smoke Fx  Pixel 07_33: 1202645850
       Free Smoke Fx  Pixel 07_34: 803740171
