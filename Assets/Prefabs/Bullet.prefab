@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 3217125097851079088, guid: 34acdc564c91239449e60d90a95ad76b, type: 3}
   lifetime: 4
 --- !u!50 &4138008036824046760
 Rigidbody2D:
@@ -158,7 +158,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
