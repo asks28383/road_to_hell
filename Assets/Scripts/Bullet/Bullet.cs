@@ -4,6 +4,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // 公有变量（可在Unity编辑器中配置）
+    [SerializeField] private int damage = 10; // 武器伤害值
     public float speed;              // 子弹飞行速度
     public GameObject explosionPrefab; // 爆炸效果预制体
     public float lifetime = 4f;      // 子弹存活时间（秒）
@@ -50,6 +51,12 @@ public class Bullet : MonoBehaviour
     /// </summary>
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // 检查击中的对象是否有Health组件
+        Health health = other.GetComponent<Health>();
+        if (health != null)
+        {
+            health.TakeDamage(damage);
+        }
         // 使用对象池获取爆炸效果实例（替代Instantiate）
         GameObject exp = ObjectPool.Instance.GetObject(explosionPrefab);
         // 设置爆炸效果位置为当前子弹位置

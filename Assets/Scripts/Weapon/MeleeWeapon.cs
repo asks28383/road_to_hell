@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MeleeWeapon : Weapon
 {
     // 配置参数
+    public Collider2D weaponCollider;
     public XuLiBar bar;
     public GameObject meleeHitBox;
     public GameObject rangedSlashPrefab; // 普通剑气
@@ -38,6 +39,17 @@ public class MeleeWeapon : Weapon
             originalSwordRotation = swordTransform.localRotation;
         }
     }
+    // 在攻击动画开始时调用（通过动画事件）
+    public void EnableWeaponCollider()
+    {
+        weaponCollider.enabled = true;
+    }
+
+    // 在攻击动画结束时调用（通过动画事件）
+    public void DisableWeaponCollider()
+    {
+        weaponCollider.enabled = false;
+    }
 
     protected override void Update()
     {
@@ -48,7 +60,6 @@ public class MeleeWeapon : Weapon
         bar.UpdateCharge(holdTimer);
 
         HandleAttack();
-        Debug.Log(holdTimer);
         if (isSwinging)
             UpdateSwordSwing();
     }
@@ -170,12 +181,6 @@ public class MeleeWeapon : Weapon
         slash.GetComponent<Bullet>().SetSpeed(direction);
         slash.transform.right = direction;
 
-        if (isPerfect)
-        {
-            // 设置强力剑气属性
-            //var bullet = slash.GetComponent<Bullet>();
-            //bullet.damage *= 2f; // 双倍伤害
-            //bullet.speed *= 1.2f; // 更快速度
-        }
+    
     }
 }
