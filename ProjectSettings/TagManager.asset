@@ -9,6 +9,7 @@ TagManager:
   - HealthBar
   - DodgeCoolDownBar
   - chargebar
+  - Boss
   layers:
   - Default
   - TransparentFX
