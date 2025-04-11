@@ -20,7 +20,6 @@ public class BossHealthBar : MonoBehaviour
     private void Update()
     {
         healthPointImage.fillAmount = (float)(health.currentHealth * 1.0 / health.maxHealth);
-        print("fill="+healthPointImage.fillAmount);
 
         if (healthPointEffect.fillAmount >= healthPointImage.fillAmount)
         {

@@ -10,6 +10,8 @@ TagManager:
   - DodgeCoolDownBar
   - chargebar
   - Boss
+  - Bullet
+  - Bullet2
   layers:
   - Default
   - TransparentFX

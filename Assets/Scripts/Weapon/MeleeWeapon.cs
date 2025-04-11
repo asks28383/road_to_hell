@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MeleeWeapon : Weapon
 {
     // 配置参数
+    [SerializeField] private int damages = 10; // 武器伤害值
     public Collider2D weaponCollider;
     public XuLiBar bar;
     public GameObject meleeHitBox;
@@ -183,4 +184,13 @@ public class MeleeWeapon : Weapon
 
     
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // 检查击中的对象是否有Health组件
+        Health health = other.GetComponent<Health>();
+        if (health != null)
+        {
+            health.TakeDamage(damages);
+        }
+}
 }

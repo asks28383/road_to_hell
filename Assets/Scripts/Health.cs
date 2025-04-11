@@ -16,8 +16,6 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
         PlayHurtAnimation();
-        Debug.Log("enemy当前生命值：");
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             Die();

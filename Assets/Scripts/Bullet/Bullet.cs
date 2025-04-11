@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 public class Bullet : MonoBehaviour
 {
     // 公有变量（可在Unity编辑器中配置）
@@ -8,14 +7,21 @@ public class Bullet : MonoBehaviour
     public float speed;              // 子弹飞行速度
     public GameObject explosionPrefab; // 爆炸效果预制体
     public float lifetime = 4f;      // 子弹存活时间（秒）
+    public BulletOwner owner;        // 子弹所有者类型
 
     private float _timer;            // 生命周期计时器
-    new private Rigidbody2D rigidbody; // 子弹的刚体组件（new关键字用于隐藏父级同名成员）
+    private Rigidbody2D rigidbody;   // 子弹的刚体组件
+
+    // 子弹所有者枚举
+    public enum BulletOwner
+    {
+        Player,
+        Boss
+    }
 
     // 初始化时获取组件
     void Awake()
     {
-        // 获取当前游戏对象上的Rigidbody2D组件
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -25,45 +31,91 @@ public class Bullet : MonoBehaviour
     /// <param name="direction">标准化后的飞行方向向量</param>
     public void SetSpeed(Vector2 direction)
     {
-        // 通过刚体设置子弹速度（方向 * 速度值）
         rigidbody.velocity = direction * speed;
     }
 
     void OnEnable()
     {
-        // 每次从对象池取出时重置计时器
         _timer = 0f;
     }
+
     void Update()
     {
-        // 可在此处添加子弹生命周期计时器等逻辑
         _timer += Time.deltaTime;
-        // 检查是否超过生命周期
         if (_timer >= lifetime)
         {
-            // 使用对象池回收子弹对象
             ObjectPool.Instance.PushObject(gameObject);
         }
     }
 
     /// <summary>
-    /// 触发器碰撞检测（当子弹碰到其他碰撞体时执行）
+    /// 触发器碰撞检测
     /// </summary>
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 检查击中的对象是否有Health组件
-        Health health = other.GetComponent<Health>();
-        if (health != null)
-        {
-            health.TakeDamage(damage);
-        }
-        // 使用对象池获取爆炸效果实例（替代Instantiate）
-        GameObject exp = ObjectPool.Instance.GetObject(explosionPrefab);
-        // 设置爆炸效果位置为当前子弹位置
-        exp.transform.position = transform.position;
-        // 需要确保爆炸效果对象在初始化时自动激活
+        // 忽略与同阵营子弹的碰撞
+        if (other.CompareTag("Bullet")|| other.CompareTag("Bullet2")) return;
 
-        // 使用对象池回收子弹对象（替代Destroy）
-        ObjectPool.Instance.PushObject(gameObject);
+        // 根据子弹所有者决定碰撞逻辑
+        switch (owner)
+        {
+            case BulletOwner.Player:
+                HandlePlayerBulletCollision(other);
+                break;
+
+            case BulletOwner.Boss:
+                HandleBossBulletCollision(other);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// 处理玩家子弹的碰撞
+    /// </summary>
+    private void HandlePlayerBulletCollision(Collider2D other)
+    {
+        // 只对Boss造成伤害
+        if (!other.CompareTag("Player"))
+        {
+            Health health = other.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
+            Debug.Log("hello");
+            SpawnExplosion();
+            ObjectPool.Instance.PushObject(gameObject);
+        }
+    }
+
+    /// <summary>
+    /// 处理Boss子弹的碰撞
+    /// </summary>
+    private void HandleBossBulletCollision(Collider2D other)
+    {
+        // 只对玩家造成伤害
+        if (!other.CompareTag("Boss"))
+        {
+            Health health = other.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
+            SpawnExplosion();
+            ObjectPool.Instance.PushObject(gameObject);
+        }
+    }
+
+    /// <summary>
+    /// 生成爆炸效果
+    /// </summary>
+    private void SpawnExplosion()
+    {
+        if (explosionPrefab != null)
+        {
+            GameObject exp = ObjectPool.Instance.GetObject(explosionPrefab);
+            exp.transform.position = transform.position;
+            exp.transform.rotation = Quaternion.identity;
+        }
     }
 }
