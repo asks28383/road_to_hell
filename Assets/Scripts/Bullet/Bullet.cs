@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // 公有变量（可在Unity编辑器中配置）
-    [SerializeField] private int damage = 10; // 武器伤害值
+    [SerializeField] public int damage = 10; // 武器伤害值
     public float speed;              // 子弹飞行速度
     public GameObject explosionPrefab; // 爆炸效果预制体
     public float lifetime = 4f;      // 子弹存活时间（秒）
