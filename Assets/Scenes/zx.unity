@@ -4845,6 +4845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 239676893836664043, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1130112322474235743, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.41
@@ -4889,6 +4893,10 @@ PrefabInstance:
       propertyPath: heatBar
       value: 
       objectReference: {fileID: 5992430134525630266}
+    - target: {fileID: 5165646758649532481, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
