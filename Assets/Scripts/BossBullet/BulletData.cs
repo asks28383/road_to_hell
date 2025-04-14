@@ -20,9 +20,13 @@ public class BulletData : ScriptableObject
     public GameObject prefab;           //×Óµ¯Ô¤ÉèÌå
 
     public float TempShootTime;
+    public Quaternion TempRotation;
+    public float TempSelfRotation;
 
-    public void ResetTempData()
+    public void ResetTempData(Transform Center)
     {
         TempShootTime = 0;
+        TempRotation = Center.rotation;
+        TempSelfRotation = SelfRotation;
     }
 }

@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 291630745236121701}
   - component: {fileID: 651262148579954040}
   - component: {fileID: 1071011924877393482}
+  - component: {fileID: 1834235389284150080}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,3 +195,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
+--- !u!114 &1834235389284150080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030893436913158662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01df4010df6f7a429cc7ebfcc5fe578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDatas:
+  - {fileID: 11400000, guid: 7d43d6fa831455b4988547e3da4f4e9f, type: 2}
