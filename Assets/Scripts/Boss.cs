@@ -52,11 +52,11 @@ public class BossAI : MonoBehaviour
             nextScanTime = Time.time + scanInterval;
         }
 
-        // 如果发现玩家且不在冷却中，开始攻击
-        if (playerTarget != null && Time.time >= nextAttackTime && !isAttacking)
-        {
-            StartCoroutine(AttackRoutine());
-        }
+        //// 如果发现玩家且不在冷却中，开始攻击
+        //if (playerTarget != null && Time.time >= nextAttackTime && !isAttacking)
+        //{
+        //    StartCoroutine(AttackRoutine());
+        //}
 
         HandleMovement(); // 处理移动逻辑
     }

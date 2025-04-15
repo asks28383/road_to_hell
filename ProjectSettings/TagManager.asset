@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - Bullet
   - Bullet2
+  - BossBullet
   layers:
   - Default
   - TransparentFX

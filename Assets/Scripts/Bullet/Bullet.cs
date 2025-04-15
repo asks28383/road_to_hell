@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 忽略与同阵营子弹的碰撞
-        if (other.CompareTag("Bullet")|| other.CompareTag("Bullet2")) return;
+        if (other.CompareTag("Bullet")|| other.CompareTag("BossBullet")) return;
 
         // 根据子弹所有者决定碰撞逻辑
         switch (owner)
