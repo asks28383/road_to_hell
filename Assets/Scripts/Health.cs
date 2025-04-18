@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     public int currentHealth;
     protected Animator animator;
 
+
     protected virtual void Awake()
     {
         currentHealth = maxHealth;
