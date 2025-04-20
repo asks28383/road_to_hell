@@ -6,7 +6,18 @@ public class EnemyHealth : Health
     {
         animator.SetTrigger("Hurt");
     }
+    public override void TakeDamage(int damage)
+    {
 
+        currentHealth -= damage;
+
+        PlayHurtAnimation();
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
     protected override void PlayDeathAnimation()
     {
         animator.SetTrigger("Death");

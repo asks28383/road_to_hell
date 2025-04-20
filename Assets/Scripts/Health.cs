@@ -15,12 +15,7 @@ public class Health : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        PlayHurtAnimation();
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        
     }
 
     protected virtual void PlayHurtAnimation()
