@@ -5,6 +5,7 @@ public class MeleeWeapon : Weapon
 {
     // 配置参数
     [SerializeField] private int damages = 10; // 武器伤害值
+    [SerializeField] private float attackCooldown = 0.5f; // 攻击冷却时间
     public Collider2D weaponCollider;
     public XuLiBar bar;
     public GameObject meleeHitBox;
@@ -13,12 +14,15 @@ public class MeleeWeapon : Weapon
     public float holdTimeForRanged = 2f;
     public float perfectChargeThreshold = 0.8f; // 完美蓄力允许的误差范围
     public float meleeRange = 1.5f;
+    public string bulletTag = "EnemyBullet"; // 可以摧毁的弹幕标签
 
     // 状态变量
     protected float holdTimer;
     protected bool isHolding;
     protected bool isInPerfectWindow; // 是否处于完美蓄力窗口期
     protected Transform slashPoint;
+    protected float cooldownTimer = 0f; // 攻击冷却计时器
+    protected bool canAttack = true; // 是否可以攻击
 
     [Header("Sword Swing Settings")]
     public Transform swordTransform;
@@ -40,6 +44,7 @@ public class MeleeWeapon : Weapon
             originalSwordRotation = swordTransform.localRotation;
         }
     }
+
     // 在攻击动画开始时调用（通过动画事件）
     public void EnableWeaponCollider()
     {
@@ -56,6 +61,16 @@ public class MeleeWeapon : Weapon
     {
         base.Update();
 
+        // 更新攻击冷却
+        if (!canAttack)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0f)
+            {
+                canAttack = true;
+            }
+        }
+
         // 更新蓄力条显示
         bar.Active(isHolding && holdTimer >= 0.3f);
         bar.UpdateCharge(holdTimer);
@@ -67,7 +82,7 @@ public class MeleeWeapon : Weapon
 
     protected override void HandleAttack()
     {
-        if (Input.GetButtonDown("Fire1") && timer == 0)
+        if (Input.GetButtonDown("Fire1") && canAttack && timer == 0)
         {
             isHolding = true;
             holdTimer = 0f;
@@ -80,7 +95,7 @@ public class MeleeWeapon : Weapon
 
             // 检查是否进入完美蓄力窗口
             if (!isInPerfectWindow &&
-                holdTimer >= holdTimeForRanged+perfectChargeThreshold/2 &&
+                holdTimer >= holdTimeForRanged + perfectChargeThreshold / 2 &&
                 holdTimer <= holdTimeForRanged + perfectChargeThreshold)
             {
                 isInPerfectWindow = true;
@@ -111,8 +126,11 @@ public class MeleeWeapon : Weapon
             holdTimer = 0f;
             isInPerfectWindow = false;
             timer = interval;
+            canAttack = false;
+            cooldownTimer = attackCooldown;
         }
     }
+
     void StartSwordSwing()
     {
         if (swordTransform == null) return;
@@ -167,9 +185,6 @@ public class MeleeWeapon : Weapon
         StartSwordSwing();
     }
 
-
-    // 修改后的释放剑气方法，增加isPerfect参数
-
     protected virtual void ReleaseRangedSlash(bool isPerfect)
     {
         TriggerAttackAnimation("Melee");
@@ -181,9 +196,8 @@ public class MeleeWeapon : Weapon
         slash.transform.position = slashPoint.position;
         slash.GetComponent<Bullet>().SetSpeed(direction);
         slash.transform.right = direction;
-
-    
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 检查击中的对象是否有Health组件
@@ -192,5 +206,15 @@ public class MeleeWeapon : Weapon
         {
             health.TakeDamage(damages);
         }
-}
+
+        // 检查是否击中可摧毁的弹幕（使用标签检测）
+        if (other.CompareTag(bulletTag))
+        {
+            // 摧毁弹幕
+            Destroy(other.gameObject);
+
+            // 或者使用对象池回收
+            // ObjectPool.Instance.ReturnObject(other.gameObject);
+        }
+    }
 }

@@ -6,7 +6,7 @@ public class PlayerHealth : Health
     [Header("Damage Settings")]
     [SerializeField] private float damageCooldown = 0.8f; // Time between allowed damage
     [SerializeField] private float flashDuration = 0.2f; // Duration of each flash
-    [SerializeField] private int flashCount = 4; // How many times to flash
+    [SerializeField] private int flashCount = 2; // How many times to flash
     [SerializeField] private Color flashColor = Color.red; // Color to flash when hit
 
     private bool canTakeDamage = true;
@@ -30,7 +30,6 @@ public class PlayerHealth : Health
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
         Debug.Log(currentHealth);
-
         PlayHurtAnimation();
         StartCoroutine(FlashEffect());
         StartCoroutine(DamageCooldown());

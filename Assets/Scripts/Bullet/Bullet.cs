@@ -54,7 +54,16 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 忽略与同阵营子弹的碰撞
-        if (other.CompareTag("Bullet")|| other.CompareTag("BossBullet")) return;
+        if (other.CompareTag("Bullet") && owner == BulletOwner.Player) return;
+        if (other.CompareTag("BossBullet") && owner == BulletOwner.Boss) return;
+
+        // 玩家子弹与Boss弹幕碰撞的特殊处理
+        if (owner == BulletOwner.Player && other.CompareTag("BossBullet"))
+        {
+            // 只销毁Boss的弹幕，玩家的子弹继续存在
+            ObjectPool.Instance.PushObject(other.gameObject);
+            return;  // 注意这里要return，避免执行后面的碰撞逻辑
+        }
 
         // 根据子弹所有者决定碰撞逻辑
         switch (owner)
@@ -82,7 +91,6 @@ public class Bullet : MonoBehaviour
             {
                 health.TakeDamage(damage);
             }
-            Debug.Log("hello");
             //SpawnExplosion();
             ObjectPool.Instance.PushObject(gameObject);
         }

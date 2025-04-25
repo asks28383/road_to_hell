@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - Bullet2
   - BossBullet
+  - PowerfulSlash
   layers:
   - Default
   - TransparentFX

@@ -31,7 +31,10 @@ public class HealthBar : MonoBehaviour
     }
     private void Update()
     {
-        UpdateHealth(playerHealth.currentHealth);
+
+           UpdateHealth(playerHealth.currentHealth);
+
+        
     }
     /// <summary>
     /// present is the current health v
