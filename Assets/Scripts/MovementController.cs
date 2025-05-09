@@ -71,4 +71,13 @@ public class MovementController : MonoBehaviour
             animator.SetBool("isRunning", true);
         }
     }
+    public void ApplySpeedModifier(float modifier)
+    {
+        movementSpeed *= modifier;
+    }
+
+    public void RemoveSpeedModifier(float modifier)
+    {
+        movementSpeed /= modifier;
+    }
 }
