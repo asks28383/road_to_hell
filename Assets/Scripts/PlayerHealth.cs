@@ -29,7 +29,7 @@ public class PlayerHealth : Health
 
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
-        Debug.Log(currentHealth);
+        //Debug.Log(currentHealth);
         PlayHurtAnimation();
         StartCoroutine(FlashEffect());
         StartCoroutine(DamageCooldown());

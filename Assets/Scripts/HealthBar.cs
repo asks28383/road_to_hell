@@ -5,7 +5,7 @@ public class HealthBar : MonoBehaviour
 {
     public Slider HPStrip;
     public static HealthBar Instance;
-    public int maxHp;// 角色的最大血量
+    public float maxHp;// 角色的最大血量
     private Health playerHealth;
     public Image fillImage;
 
@@ -40,7 +40,7 @@ public class HealthBar : MonoBehaviour
     /// present is the current health v
     /// </summary>
     /// <param name="present"></param>
-    public void UpdateHealth(int present)
+    public void UpdateHealth(float present)
     {
         HPStrip.value = present;
         UpdateHealthBarColor();

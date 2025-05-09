@@ -84,4 +84,18 @@ public class ObjectPool
         objectPool[_name].Enqueue(prefab);
         prefab.SetActive(false);
     }
+    // 在ObjectPool类中添加这些方法
+    public bool HasPool(string prefabName)
+    {
+        return objectPool.ContainsKey(prefabName) && objectPool[prefabName].Count > 0;
+    }
+
+    public void PrewarmPool(GameObject prefab, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            GameObject obj = GameObject.Instantiate(prefab);
+            PushObject(obj);
+        }
+    }
 }
