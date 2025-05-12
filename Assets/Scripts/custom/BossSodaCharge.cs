@@ -1,7 +1,8 @@
+using System.Collections;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-[TaskCategory("Boss")]
+[TaskCategory("Custom")]
 public class BossSodaCharge : Action
 {
     [Header("冲刺设置")]
@@ -105,10 +106,29 @@ public class BossSodaCharge : Action
     private void SpawnTrail()
     {
         GameObject trail = ObjectPool.Instance.GetObject(sodaTrailPrefab);
-        trail.transform.position = transform.position - Vector3.up * 0.2f;
-        trail.transform.rotation = Quaternion.identity;
-    }
+        trail.transform.position = transform.position;
 
+        // 2D方向计算（使用Z轴作为俯视角的"上方向"）
+        Vector2 direction2D = new Vector2(chargeDirection.x, chargeDirection.y);
+        if (direction2D != Vector2.zero)
+        {
+            // 计算角度并旋转（注意Unity的2D旋转是绕Z轴）
+            float angle = Mathf.Atan2(direction2D.y, direction2D.x) * Mathf.Rad2Deg;
+            trail.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        StartCoroutine(ReturnTrailAfterDelay(trail, 3f));
+    }
+    private IEnumerator ReturnTrailAfterDelay(GameObject trail, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // 安全回收检查
+        if (trail != null && trail.activeInHierarchy)
+        {
+            ObjectPool.Instance.PushObject(trail);
+        }
+    }
     public override void OnEnd()
     {
         // 清理状态
