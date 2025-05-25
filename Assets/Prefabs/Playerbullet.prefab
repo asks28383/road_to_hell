@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4138008036824046760}
   - component: {fileID: -8013421573359728510}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Playerbullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3217125097851079088, guid: 34acdc564c91239449e60d90a95ad76b, type: 3}
   lifetime: 4
   owner: 0
+  canDestroyProjectiles: 0
 --- !u!50 &4138008036824046760
 Rigidbody2D:
   serializedVersion: 4

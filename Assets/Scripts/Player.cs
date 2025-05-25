@@ -1,48 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Player : Character
+public class Player : MonoBehaviour
 {
-    [HideInInspector]
-    public float hitPoints;
-    public override IEnumerator DamageCharacter(int damage, float interval)
-    {
-        while (true)
-        {
-            StartCoroutine(FlickerCharacter());
-            hitPoints = hitPoints - damage;
-            if (hitPoints <= float.Epsilon)
-            {
-                KillCharacter();
-                break;
-            }
-            if (interval > float.Epsilon)
-            {
-                yield return new WaitForSeconds(interval);
-            }
-            else
-            {
-                break;
-            }
-        }
-    }
+    [Header("Weapons")]
+    public GameObject primaryWeapon;
+    public GameObject secondaryWeapon;
 
-    public override void ResetCharacter()
-    {
-        hitPoints = startingHitPoints;
-    }
+    [Header("UI Elements")]
+    public GameObject primaryHeatBar; // 主武器过热条（独立UI）
+    public GameObject secondaryChargeBar; // 副武器蓄力条（子物体）
 
-    // Start is called before the first frame update
+    private enum WeaponType { Primary, Secondary }
+    private WeaponType currentWeapon = WeaponType.Primary;
 
     void Start()
     {
-        ResetCharacter();
+        // 初始化显示状态
+        SetWeaponActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SwitchWeapon();
+        }
+    }
+
+    private void SwitchWeapon()
+    {
+        // 切换武器类型
+        currentWeapon = (currentWeapon == WeaponType.Primary) ? WeaponType.Secondary : WeaponType.Primary;
+        SetWeaponActive(currentWeapon == WeaponType.Primary);
+    }
+
+    private void SetWeaponActive(bool isPrimary)
+    {
+        // 设置武器激活状态
+        primaryWeapon.SetActive(isPrimary);
+        secondaryWeapon.SetActive(!isPrimary);
+
+        // 设置UI条显示状态
+        if (primaryHeatBar != null)
+            primaryHeatBar.SetActive(isPrimary);
+        if (secondaryChargeBar != null)
+            secondaryChargeBar.gameObject.SetActive(!isPrimary);
     }
 }

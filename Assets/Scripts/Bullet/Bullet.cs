@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public GameObject explosionPrefab; // 爆炸效果预制体
     public float lifetime = 4f;      // 子弹存活时间（秒）
     public BulletOwner owner;        // 子弹所有者类型
-
+    [SerializeField] public bool canDestroyProjectiles = false; // 新增属性
     private float _timer;            // 生命周期计时器
     private Rigidbody2D rigidbody;   // 子弹的刚体组件
 
@@ -61,7 +61,10 @@ public class Bullet : MonoBehaviour
         if (owner == BulletOwner.Player && other.CompareTag("BossBullet"))
         {
             // 只销毁Boss的弹幕，玩家的子弹继续存在
-            ObjectPool.Instance.PushObject(other.gameObject);
+            if (canDestroyProjectiles) // 只有标记为true的子弹才能消除弹幕
+            {
+                ObjectPool.Instance.PushObject(other.gameObject);
+            }
             return;  // 注意这里要return，避免执行后面的碰撞逻辑
         }
 
@@ -84,7 +87,7 @@ public class Bullet : MonoBehaviour
     private void HandlePlayerBulletCollision(Collider2D other)
     {
         // 只对Boss造成伤害
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Boss")||other.CompareTag("Wall"))
         {
             Health health = other.GetComponent<Health>();
             if (health != null)
@@ -102,7 +105,7 @@ public class Bullet : MonoBehaviour
     private void HandleBossBulletCollision(Collider2D other)
     {
         // 只对玩家造成伤害
-        if (!other.CompareTag("Boss"))
+        if (other.CompareTag("Player")||other.CompareTag("Wall"))
         {
             Health health = other.GetComponent<Health>();
             if (health != null)

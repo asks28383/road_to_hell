@@ -14,6 +14,8 @@ TagManager:
   - Bullet2
   - BossBullet
   - PowerfulSlash
+  - obstacle
+  - Wall
   layers:
   - Default
   - TransparentFX
