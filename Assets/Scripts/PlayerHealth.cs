@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
     [Header("Damage Settings")]
-    [SerializeField] private float damageCooldown = 0.8f; // Time between allowed damage
+    [SerializeField] private float damageCooldown = 0.4f; // Time between allowed damage
     [SerializeField] private float flashDuration = 0.2f; // Duration of each flash
     [SerializeField] private int flashCount = 2; // How many times to flash
     [SerializeField] private Color flashColor = Color.red; // Color to flash when hit
@@ -59,7 +59,10 @@ public class PlayerHealth : Health
             yield return new WaitForSeconds(flashDuration);
         }
     }
-
+    public void Recover(float recovery)
+    {
+        currentHealth = Mathf.Min(currentHealth + recovery, maxHealth);
+    }
     protected override void Die()
     {
         base.Die();

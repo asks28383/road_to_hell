@@ -387,25 +387,25 @@ MonoBehaviour:
       startIndex: 
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(265.1721,-79.2837143)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(-2.12792969,155.608536)"},"ID":1,"Name":"Root","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(-293.977844,121.876572)"},"ID":2,"Name":"Parallel","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BossPhaseUpdater","NodeData":{"Offset":"(-0.720554352,96.19223)"},"ID":3,"Name":"Boss
-        Phase Updater","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":3},"SinglechaseThreshold":0.8,"SinglesodaThreshold":0.5,"SinglebulletThreshold":0.3}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(365.3252,219.470978)"},"ID":4,"Name":"StateManager","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1195.28186,139.805176)","WatchedFields":["abortType"]},"ID":5,"Name":"BulletAttackState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldBulletAttack","NodeData":{"Offset":"(-252.146164,122.535645)"},"ID":6,"Name":"Check
-        Should Bullet Attack","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":3},"Int32requiredPhase":3},{"Type":"EnterBulletAttack","NodeData":{"Offset":"(-79.85646,121.071983)"},"ID":7,"Name":"Enter
-        Bullet Attack","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(46.1669922,130.029785)"},"ID":8,"Name":"Parallel","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"SnotBubbleAttack","NodeData":{"Offset":"(-31.8330078,144.829651)"},"ID":9,"Name":"Snot
-        Bubble Attack","Instant":true,"GameObjectbubblePrefab":0,"TransformmouthPosition":1,"SinglespawnInterval":0.2,"SingleattackDuration":5,"SingleplayerTrackingAngle":30,"SingleminSpeed":1,"SinglemaxSpeed":2,"SinglewobbleIntensity":0.5,"SinglewobbleFrequency":2}]},{"Type":"ExitBulletAttack","NodeData":{"Offset":"(190.143311,115.447021)"},"ID":10,"Name":"Exit
-        Bullet Attack","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-582.085632,87.14288)"},"ID":11,"Name":"SodaChargeState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldSodaCharge","NodeData":{"Offset":"(-245.642914,164.174011)"},"ID":12,"Name":"Check
-        Should Soda Charge","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":3},"Int32requiredPhase":2},{"Type":"EnterSodaCharge","NodeData":{"Offset":"(-42.51461,160.717972)"},"ID":13,"Name":"Enter
-        Soda Charge","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(109.56237,159.517349)"},"ID":14,"Name":"Parallel","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BossSodaCharge","NodeData":{"Offset":"(-0.006082535,150.262329)","WatchedFields":["sodaTrailPrefab"]},"ID":15,"Name":"Boss
-        Soda Charge","Instant":true,"Int32maxCharges":4,"SinglechargeSpeed":6,"SinglechargeDuration":1,"SinglepostChargeDelay":0.8,"GameObjectsodaTrailPrefab":2,"SingletrailSpawnInterval":0.1}]},{"Type":"ExitSodaCharge","NodeData":{"Offset":"(255.748474,160.6956)"},"ID":16,"Name":"Exit
-        Soda Charge","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(144.888153,95.85385)"},"ID":17,"Name":"ChaseState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldChase","NodeData":{"Offset":"(-303.4813,168.517822)"},"ID":18,"Name":"Check
-        Should Chase","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":3},"Int32requiredPhase":1},{"Type":"EnterChase","NodeData":{"Offset":"(-128.309723,167.798981)"},"ID":19,"Name":"Enter
-        Chase","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(25.970993,172.071716)"},"ID":20,"Name":"ChaseBehavior","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"MoveTowardsPlayer","NodeData":{"Offset":"(-68.75784,145.713928)"},"ID":21,"Name":"Move
-        Towards Player","Instant":true,"Singlespeed":1},{"Type":"ThrowBananaPeels","NodeData":{"Offset":"(104.340355,147.209)"},"ID":22,"Name":"Throw
-        Banana Peels","Instant":true,"GameObjectbananaPrefab":3,"GameObjectareaPrefab":4,"SinglethrowSpeed":3,"SinglethrowInterval":1,"Int32totalThrows":5,"SingleareaDuration":10}]},{"Type":"ExitChase","NodeData":{"Offset":"(168.212234,142.075958)"},"ID":23,"Name":"Exit
-        Chase","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(677.546753,95.85385)","WatchedFields":["abortType"]},"ID":24,"Name":"SleepState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldSleep","NodeData":{"Offset":"(-244.855591,156.03302)"},"ID":25,"Name":"Check
-        Should Sleep","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":3},"Int32requiredPhase":0},{"Type":"EnterSleep","NodeData":{"Offset":"(-99.55261,156.083069)"},"ID":26,"Name":"Enter
-        Sleep","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(34.1913,157.793854)"},"ID":27,"Name":"SleepBehavior","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"RecoverHealth","NodeData":{"Offset":"(-67.9375,148.649353)"},"ID":28,"Name":"Recover
-        Health","Instant":true,"SinglerecoverRate":5},{"Type":"SnotBubbleAttack","NodeData":{"Offset":"(87.29648,146.128357)"},"ID":29,"Name":"Snot
-        Bubble Attack","Instant":true,"GameObjectbubblePrefab":5,"TransformmouthPosition":6,"SinglespawnInterval":0.25,"SingleattackDuration":100,"SingleplayerTrackingAngle":30,"SingleminSpeed":1,"SinglemaxSpeed":2,"SinglewobbleIntensity":0.5,"SinglewobbleFrequency":2}]},{"Type":"ExitSleep","NodeData":{"Offset":"(215.732452,161.099)"},"ID":30,"Name":"Exit
-        Sleep","Instant":true}]}]}]}}'
+        Phase Updater","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":2},"SinglechaseThreshold":0.8,"SinglesodaThreshold":0.5,"SinglebulletThreshold":0.3}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(365.3252,219.470978)"},"ID":4,"Name":"StateManager","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1214.7583,95.85385)","WatchedFields":["abortType"]},"ID":5,"Name":"SleepState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldSleep","NodeData":{"Offset":"(-244.855591,156.03302)"},"ID":6,"Name":"Check
+        Should Sleep","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":2},"Int32requiredPhase":3},{"Type":"EnterSleep","NodeData":{"Offset":"(-99.55261,156.083069)"},"ID":7,"Name":"Enter
+        Sleep","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(34.1913,157.793854)"},"ID":8,"Name":"SleepBehavior","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"RecoverHealth","NodeData":{"Offset":"(-67.9375,148.649353)"},"ID":9,"Name":"Recover
+        Health","Instant":true,"SinglerecoverRate":5},{"Type":"SnotBubbleAttack","NodeData":{"Offset":"(87.29648,146.128357)"},"ID":10,"Name":"Snot
+        Bubble Attack","Instant":true,"GameObjectbubblePrefab":0,"TransformmouthPosition":1,"SinglespawnInterval":0.25,"SingleattackDuration":100,"SingleplayerTrackingAngle":30,"SingleminSpeed":1,"SinglemaxSpeed":2,"SinglewobbleIntensity":0.5,"SinglewobbleFrequency":2}]},{"Type":"ExitSleep","NodeData":{"Offset":"(215.732452,161.099)"},"ID":11,"Name":"Exit
+        Sleep","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-582.085632,87.14288)"},"ID":12,"Name":"SodaChargeState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldSodaCharge","NodeData":{"Offset":"(-245.642914,164.174011)"},"ID":13,"Name":"Check
+        Should Soda Charge","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":2},"Int32requiredPhase":2},{"Type":"EnterSodaCharge","NodeData":{"Offset":"(-42.51461,160.717972)"},"ID":14,"Name":"Enter
+        Soda Charge","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(109.56237,159.517349)"},"ID":15,"Name":"Parallel","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BossSodaCharge","NodeData":{"Offset":"(-0.006082535,150.262329)","WatchedFields":["sodaTrailPrefab"]},"ID":16,"Name":"Boss
+        Soda Charge","Instant":true,"Int32maxCharges":6,"SinglechargeSpeed":10,"SinglechargeDuration":2,"SinglepreparationTime":0.5,"SinglepostChargeDelay":0.4,"GameObjectsodaTrailPrefab":2,"SingletrailSpawnInterval":0.2}]},{"Type":"ExitSodaCharge","NodeData":{"Offset":"(255.748474,160.6956)"},"ID":17,"Name":"Exit
+        Soda Charge","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(144.888153,95.85385)"},"ID":18,"Name":"ChaseState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldChase","NodeData":{"Offset":"(-303.4813,168.517822)"},"ID":19,"Name":"Check
+        Should Chase","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":2},"Int32requiredPhase":1},{"Type":"EnterChase","NodeData":{"Offset":"(-128.309723,167.798981)"},"ID":20,"Name":"Enter
+        Chase","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(25.970993,172.071716)"},"ID":21,"Name":"ChaseBehavior","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"MoveTowardsPlayer","NodeData":{"Offset":"(-68.75784,145.713928)"},"ID":22,"Name":"Move
+        Towards Player","Instant":true,"Singlespeed":1},{"Type":"ThrowBananaPeels","NodeData":{"Offset":"(104.340355,147.209)"},"ID":23,"Name":"Throw
+        Banana Peels","Instant":true,"GameObjectbananaPrefab":3,"GameObjectareaPrefab":4,"SinglethrowSpeed":3,"SinglethrowInterval":1,"Int32totalThrows":5,"SingleareaDuration":10}]},{"Type":"ExitChase","NodeData":{"Offset":"(168.212234,142.075958)"},"ID":24,"Name":"Exit
+        Chase","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(889.3312,211.920532)","WatchedFields":["abortType"]},"ID":25,"Name":"BulletAttackState","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"CheckShouldBulletAttack","NodeData":{"Offset":"(-252.146164,122.535645)"},"ID":26,"Name":"Check
+        Should Bullet Attack","Instant":true,"SharedIntcurrentPhase":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":2},"Int32requiredPhase":0},{"Type":"EnterBulletAttack","NodeData":{"Offset":"(-79.85646,121.071983)"},"ID":27,"Name":"Enter
+        Bullet Attack","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(46.1669922,130.029785)"},"ID":28,"Name":"Parallel","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"SnotBubbleAttack","NodeData":{"Offset":"(-31.8330078,144.829651)"},"ID":29,"Name":"Snot
+        Bubble Attack","Instant":true,"GameObjectbubblePrefab":5,"TransformmouthPosition":6,"SinglespawnInterval":0.2,"SingleattackDuration":10,"SingleplayerTrackingAngle":30,"SingleminSpeed":1,"SinglemaxSpeed":2,"SinglewobbleIntensity":0.5,"SinglewobbleFrequency":2}]},{"Type":"ExitBulletAttack","NodeData":{"Offset":"(190.143311,115.447021)"},"ID":30,"Name":"Exit
+        Bullet Attack","Instant":true}]}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -415,7 +415,7 @@ MonoBehaviour:
         - {fileID: 7404709760281635850, guid: eee29f00feef3034d8709b178d612270, type: 3}
         - {fileID: 1932317522}
         - {fileID: 3413214324682852292, guid: a1a04503c7b322944ae9f108379112c4, type: 3}
-        - {fileID: 8572821051477699380, guid: d7f3384bf7d99584ea40d8944527eff7, type: 3}
+        - {fileID: 1029939189848300082, guid: d17ae80bb12b1e040ba0456bfc40e0bb, type: 3}
         - {fileID: 3029455628580440214, guid: 82545856420261643baff729b2a7e452, type: 3}
         - {fileID: 7404709760281635850, guid: eee29f00feef3034d8709b178d612270, type: 3}
         - {fileID: 1932317522}
@@ -565,6 +565,10 @@ PrefabInstance:
     - target: {fileID: 746146994132988344, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
       propertyPath: maxHitPoints
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 746146994132988344, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: blinkCooldown
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 746146994132988344, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
       propertyPath: primaryWeapon
@@ -1028,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  damageCooldown: 0.8
+  damageCooldown: 0.4
   flashDuration: 0.2
   flashCount: 2
   flashColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1198,6 +1202,10 @@ PrefabInstance:
     - target: {fileID: 5030893436913158662, guid: 1de962d4eeaeabf4a8da13e77186753f, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632373946176886842, guid: 1de962d4eeaeabf4a8da13e77186753f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7812350476978178736, guid: 1de962d4eeaeabf4a8da13e77186753f, type: 3}
       propertyPath: m_LocalPosition.x

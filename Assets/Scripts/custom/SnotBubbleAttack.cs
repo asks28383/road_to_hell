@@ -54,7 +54,7 @@ public class SnotBubbleAttack : Action
         // 攻击持续时间结束
         if (attackTimer >= attackDuration)
         {
-            return TaskStatus.Success;
+            return TaskStatus.Running;
         }
 
         // 定时发射泡泡
