@@ -13,7 +13,7 @@ public class EnemyHealth : Health
     {
 
         currentHealth -= damage;
-        PlayHurtAnimation();
+        //PlayHurtAnimation();
 
         if (currentHealth <= 0)
         {

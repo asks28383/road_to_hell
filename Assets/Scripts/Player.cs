@@ -22,6 +22,12 @@ public class Player : MonoBehaviour
     public float healDuration = 5f;     // 治疗持续时间
     public float healCooldown = 10f;    // 冷却时间
 
+    [Header("CoolDown UI")]
+    public Image blinkCooldownMask;  // 闪现冷却遮罩
+    public Text blinkCooldownText;   // 闪现冷却文本
+    public Image healCooldownMask;   // 治疗冷却遮罩
+    public Text healCooldownText;    // 治疗冷却文本
+
     // 私有变量
     private PlayerHealth playerHealth;
     private Rigidbody2D rb;
@@ -97,14 +103,34 @@ public class Player : MonoBehaviour
     {
         if (!canBlink) return;
 
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rb.position += (mousePos - (Vector2)transform.position).normalized * blinkDistance;
+        // 获取角色当前的移动输入
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // 如果没有输入，则使用角色当前面朝方向（例如最后移动的方向）
+        if (moveHorizontal == 0 && moveVertical == 0)
+        {
+            // 可以获取角色当前的SpriteRenderer.flipX或transform.localScale.x来判断面朝方向
+            // 这里假设向右为正方向
+            moveHorizontal = transform.localScale.x > 0 ? 1 : -1;
+        }
+
+        // 创建移动方向向量并归一化
+        Vector2 moveDirection = new Vector2(moveHorizontal, moveVertical).normalized;
+
+        // 如果完全没有方向（理论上不会发生），则默认向右闪现
+        if (moveDirection == Vector2.zero)
+        {
+            moveDirection = Vector2.right;
+        }
+
+        // 应用闪现
+        rb.position += moveDirection * blinkDistance;
 
         canBlink = false;
         blinkCooldownTimer = blinkCooldown;
         UpdateCooldownUI();
     }
-
     private void UpdateCooldowns()
     {
         if (!canBlink)
@@ -124,10 +150,56 @@ public class Player : MonoBehaviour
 
     private void UpdateCooldownUI()
     {
-        if (blinkCooldownUI)
-            blinkCooldownUI.fillAmount = canBlink ? 0 : blinkCooldownTimer / blinkCooldown;
+        // 闪现冷却UI
+        if (blinkCooldownMask != null)
+        {
+            if (canBlink)
+            {
+                blinkCooldownMask.fillAmount = 0;
+                blinkCooldownText.text = "";
+            }
+            else
+            {
+                float blinkRatio = blinkCooldownTimer / blinkCooldown;
+                blinkCooldownMask.fillAmount = blinkRatio;
+                blinkCooldownText.text = Mathf.Ceil(blinkCooldownTimer).ToString();
 
-        if (healCooldownUI)
-            healCooldownUI.fillAmount = canHeal ? 0 : healCooldownTimer / healCooldown;
+                // 冷却快结束时闪烁效果
+                if (blinkRatio < 0.2f)
+                {
+                    float alpha = Mathf.PingPong(Time.time * 5, 1);
+                    blinkCooldownText.color = new Color(1, 1, 1, alpha);
+                }
+                else
+                {
+                    blinkCooldownText.color = new Color(1, 1, 1, 0.8f);
+                }
+            }
+        }
+
+        // 治疗冷却UI
+        if (healCooldownMask != null)
+        {
+            if (isHealing)
+            {
+                // 治疗中显示进度
+                float healRatio = 1 - (healTimer / healDuration);
+                healCooldownMask.fillAmount = healRatio;
+                healCooldownText.text = Mathf.Ceil(healDuration - healTimer).ToString();
+                healCooldownText.color = new Color(0.5f, 1, 0.5f, 0.8f); // 浅绿色
+            }
+            else if (canHeal)
+            {
+                healCooldownMask.fillAmount = 0;
+                healCooldownText.text = "";
+            }
+            else
+            {
+                float healRatio = healCooldownTimer / healCooldown;
+                healCooldownMask.fillAmount = healRatio;
+                healCooldownText.text = Mathf.Ceil(healCooldownTimer).ToString();
+                healCooldownText.color = new Color(1, 1, 1, 0.8f);
+            }
+        }
     }
 }

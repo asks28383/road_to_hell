@@ -21,10 +21,9 @@ public class BossPhaseUpdater : Action
 
     public override TaskStatus OnUpdate()
     {
-        Debug.Log("当前生命值：");
+        
         
         float healthPercent = health.currentHealth / health.maxHealth;
-        Debug.Log(healthPercent);
         if (healthPercent <= bulletThreshold && currentPhase.Value < 3)
         {
             currentPhase.Value = 3;
@@ -38,7 +37,7 @@ public class BossPhaseUpdater : Action
         else if (healthPercent <= chaseThreshold && currentPhase.Value < 1)
         {
             currentPhase.Value = 1;
-            Debug.Log($"阶段切换至Chase | 当前血量: {health.currentHealth}");
+            
         }
 
         return TaskStatus.Running;

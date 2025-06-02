@@ -95,6 +95,7 @@ public class Bullet : MonoBehaviour
                 health.TakeDamage(damage);
             }
             //SpawnExplosion();
+            
             ObjectPool.Instance.PushObject(gameObject);
         }
     }
