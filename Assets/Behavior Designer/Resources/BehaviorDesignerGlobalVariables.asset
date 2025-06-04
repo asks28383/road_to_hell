@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mVariableData:
     variableStartIndex: 
-    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":0}]}'
+    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"CurrentState","IsShared":true,"IsGlobal":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"currentPhase","IsShared":true,"IsGlobal":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"phaseTimer","IsShared":true,"IsGlobal":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanceToPlayer","IsShared":true,"IsGlobal":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"healthPercentage","IsShared":true,"IsGlobal":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isSleeping","IsShared":true,"IsGlobal":true,"BooleanmValue":false}]}'
     fieldSerializationData:
       typeName: []
       fieldNameHash: 

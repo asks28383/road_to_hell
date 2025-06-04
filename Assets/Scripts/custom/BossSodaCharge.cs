@@ -5,6 +5,7 @@ using UnityEngine;
 [TaskCategory("Custom")]
 public class BossSodaCharge : Action
 {
+
     [Header("冲刺设置")]
     public int maxCharges = 3;               // 最大冲刺次数
     public float chargeSpeed = 15f;          // 冲刺速度
@@ -47,8 +48,8 @@ public class BossSodaCharge : Action
 
     public override TaskStatus OnUpdate()
     {
-        if (currentCharges >= maxCharges)
-            return TaskStatus.Success;
+        //if (currentCharges >= maxCharges)
+        //    return TaskStatus.Success;
 
         // 准备阶段
         if (isPreparing)

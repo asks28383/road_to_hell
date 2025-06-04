@@ -52,7 +52,7 @@ public class ThrowBananaPeels : Action
         if (throwCount >= totalThrows)
         {
             isThrowing = false;
-            return TaskStatus.Success;
+            return TaskStatus.Running;
         }
 
         return TaskStatus.Running;
