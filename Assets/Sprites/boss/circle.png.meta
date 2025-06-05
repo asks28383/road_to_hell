@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 783c567a730a9c747bf668bcf22a6c8f
+guid: 895b9899fe0bf7e40a593b85201955b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "boss\u6C14\u6CE11_0"
+      name: circle_0
       rect:
         serializedVersion: 2
-        x: 150
-        y: 224
-        width: 700
-        height: 600
+        x: 28
+        y: 27
+        width: 78
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6b31a669e40e5f409c00adfbb0cafac
-      internalID: 813158838
+      spriteID: 4546f3413ae8b4847b2b7f4d28439ca7
+      internalID: -186900066
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "boss\u6C14\u6CE11_0": 813158838
+      circle_0: -186900066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

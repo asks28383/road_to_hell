@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 265a08fd1106cb4469d357dd4028a847
+guid: d476ec9de26bb694a98d2a2236ee22fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,22 +97,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u53EF\u4E50_0"
+      name: water_pound_0
       rect:
         serializedVersion: 2
-        x: 346
-        y: 317
-        width: 315
-        height: 352
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 274
+        y: 411
+        width: 482
+        height: 238
+      alignment: 9
+      pivot: {x: 0.49760863, y: 0.4971571}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 789bc52ad49ad154d99d7263fe6878d2
-      internalID: 713310664
+      spriteID: 3148f54a2c3a5704d997c94155263f24
+      internalID: 21021033
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u53EF\u4E50_0": 713310664
+      water_pound_0: 21021033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
