@@ -5,30 +5,36 @@ using UnityEngine;
 [TaskCategory("Custom")]
 public class BossSodaCharge : Action
 {
+    [Header("Charge Settings")]
+    public int maxCharges = 3;
+    public float chargeSpeed = 15f;
+    public float chargeDuration = 0.5f;
+    public float preparationTime = 0.5f;
+    public float postChargeDelay = 0.8f;
 
-    [Header("冲刺设置")]
-    public int maxCharges = 3;               // 最大冲刺次数
-    public float chargeSpeed = 15f;          // 冲刺速度
-    public float chargeDuration = 0.5f;      // 单次冲刺持续时间
-    public float preparationTime = 0.5f;     // 冲刺前准备时间
-    public float postChargeDelay = 0.8f;     // 每次冲刺后的休息时间
+    [Header("Soda Trail")]
+    public GameObject sodaTrailPrefab;
+    public float trailSpawnInterval = 0.1f;
 
-    [Header("粘液痕迹")]
-    public GameObject sodaTrailPrefab;       // 粘液痕迹预制体
-    public float trailSpawnInterval = 0.1f;  // 粘液生成间隔
+    [Header("Damage Settings")]
+    public int chargeDamage = 1;
+    public float damageCooldown = 0.5f;
+    public float knockbackForce = 5f;
 
-    private int currentCharges;              // 当前冲刺次数
-    private float chargeTimer;               // 冲刺计时器
-    private float preparationTimer;          // 准备阶段计时器
-    private float delayTimer;                // 休息计时器
-    private Vector3 chargeDirection;         // 冲刺方向
-    private float lastTrailSpawnTime;        // 上次生成粘液时间
-    private Transform player;                // 玩家参考
-    private bool isPreparing;                // 是否在准备阶段
-    private bool isCharging;                 // 是否正在冲刺
-    private Rigidbody2D rb;                  // 刚体组件
-    private Animator animator;               // 动画控制器
-    private const string IsDashingParam = "isDashing"; // 动画参数名
+    // Private variables
+    private int currentCharges;
+    private float chargeTimer;
+    private float preparationTimer;
+    private float delayTimer;
+    private Vector2 chargeDirection;
+    private float lastTrailSpawnTime;
+    private float lastDamageTime;
+    private Transform player;
+    private bool isPreparing;
+    private bool isCharging;
+    private Rigidbody2D rb;
+    private Animator animator;
+    private const string IsDashingParam = "isDashing";
 
     public override void OnStart()
     {
@@ -36,7 +42,7 @@ public class BossSodaCharge : Action
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // 预热对象池
+        // Initialize object pool
         if (!ObjectPool.Instance.HasPool(sodaTrailPrefab.name))
         {
             ObjectPool.Instance.PrewarmPool(sodaTrailPrefab, 10);
@@ -48,10 +54,6 @@ public class BossSodaCharge : Action
 
     public override TaskStatus OnUpdate()
     {
-        //if (currentCharges >= maxCharges)
-        //    return TaskStatus.Success;
-
-        // 准备阶段
         if (isPreparing)
         {
             preparationTimer -= Time.deltaTime;
@@ -61,26 +63,24 @@ public class BossSodaCharge : Action
                 StartCharging();
             }
         }
-        // 冲刺阶段
         else if (isCharging)
         {
             chargeTimer += Time.deltaTime;
             rb.velocity = chargeDirection * chargeSpeed;
 
-            // 生成粘液痕迹
+            // Spawn trail effect
             if (Time.time - lastTrailSpawnTime > trailSpawnInterval)
             {
                 SpawnTrail();
                 lastTrailSpawnTime = Time.time;
             }
 
-            // 冲刺结束条件
+            // End charge if duration exceeded
             if (chargeTimer >= chargeDuration)
             {
                 EndCharging();
             }
         }
-        // 休息阶段
         else
         {
             delayTimer -= Time.deltaTime;
@@ -90,7 +90,7 @@ public class BossSodaCharge : Action
             }
         }
 
-        return TaskStatus.Running;
+        return currentCharges >= maxCharges ? TaskStatus.Success : TaskStatus.Running;
     }
 
     private void StartPreparation()
@@ -99,13 +99,12 @@ public class BossSodaCharge : Action
         isCharging = false;
         preparationTimer = preparationTime;
         rb.velocity = Vector2.zero;
-        animator.SetBool(IsDashingParam, false); // 确保冲刺动画关闭
+        animator.SetBool(IsDashingParam, false);
     }
 
     private void DetermineChargeDirection()
     {
-        Vector3 toPlayer = player.position - transform.position;
-        chargeDirection = new Vector3(toPlayer.x, toPlayer.y, 0).normalized;
+        chargeDirection = (player.position - transform.position).normalized;
     }
 
     private void StartCharging()
@@ -114,14 +113,14 @@ public class BossSodaCharge : Action
         isCharging = true;
         chargeTimer = 0;
         currentCharges++;
-        animator.SetBool(IsDashingParam, true); // 开始冲刺动画
+        animator.SetBool(IsDashingParam, true);
     }
 
     private void EndCharging()
     {
         isCharging = false;
         rb.velocity = Vector2.zero;
-        animator.SetBool(IsDashingParam, false); // 结束冲刺动画
+        animator.SetBool(IsDashingParam, false);
 
         if (currentCharges < maxCharges)
         {
@@ -134,10 +133,9 @@ public class BossSodaCharge : Action
         GameObject trail = ObjectPool.Instance.GetObject(sodaTrailPrefab);
         trail.transform.position = transform.position;
 
-        Vector2 direction2D = new Vector2(chargeDirection.x, chargeDirection.y);
-        if (direction2D != Vector2.zero)
+        if (chargeDirection != Vector2.zero)
         {
-            float angle = Mathf.Atan2(direction2D.y, direction2D.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(chargeDirection.y, chargeDirection.x) * Mathf.Rad2Deg;
             trail.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
@@ -153,17 +151,44 @@ public class BossSodaCharge : Action
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isCharging && collision.gameObject.CompareTag("Wall"))
+        if (!isCharging) return;
+
+        if (collision.gameObject.CompareTag("Wall"))
         {
             EndCharging();
+        }
+        else if (collision.gameObject.CompareTag("Player") && Time.time > lastDamageTime + damageCooldown)
+        {
+            DealDamageToPlayer(collision.gameObject);
+        }
+
+        // 如果需要可以调用基类方法
+        // base.OnCollisionEnter2D(collision);
+    }
+
+    private void DealDamageToPlayer(GameObject player)
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(chargeDamage);
+            lastDamageTime = Time.time;
+
+            // Apply knockback
+            Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+                playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+            }
         }
     }
 
     public override void OnEnd()
     {
         rb.velocity = Vector2.zero;
-        animator.SetBool(IsDashingParam, false); // 确保动画状态重置
+        animator.SetBool(IsDashingParam, false);
     }
 }
