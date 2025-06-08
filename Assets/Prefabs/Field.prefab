@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.82, y: 0.29, z: 0}
-  m_LocalScale: {x: 0.9864304, y: 0.9864304, z: 0.9864304}
+  m_LocalScale: {x: 1.3011783, y: 1.3011783, z: 1.3011783}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1520367287, guid: 0ed5bd58c5d1e734f99d9c4bbe1b1238, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   slowFactor: 0.5
   duration: 10
   damageInterval: 0.5
-  damagePerTick: 0
+  damagePerTick: 10
 --- !u!61 &6507657479754190663
 BoxCollider2D:
   m_ObjectHideFlags: 0

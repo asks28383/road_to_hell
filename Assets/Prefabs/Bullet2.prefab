@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8684525837257662277, guid: a541efad341549a41848c320836f0dc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3217125097851079088, guid: 34acdc564c91239449e60d90a95ad76b, type: 3}
   lifetime: 4
   owner: 1
+  canDestroyProjectiles: 0
 --- !u!50 &8553382148197989737
 Rigidbody2D:
   serializedVersion: 4
