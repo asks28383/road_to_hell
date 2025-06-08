@@ -38,7 +38,7 @@ public class MeleeWeapon : Weapon
     protected override void Start()
     {
         base.Start();
-        slashPoint = transform.Find("SlashPoint");
+        slashPoint = transform.Find("slashpoint");
         if (swordTransform != null)
         {
             originalSwordRotation = swordTransform.localRotation;
@@ -76,8 +76,8 @@ public class MeleeWeapon : Weapon
         bar.UpdateCharge(holdTimer);
 
         HandleAttack();
-        if (isSwinging)
-            UpdateSwordSwing();
+        //if (isSwinging)
+        //    UpdateSwordSwing();
     }
 
     protected override void HandleAttack()
