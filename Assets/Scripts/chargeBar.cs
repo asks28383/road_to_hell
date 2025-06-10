@@ -45,6 +45,7 @@ public class chargeBar : MonoBehaviour
         //{
         //    IncreaseHeat(0.15f);
         //}
+        //Debug.Log(isOverheated);
         if (isOverheated)
         {
             // 过热时，OverHeat 缓慢减少

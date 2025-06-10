@@ -39,6 +39,7 @@ public class RangedWeapon : Weapon
         if (heatBar != null)
         {
             isOverheated = heatBar.IsWeaponOverheated();
+            
             // 更新武器颜色
             if (weaponRenderer != null)
             {
@@ -47,8 +48,10 @@ public class RangedWeapon : Weapon
         }
         float percent = heatBar.get_percent();
         //只在非过热状态下处理攻击
+        Debug.Log("1:" + isOverheated);
         if (!isOverheated)
         {
+
             HandleAttack();
         }
     }

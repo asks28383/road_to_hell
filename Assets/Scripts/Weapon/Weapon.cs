@@ -33,7 +33,7 @@ public abstract class Weapon : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         UpdateWeaponDirection();
         UpdateAttackCooldown();
-        HandleAttack();
+        //HandleAttack();
     }
 
     protected void UpdateWeaponDirection()
