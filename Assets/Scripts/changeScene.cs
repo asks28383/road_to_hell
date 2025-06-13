@@ -21,6 +21,10 @@ public class changeScene : MonoBehaviour
             sceneButton.button.onClick.AddListener(() =>
             {
                 LoadScene(sceneButton.sceneName);
+                if(sceneButton.sceneName == "LevelSelectScene")
+                {
+                    AchievementEvents.OnAchievementTriggered?.Invoke("FirstEntertheGame");
+                }
             });
         }
     }
