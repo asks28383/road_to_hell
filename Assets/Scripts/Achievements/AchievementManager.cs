@@ -29,6 +29,10 @@ public class AchievementManager : MonoBehaviour
         foreach (Achievement ach in allAchievements)
         {
             ach.unlocked = PlayerPrefs.GetInt(ach.achievementID, 0) == 1;
+            //Debug.Log($"Achievement {ach.title} loaded: {(ach.unlocked ? "Unlocked" : "Locked")}");
+            //删除保存的成就记录
+            //这个只是测试用，日后删除
+            DeleteAchievement(ach);
         }
     }
 
@@ -36,6 +40,13 @@ public class AchievementManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(ach.achievementID, 1);
         PlayerPrefs.Save();
+    }
+
+    private void DeleteAchievement(Achievement ach)
+    {
+        PlayerPrefs.DeleteKey(ach.achievementID);
+        ach.unlocked = false; // Reset the achievement state
+        //Debug.Log($"Achievement {ach.title} deleted");
     }
 
     public void UnlockAchievement(string id)
@@ -47,5 +58,15 @@ public class AchievementManager : MonoBehaviour
             SaveAchievement(ach);
             onAchievementUnlocked?.Invoke(ach);
         }
+    }
+
+    private void OnEnable()
+    {
+        AchievementEvents.OnAchievementTriggered += UnlockAchievement;
+    }
+
+    private void OnDisable()
+    {
+        AchievementEvents.OnAchievementTriggered -= UnlockAchievement;
     }
 }

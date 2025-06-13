@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98574020518ac0b409be5b071752e072, type: 3}
   m_Name: Achievement1
   m_EditorClassIdentifier: 
-  achievementID: 1
+  achievementID: firstshoot
   title: "\u54D2\u54D2\u54D2\u54D2\u54D2"
   description: "\u7B2C\u4E00\u6B21\u5C04\u51FB"
-  icon: {fileID: 0}
+  icon: {fileID: -1323673292, guid: 0b35bb3e63fc0e244b5c5492c9b47f68, type: 3}
   unlocked: 1
