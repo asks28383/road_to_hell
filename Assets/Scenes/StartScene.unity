@@ -209,6 +209,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1527827017310908434, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
+      propertyPath: allAchievements.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527827017310908434, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
+      propertyPath: allAchievements.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: df45b01f0694c5447b3c03b9e57fdd5e, type: 2}
     - target: {fileID: 2200585311691003174, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1309705
@@ -481,6 +489,10 @@ PrefabInstance:
     - target: {fileID: 343737020152055337, guid: e327ad858307c314dbc8096881b63a9e, type: 3}
       propertyPath: m_Name
       value: Achievementshow
+      objectReference: {fileID: 0}
+    - target: {fileID: 995688409232213682, guid: e327ad858307c314dbc8096881b63a9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3413694263452100334, guid: e327ad858307c314dbc8096881b63a9e, type: 3}
       propertyPath: m_Pivot.x
