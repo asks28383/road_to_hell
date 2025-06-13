@@ -1071,7 +1071,7 @@ PrefabInstance:
     - target: {fileID: 5992430135038440391, guid: 88876f186848e0a488b0c48c5b5561c1, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 1198234515}
+      objectReference: {fileID: 0}
     - target: {fileID: 5992430135038440391, guid: 88876f186848e0a488b0c48c5b5561c1, type: 3}
       propertyPath: CoolDownSpeed
       value: 0.05
@@ -1084,17 +1084,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1627497294}
   m_SourcePrefab: {fileID: 100100000, guid: 88876f186848e0a488b0c48c5b5561c1, type: 3}
---- !u!114 &1198234515 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3178362332728559573, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
-  m_PrefabInstance: {fileID: 1403608348}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa266f6943175dd429ffe0e047ffa29c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1388223504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1713,10 @@ PrefabInstance:
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
       value: 
       objectReference: {fileID: 1899267936}
+    - target: {fileID: 5132757370144259536, guid: eb261a4d5f5ed71479fe6aecb4085a0c, type: 3}
+      propertyPath: maxHealth
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 7332366503058715194, guid: eb261a4d5f5ed71479fe6aecb4085a0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.52
@@ -1787,7 +1780,7 @@ PrefabInstance:
     - target: {fileID: 914931317705673143, guid: a326a65bda4d0754ca77dcffb20a3695, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 1198234515}
+      objectReference: {fileID: 0}
     - target: {fileID: 3271173065154418918, guid: a326a65bda4d0754ca77dcffb20a3695, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

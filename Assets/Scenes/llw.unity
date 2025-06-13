@@ -447,6 +447,10 @@ PrefabInstance:
         Bubble Attack","Instant":true,"GameObjectbubblePrefab":6,"TransformmouthPosition":7,"SinglespawnInterval":0.2,"SingleattackDuration":10,"SingleplayerTrackingAngle":30,"SingleminSpeed":1,"SinglemaxSpeed":2,"SinglewobbleIntensity":0.5,"SinglewobbleFrequency":2}]},{"Type":"ExitBulletAttack","NodeData":{"Offset":"(190.143311,115.447021)"},"ID":24,"Name":"Exit
         Bullet Attack","Instant":true}]}]}]}}'
       objectReference: {fileID: 0}
+    - target: {fileID: 5132757370144259536, guid: eb261a4d5f5ed71479fe6aecb4085a0c, type: 3}
+      propertyPath: maxHealth
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 7332366503058715194, guid: eb261a4d5f5ed71479fe6aecb4085a0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.52
