@@ -32,7 +32,7 @@ public class BossPhaseController : Action
     public bool enableDreamTransition = true;
     public float transitionDelay = 1.0f;
     public string mainSceneName = "zx";
-    public string dreamSceneName = "llw";
+    public string dreamSceneName = "DreamScene";
 
     private EnemyHealth health;
     private PlayerHealth playerHealth;
@@ -274,6 +274,7 @@ public class BossPhaseController : Action
         // 加载梦境场景
         SceneManager.LoadScene(dreamSceneName);
         isInDreamWorld = true;
+        AchievementEvents.OnAchievementTriggered?.Invoke("EnterDreamWorld");
         Debug.Log("正在进入梦境世界...");
     }
 

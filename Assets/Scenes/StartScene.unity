@@ -211,12 +211,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1527827017310908434, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
       propertyPath: allAchievements.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1527827017310908434, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
       propertyPath: allAchievements.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: df45b01f0694c5447b3c03b9e57fdd5e, type: 2}
+    - target: {fileID: 1527827017310908434, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
+      propertyPath: allAchievements.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: cc8d562b65f34bd4f83e2fc8378ae0f9, type: 2}
+    - target: {fileID: 1527827017310908434, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
+      propertyPath: allAchievements.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 96a34087a8ccfe549a0c0a645228c195, type: 2}
     - target: {fileID: 2200585311691003174, guid: 3726ec6248aa1e44385dcd0053e201b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1309705

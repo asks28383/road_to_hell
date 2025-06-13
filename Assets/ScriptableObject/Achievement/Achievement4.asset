@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98574020518ac0b409be5b071752e072, type: 3}
-  m_Name: NewAchievement
+  m_Name: Achievement4
   m_EditorClassIdentifier: 
-  achievementID: FirstEntertheGame
-  title: "\u7B2C\u4E00\u6B21\u6253\u5F00\u6E38\u620F"
-  description: "\u606D\u559C\u4F60\uFF0C\u4F60\u627E\u5230\u4E86\u5F00\u59CB\u952E"
-  icon: {fileID: -1837323967, guid: 511455d31947db64baa8369241b41553, type: 3}
-  unlocked: 1
+  achievementID: EnterDreamWorld
+  title: "\u7B2C\u4E00\u6B21\u8FDB\u5165\u68A6\u4E16\u754C"
+  description: "\u7075\u611F\u83C7\u54E9\u83C7\u54E9\u6211\u5693\u7075\u611F\u83C7"
+  icon: {fileID: -728108651, guid: 51bd02253aa173240bbdac904cd78ac4, type: 3}
+  unlocked: 0

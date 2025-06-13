@@ -102,6 +102,7 @@ public class EnemyHealth : Health
 
         // 触发事件
         onBossDeath.Invoke();
+        AchievementEvents.OnAchievementTriggered?.Invoke("DefeatBoss");
 
         // 显示UI
         if (victoryUI != null)
