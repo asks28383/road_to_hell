@@ -14,7 +14,7 @@ public class start : MonoBehaviour
         PlayerPrefs.DeleteKey("HasTriggeredFirstDream");
         PlayerPrefs.DeleteKey("HasTriggeredFirstDream");
         PlayerPrefs.DeleteKey("HasTriggeredSecondDream");
-        SceneManager.LoadScene("zx");
+        //SceneManager.LoadScene("zx");
     }
 
     // Update is called once per frame
