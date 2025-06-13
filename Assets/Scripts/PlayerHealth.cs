@@ -1,13 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : Health
 {
     [Header("Damage Settings")]
-    [SerializeField] private float damageCooldown = 0.4f; // Time between allowed damage
-    [SerializeField] private float flashDuration = 0.2f; // Duration of each flash
-    [SerializeField] private int flashCount = 2; // How many times to flash
-    [SerializeField] private Color flashColor = Color.red; // Color to flash when hit
+    [SerializeField] private float damageCooldown = 0.4f;
+    [SerializeField] private float flashDuration = 0.2f;
+    [SerializeField] private int flashCount = 2;
+    [SerializeField] private Color flashColor = Color.red;
+
+    [Header("Death Settings")]
+    [SerializeField] private GameObject gameOverUI; // 失败UI对象
+    [SerializeField] private float showUIDelay = 1.5f; // 显示UI的延迟时间
+    [SerializeField] private UnityEvent onPlayerDeath; // 玩家死亡事件
 
     private bool canTakeDamage = true;
     private SpriteRenderer spriteRenderer;
@@ -21,6 +27,17 @@ public class PlayerHealth : Health
         {
             originalColor = spriteRenderer.color;
         }
+
+        // 初始化时隐藏UI
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(false);
+        }
+        //else
+        //{
+        //    // 尝试自动查找
+        //    gameOverUI = GameObject.FindGameObjectWithTag("GameOverUI");
+        //}
     }
 
     public override void TakeDamage(int damage)
@@ -29,7 +46,6 @@ public class PlayerHealth : Health
 
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
-        //Debug.Log(currentHealth);
         PlayHurtAnimation();
         StartCoroutine(FlashEffect());
         StartCoroutine(DamageCooldown());
@@ -59,13 +75,41 @@ public class PlayerHealth : Health
             yield return new WaitForSeconds(flashDuration);
         }
     }
+
     public void Recover(float recovery)
     {
         currentHealth = Mathf.Min(currentHealth + recovery, maxHealth);
     }
+
     protected override void Die()
     {
         base.Die();
-        // Additional player death logic if needed
+        StartCoroutine(ShowGameOverUI());
+
+        //// 禁用玩家控制
+        //GetComponent<PlayerMovement>().enabled = false;
+        //GetComponent<PlayerAttack>().enabled = false;
+    }
+
+    private IEnumerator ShowGameOverUI()
+    {
+        // 等待一段时间让死亡动画播放
+        yield return new WaitForSeconds(showUIDelay);
+
+        // 触发死亡事件
+        onPlayerDeath.Invoke();
+
+        // 显示UI
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(true);
+
+            // 暂停游戏（可选）
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Debug.LogWarning("Game Over UI未指定！");
+        }
     }
 }

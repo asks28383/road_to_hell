@@ -16,6 +16,7 @@ TagManager:
   - PowerfulSlash
   - obstacle
   - Wall
+  - GameOverUi
   layers:
   - Default
   - TransparentFX

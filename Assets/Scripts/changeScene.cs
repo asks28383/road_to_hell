@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class MultiSceneLoader : MonoBehaviour
+public class changeScene : MonoBehaviour
 {
     [System.Serializable]
     public class SceneButton
