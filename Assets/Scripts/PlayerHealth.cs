@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,6 +19,7 @@ public class PlayerHealth : Health
     private bool canTakeDamage = true;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    public CameraShake cameraShake;
 
     protected override void Awake()
     {
@@ -49,6 +51,8 @@ public class PlayerHealth : Health
         PlayHurtAnimation();
         StartCoroutine(FlashEffect());
         StartCoroutine(DamageCooldown());
+        // ÀýÈçÔÚ PlayerHealth.cs ÖÐ
+        cameraShake.Shake();
 
         if (currentHealth <= 0)
         {

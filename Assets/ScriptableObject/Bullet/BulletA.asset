@@ -17,7 +17,7 @@ MonoBehaviour:
   Count: 15
   LifeTime: 4
   CdTime: 1
-  Speed: 3
+  Speed: 6
   Angle: 23
   Distance: 0
   CenterDis: 0
