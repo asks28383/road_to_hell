@@ -48,7 +48,7 @@ public class RangedWeapon : Weapon
         }
         float percent = heatBar.get_percent();
         //只在非过热状态下处理攻击
-        Debug.Log("1:" + isOverheated);
+        //Debug.Log("1:" + isOverheated);
         if (!isOverheated)
         {
 

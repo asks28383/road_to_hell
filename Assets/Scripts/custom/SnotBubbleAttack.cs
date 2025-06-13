@@ -22,7 +22,9 @@ public class SnotBubbleAttack : Action
     private float timer;
     private float attackTimer;
     private Transform player;
-
+    // 新增静态变量用于跨场景保持血量
+    private static float? persistentPlayerHealth = null;
+    private static float? persistentBossHealth = null;
     public override void OnStart()
     {
         timer = 0f;

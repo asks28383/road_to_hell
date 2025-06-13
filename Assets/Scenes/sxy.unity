@@ -1701,6 +1701,10 @@ PrefabInstance:
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
       value: 
       objectReference: {fileID: 1899267936}
+    - target: {fileID: 5132757370144259536, guid: eb261a4d5f5ed71479fe6aecb4085a0c, type: 3}
+      propertyPath: maxHealth
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 7332366503058715194, guid: eb261a4d5f5ed71479fe6aecb4085a0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.52

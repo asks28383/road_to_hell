@@ -24,7 +24,8 @@ public class BossPhaseController : Action
     public float closeDistanceThreshold = 5f;
 
     [Header("血量阈值")]
-    [Range(0, 1)] public float sleepThreshold = 0.33f;
+    [Range(0, 1)] public float firstSleepThreshold = 0.66f; // 第一次睡眠阈值 (2/3血量)
+    [Range(0, 1)] public float secondSleepThreshold = 0.33f; // 第二次睡眠阈值 (1/3血量)
 
     // 场景切换相关变量
     [Header("场景切换设置")]
@@ -40,7 +41,8 @@ public class BossPhaseController : Action
     private float damageTakenBeforeDream;
     private bool isInitialized = false;
     private bool isInDreamWorld = false;
-    private bool hasTriggeredDream = false;
+    private bool hasTriggeredFirstDream = false;
+    private bool hasTriggeredSecondDream = false;
     private int phaseBeforeSleep; // 记录进入睡眠前的阶段
 
     public override void OnStart()
@@ -76,10 +78,19 @@ public class BossPhaseController : Action
             PlayerPrefs.DeleteKey("BossHealth");
         }
 
+        // 从PlayerPrefs加载梦境触发状态
+        if (PlayerPrefs.HasKey("HasTriggeredFirstDream"))
+        {
+            hasTriggeredFirstDream = PlayerPrefs.GetInt("HasTriggeredFirstDream") == 1;
+        }
+        if (PlayerPrefs.HasKey("HasTriggeredSecondDream"))
+        {
+            hasTriggeredSecondDream = PlayerPrefs.GetInt("HasTriggeredSecondDream") == 1;
+        }
+
         initialHealth = health.currentHealth;
         damageTakenBeforeDream = 0;
         isInDreamWorld = false;
-        hasTriggeredDream = false;
 
         // 如果是首次初始化，设置为BulletAttack状态
         if (currentPhase.Value == 0)
@@ -93,7 +104,6 @@ public class BossPhaseController : Action
     private void InitializeDreamWorld()
     {
         isInDreamWorld = true;
-        hasTriggeredDream = true;
         currentPhase.Value = 0; // 强制设置为Sleep状态
         isSleeping.Value = true;
         phaseTimer.Value = sleepDuration;
@@ -120,7 +130,7 @@ public class BossPhaseController : Action
         phaseTimer.Value -= Time.deltaTime;
 
         // 检查是否需要强制睡眠（只在主场景且未处于睡眠状态时检查）
-        if (!isInDreamWorld && !isSleeping.Value && ShouldForceSleep() && !hasTriggeredDream)
+        if (!isInDreamWorld && !isSleeping.Value && ShouldForceSleep())
         {
             ForceSleep();
             return TaskStatus.Running;
@@ -145,7 +155,19 @@ public class BossPhaseController : Action
 
     private bool ShouldForceSleep()
     {
-        return damageTakenBeforeDream >= initialHealth * sleepThreshold;
+        // 检查第一次睡眠条件（未触发过且血量降到阈值）
+        if (!hasTriggeredFirstDream && healthPercentage.Value <= firstSleepThreshold)
+        {
+            return true;
+        }
+
+        // 检查第二次睡眠条件（未触发过且血量降到阈值）
+        if (!hasTriggeredSecondDream && healthPercentage.Value <= secondSleepThreshold)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void ForceSleep()
@@ -154,9 +176,22 @@ public class BossPhaseController : Action
         currentPhase.Value = 0;
         phaseTimer.Value = sleepDuration;
         isSleeping.Value = true;
-        hasTriggeredDream = true;
 
-        Debug.Log($"进入睡眠状态 | 之前阶段: {GetPhaseName(phaseBeforeSleep)}");
+        // 标记触发的梦境并保存状态
+        if (!hasTriggeredFirstDream && healthPercentage.Value <= firstSleepThreshold)
+        {
+            hasTriggeredFirstDream = true;
+            PlayerPrefs.SetInt("HasTriggeredFirstDream", 1);
+            Debug.Log($"第一次进入睡眠状态 | 之前阶段: {GetPhaseName(phaseBeforeSleep)} | 血量阈值: {firstSleepThreshold}");
+        }
+        else if (!hasTriggeredSecondDream && healthPercentage.Value <= secondSleepThreshold)
+        {
+            hasTriggeredSecondDream = true;
+            PlayerPrefs.SetInt("HasTriggeredSecondDream", 1);
+            Debug.Log($"第二次进入睡眠状态 | 之前阶段: {GetPhaseName(phaseBeforeSleep)} | 血量阈值: {secondSleepThreshold}");
+        }
+
+        PlayerPrefs.Save();
 
         if (enableDreamTransition)
         {
@@ -176,7 +211,6 @@ public class BossPhaseController : Action
         {
             // 主场景中睡眠结束，恢复之前的状态
             SetPhase(phaseBeforeSleep, GetPhaseDuration(phaseBeforeSleep));
-            hasTriggeredDream = false;
             initialHealth = health.currentHealth; // 重置伤害计算基准
             damageTakenBeforeDream = 0;
 
