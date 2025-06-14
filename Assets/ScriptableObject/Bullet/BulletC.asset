@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bae27bc0399b7a545949ea2514c5a48f, type: 3}
-  m_Name: BulletA
+  m_Name: BulletC
   m_EditorClassIdentifier: 
   P_Offset: {x: 0, y: 0, z: 0}
   R_Offset: {x: 0, y: 0, z: 0}
-  Count: 3
+  Count: 24
   LifeTime: 4
-  CdTime: 1
-  Speed: 10
-  Angle: 5
-  Distance: 1
+  CdTime: 0.5
+  Speed: 5
+  Angle: 15
+  Distance: 0
   CenterDis: 0
-  SelfRotation: 0
+  SelfRotation: 5
   AddRotation: 0
-  directionMode: 1
+  directionMode: 0
   prefab: {fileID: 7404709760281635850, guid: eee29f00feef3034d8709b178d612270, type: 3}
-  TempShootTime: 30
-  TempRotation: {x: 0, y: 0, z: 0, w: 1}
-  TempSelfRotation: 0
+  TempShootTime: 9
+  TempRotation: {x: 0, y: 0, z: 0.7071069, w: 0.7071069}
+  TempSelfRotation: 5

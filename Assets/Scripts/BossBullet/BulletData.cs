@@ -17,6 +17,14 @@ public class BulletData : ScriptableObject
     public float SelfRotation = 0f;     //每帧自转角度
     public float AddRotation = 0f;     //每帧自传角度增量
 
+    public enum BulletDirectionMode
+    {
+        FixedRotation,    // 使用设置的旋转角度（你当前的模式）
+        TargetPosition    // 朝某目标位置发射（我们要加的）
+    }
+
+    public BulletDirectionMode directionMode = BulletDirectionMode.FixedRotation;
+
     public GameObject prefab;           //子弹预设体
 
     public float TempShootTime;
