@@ -46,6 +46,9 @@ public class EnemyHealth : Health
 
         if (currentHealth <= 0)
         {
+            // 触发事件
+            onBossDeath.Invoke();
+            AchievementEvents.OnAchievementTriggered?.Invoke("DefeatBoss");
             Die();
         }
     }
@@ -99,18 +102,14 @@ public class EnemyHealth : Health
     {
         // 等待死亡动画播放一段时间
         yield return new WaitForSeconds(showUIDelay);
-
-        // 触发事件
-        onBossDeath.Invoke();
-        AchievementEvents.OnAchievementTriggered?.Invoke("DefeatBoss");
-
         // 显示UI
         if (victoryUI != null)
         {
             victoryUI.SetActive(true);
 
-            // 可选：暂停游戏
-            Time.timeScale = 0f;
+            Destroy(gameObject);
+            //// 可选：暂停游戏
+            //Time.timeScale = 0f;
         }
         else
         {

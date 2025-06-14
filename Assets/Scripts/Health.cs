@@ -26,6 +26,7 @@ public class Health : MonoBehaviour
     protected virtual void Die()
     {
         PlayDeathAnimation();
+        //Destroy();
     }
     protected virtual void Destroy()
     {

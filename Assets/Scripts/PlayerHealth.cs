@@ -108,8 +108,9 @@ public class PlayerHealth : Health
         {
             gameOverUI.SetActive(true);
 
-            // 暂停游戏（可选）
-            Time.timeScale = 0f;
+            Destroy(gameObject);
+            //// 暂停游戏（可选）
+            //Time.timeScale = 0f;
         }
         else
         {
