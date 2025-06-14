@@ -35,9 +35,10 @@ public class BossSodaCharge : Action
     private Rigidbody2D rb;
     private Animator animator;
     private const string IsDashingParam = "isDashing";
-
+    public GameObject boss;
     public override void OnStart()
     {
+        boss.GetComponent<BulletConfig>().enabled = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

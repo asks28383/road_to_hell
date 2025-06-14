@@ -6,9 +6,10 @@ public class MoveTowardsPlayer : Action
 {
     public float speed = 2f;
     private Transform player;
-
+    public GameObject boss;
     public override void OnStart()
     {
+        boss.GetComponent<BulletConfig>().enabled = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

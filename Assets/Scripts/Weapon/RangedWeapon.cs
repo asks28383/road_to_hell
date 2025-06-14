@@ -5,6 +5,7 @@ public class RangedWeapon : Weapon
     [Header("…‰ª˜…Ë÷√")]
     public GameObject bulletPrefab;
     protected Transform muzzlePos;
+    public float shotSpeed;
 
     [Header("UI“˝”√")]
     public chargeBar heatBar;
@@ -60,7 +61,7 @@ public class RangedWeapon : Weapon
     {
         if (Input.GetButton("Fire1") && timer == 0)
         {
-            heatBar.IncreaseHeat(0.15f);
+            heatBar.IncreaseHeat(0.05f);
             timer = interval;
             Fire();
         }
@@ -74,7 +75,7 @@ public class RangedWeapon : Weapon
 
         float angle = Random.Range(-5f, 5f);
         Vector2 shotDirection = Quaternion.AngleAxis(angle, Vector3.forward) * direction;
-        bullet.GetComponent<Bullet>().SetSpeed(shotDirection);
+        bullet.GetComponent<Bullet>().SetSpeed(shotDirection*shotSpeed);
 
         TriggerAttackAnimation("Shoot");
     }
