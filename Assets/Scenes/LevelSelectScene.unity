@@ -390,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: levelKey
-      value: level1_Completed
+      value: Level1_Completed
       objectReference: {fileID: 0}
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: deadImage
@@ -594,7 +594,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: levelKey
-      value: level3_Completed
+      value: Level3_Completed
       objectReference: {fileID: 0}
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: deadImage
@@ -610,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 2091736834}
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: prevLevelKey
-      value: level2_Completed
+      value: Level2_Completed
       objectReference: {fileID: 0}
     - target: {fileID: 3998016337364361991, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: m_Interactable
@@ -930,7 +930,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: levelKey
-      value: level2_Completed
+      value: Level2_Completed
       objectReference: {fileID: 0}
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: deadImage
@@ -946,7 +946,7 @@ PrefabInstance:
       objectReference: {fileID: 1527669255}
     - target: {fileID: 3775817260005376983, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: prevLevelKey
-      value: level1_Completed
+      value: Level1_Completed
       objectReference: {fileID: 0}
     - target: {fileID: 3998016337364361991, guid: 56d50b6b11b2eb14d8807b61eb5e59dc, type: 3}
       propertyPath: m_Interactable
@@ -1224,11 +1224,11 @@ MonoBehaviour:
   - button: {fileID: 1966703794}
     sceneName: StartScene
   - button: {fileID: 1014385140}
-    sceneName: CharaterSelection
+    sceneName: level1
   - button: {fileID: 1472213957}
-    sceneName: CharaterSelection
+    sceneName: level2
   - button: {fileID: 2094850504}
-    sceneName: CharaterSelection
+    sceneName: level3
 --- !u!1 &1785936444
 GameObject:
   m_ObjectHideFlags: 0
