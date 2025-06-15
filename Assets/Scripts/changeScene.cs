@@ -20,7 +20,7 @@ public class changeScene : MonoBehaviour
         {
             sceneButton.button.onClick.AddListener(() =>
             {
-                LoadScene(sceneButton.sceneName);
+                LoadSceneWithTransition(sceneButton.sceneName);
                 if(sceneButton.sceneName == "LevelSelectScene")
                 {
                     AchievementEvents.OnAchievementTriggered?.Invoke("FirstEntertheGame");
@@ -32,5 +32,10 @@ public class changeScene : MonoBehaviour
     void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    void LoadSceneWithTransition(string sceneName)
+    {
+        FadeController.Instance.FadeToScene(sceneName);
     }
 }
