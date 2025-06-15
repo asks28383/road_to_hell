@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6311589818360620812, guid: 0885286374fb3aa4cb42148114525d42, type: 3}
+      propertyPath: sceneButtons.Array.data[0].sceneName
+      value: level1
+      objectReference: {fileID: 0}
     - target: {fileID: 8214387919861346346, guid: 0885286374fb3aa4cb42148114525d42, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.92224
@@ -1517,7 +1521,7 @@ PrefabInstance:
       objectReference: {fileID: 1495578967}
     - target: {fileID: 349771716935726892, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: sceneButtons.Array.data[0].sceneName
-      value: Start
+      value: level1
       objectReference: {fileID: 0}
     - target: {fileID: 349771716935726892, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: sceneButtons.Array.data[2].sceneName
@@ -1653,7 +1657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7499060574216781368, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8283330728885396809, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_Text

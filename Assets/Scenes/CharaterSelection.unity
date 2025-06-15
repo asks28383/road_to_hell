@@ -525,7 +525,7 @@ MonoBehaviour:
   - button: {fileID: 1631683028}
     sceneName: LevelSelectScene
   - button: {fileID: 1507061499}
-    sceneName: Start
+    sceneName: level1
 --- !u!1 &660106108
 GameObject:
   m_ObjectHideFlags: 0
