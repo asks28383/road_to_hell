@@ -24,7 +24,7 @@ MonoBehaviour:
   SelfRotation: 5
   AddRotation: 0
   directionMode: 0
-  prefab: {fileID: 7404709760281635850, guid: eee29f00feef3034d8709b178d612270, type: 3}
+  prefab: {fileID: 5389570491247247108, guid: 28040bcb1c19e414faec26e509b3d247, type: 3}
   TempShootTime: 30.26
   TempRotation: {x: 0, y: 0, z: -0.04361936, w: -0.99904895}
   TempSelfRotation: 5
