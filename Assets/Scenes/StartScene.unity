@@ -687,7 +687,6 @@ GameObject:
   - component: {fileID: 1276266219}
   - component: {fileID: 1276266218}
   - component: {fileID: 1276266217}
-  - component: {fileID: 1276266216}
   - component: {fileID: 1276266220}
   m_Layer: 5
   m_Name: Transition
@@ -696,23 +695,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1276266216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276266215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1276266217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 2135845890}
-  fadeDuration: 1
+  fadeDuration: 0.6
 --- !u!1001 &1317178830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1480,9 +1462,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135845888}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1001 &5229521278969013299
 PrefabInstance:
