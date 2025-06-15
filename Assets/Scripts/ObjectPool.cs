@@ -4,87 +4,78 @@ using UnityEngine;
 
 public class ObjectPool
 {
-    // 单例实例
     private static ObjectPool instance;
-
-    // 对象池字典：key=预制体名称，value=可重用对象队列
     private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();
-
-    // 用于组织场景中所有池对象的父物体
     private GameObject pool;
 
-    // 单例访问器
+    // 新增：静态构造函数确保单例初始化
+    static ObjectPool()
+    {
+        instance = new ObjectPool();
+        // 立即创建持久化的pool对象
+        instance.pool = new GameObject("ObjectPool");
+        GameObject.DontDestroyOnLoad(instance.pool);
+    }
+
     public static ObjectPool Instance
     {
         get
         {
-            // 延迟初始化单例实例
-            if (instance == null)
+            // 确保pool对象存在
+            if (instance.pool == null)
             {
-                instance = new ObjectPool();
+                instance.pool = new GameObject("ObjectPool");
+                GameObject.DontDestroyOnLoad(instance.pool);
             }
             return instance;
         }
     }
 
-    /// <summary>
-    /// 从对象池获取对象（如果没有则创建新对象）
-    /// </summary>
-    /// <param name="prefab">需要的对象预制体</param>
-    /// <returns>已激活的游戏对象</returns>
     public GameObject GetObject(GameObject prefab)
     {
         GameObject _object;
+        string cleanName = prefab.name.Replace("(Clone)", string.Empty);
 
-        // 检查是否存在对应对象池且池中有可用对象
-        if (!objectPool.ContainsKey(prefab.name) || objectPool[prefab.name].Count == 0)
+        if (!objectPool.ContainsKey(cleanName) || objectPool[cleanName].Count == 0)
         {
-            // 创建新对象
             _object = GameObject.Instantiate(prefab);
-
-            // 将新对象先放回池中进行初始化
             PushObject(_object);
 
-            // 创建总父物体（如果不存在）
-            if (pool == null)
-                pool = new GameObject("ObjectPool");
-
-            // 查找/创建对应类型的子池
-            GameObject childPool = GameObject.Find(prefab.name + "Pool");
-            if (!childPool)
+            // 确保子池存在且持久化
+            Transform childPool = pool.transform.Find(cleanName + "Pool");
+            if (childPool == null)
             {
-                childPool = new GameObject(prefab.name + "Pool");
-                childPool.transform.SetParent(pool.transform); // 设置层级关系
+                childPool = new GameObject(cleanName + "Pool").transform;
+                childPool.SetParent(pool.transform);
             }
-
-            // 设置新对象的父级
-            _object.transform.SetParent(childPool.transform);
         }
 
-        // 从队列取出对象并激活
-        _object = objectPool[prefab.name].Dequeue();
+        _object = objectPool[cleanName].Dequeue();
         _object.SetActive(true);
+        _object.transform.SetParent(null); // 取出时解除父子关系
         return _object;
     }
 
-    /// <summary>
-    /// 将对象回收到对象池
-    /// </summary>
-    /// <param name="prefab">要回收的游戏对象</param>
     public void PushObject(GameObject prefab)
     {
-        // 清理克隆体名称后缀
         string _name = prefab.name.Replace("(Clone)", string.Empty);
 
-        // 创建新队列（如果不存在）
         if (!objectPool.ContainsKey(_name))
             objectPool.Add(_name, new Queue<GameObject>());
 
-        // 将对象加入队列并禁用
-        objectPool[_name].Enqueue(prefab);
+        // 确保对象回到正确的子池
+        Transform childPool = pool.transform.Find(_name + "Pool");
+        if (childPool == null)
+        {
+            childPool = new GameObject(_name + "Pool").transform;
+            childPool.SetParent(pool.transform);
+        }
+        prefab.transform.SetParent(childPool);
+
         prefab.SetActive(false);
+        objectPool[_name].Enqueue(prefab);
     }
-    // 在ObjectPool类中添加这些方法
+
     public bool HasPool(string prefabName)
     {
         return objectPool.ContainsKey(prefabName) && objectPool[prefabName].Count > 0;
@@ -92,10 +83,46 @@ public class ObjectPool
 
     public void PrewarmPool(GameObject prefab, int count)
     {
+        string cleanName = prefab.name.Replace("(Clone)", string.Empty);
+
+        // 确保子池存在
+        if (!pool.transform.Find(cleanName + "Pool"))
+        {
+            GameObject childPool = new GameObject(cleanName + "Pool");
+            childPool.transform.SetParent(pool.transform);
+        }
+
         for (int i = 0; i < count; i++)
         {
             GameObject obj = GameObject.Instantiate(prefab);
             PushObject(obj);
+        }
+    }
+
+    // 新增私有方法：清理无效引用（不改变原有接口）
+    private void CleanInvalidReferences()
+    {
+        List<string> keysToRemove = new List<string>();
+
+        foreach (var pair in objectPool)
+        {
+            // 移除null引用
+            while (pair.Value.Count > 0 && pair.Value.Peek() == null)
+            {
+                pair.Value.Dequeue();
+            }
+
+            // 标记空队列
+            if (pair.Value.Count == 0)
+            {
+                keysToRemove.Add(pair.Key);
+            }
+        }
+
+        // 移除空队列
+        foreach (var key in keysToRemove)
+        {
+            objectPool.Remove(key);
         }
     }
 }

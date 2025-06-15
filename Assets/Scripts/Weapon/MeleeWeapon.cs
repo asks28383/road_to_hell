@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -113,11 +114,13 @@ public class MeleeWeapon : Weapon
         {
             if (holdTimer >= holdTimeForRanged) // 达到蓄力要求
             {
+                Debug.Log("达到蓄力要求");
                 // 根据是否在完美窗口内决定释放哪种剑气
                 ReleaseRangedSlash(isInPerfectWindow);
             }
             else // 未达到蓄力要求
             {
+                Debug.Log("未达到蓄力要求");
                 PerformMeleeAttack();
             }
 
@@ -189,10 +192,13 @@ public class MeleeWeapon : Weapon
     {
         TriggerAttackAnimation("Melee");
         StartSwordSwing();
-
         GameObject slashPrefab = isPerfect ? poweredSlashPrefab : rangedSlashPrefab;
+        
         GameObject slash = ObjectPool.Instance.GetObject(slashPrefab);
-
+        if (slash == null)
+        {
+            Debug.Log("无预制体");
+        }
         slash.transform.position = slashPoint.position;
         slash.GetComponent<Bullet>().SetSpeed(direction);
         slash.transform.right = direction;

@@ -36,9 +36,9 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 179421a7bbeb7ed46a23c566b990536c
-    name: BGM
+    name: MusicVol
   - guid: 978bc7f01f5619646af7ea1937efa88c
-    name: Mater
+    name: MaterVol
   - guid: 56c00f78f202a6b4e9fe11feb0d575fd
     name: SFX
   m_AudioMixerGroupViews:
