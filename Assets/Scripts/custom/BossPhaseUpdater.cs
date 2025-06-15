@@ -1,3 +1,4 @@
+using System.Collections;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
@@ -260,42 +261,51 @@ public class BossPhaseController : Action
         };
     }
 
-    private void TransitionToDreamWorld()
+    private IEnumerator TransitionToDreamWorldCoroutine()
     {
-        if (isInDreamWorld) return;
-
         // 保存关键状态
         PlayerPrefs.SetFloat("PlayerHealth", playerHealth.currentHealth);
         PlayerPrefs.SetFloat("BossHealth", health.currentHealth);
-        PlayerPrefs.SetFloat("BossInitialHealth", initialHealth);
-        PlayerPrefs.SetInt("BossPhaseBeforeSleep", phaseBeforeSleep);
         PlayerPrefs.Save();
 
-        // 加载梦境场景
-        //SceneManager.LoadScene(dreamSceneName);
+        // 开始转场
         DreamTransitionManager.Instance.TransitionToScene(dreamSceneName);
+
+        // 等待转场完成（通过场景名称判断）
+        yield return new WaitUntil(() => SceneManager.GetActiveScene().name == dreamSceneName);
+
         isInDreamWorld = true;
         AchievementEvents.OnAchievementTriggered?.Invoke("EnterDreamWorld");
-        Debug.Log("正在进入梦境世界...");
+        Debug.Log("已进入梦境世界");
+    }
+
+    private IEnumerator ReturnToMainWorldCoroutine()
+    {
+        // 保存状态
+        PlayerPrefs.SetFloat("PlayerHealth", playerHealth.currentHealth);
+        PlayerPrefs.SetFloat("BossHealth", health.currentHealth);
+        PlayerPrefs.Save();
+
+        // 开始转场
+        DreamTransitionManager.Instance.TransitionToScene(mainSceneName);
+
+        // 等待转场完成
+        yield return new WaitUntil(() => SceneManager.GetActiveScene().name == mainSceneName);
+
+        isInDreamWorld = false;
+        Debug.Log("已返回主世界");
+    }
+    private void TransitionToDreamWorld()
+    {
+        if (isInDreamWorld) return;
+        StartCoroutine(TransitionToDreamWorldCoroutine());
     }
 
     private void ReturnToMainWorld()
     {
         if (!isInDreamWorld) return;
-
-        // 保存梦境中的血量状态
-        PlayerPrefs.SetFloat("PlayerHealth", playerHealth.currentHealth);
-        PlayerPrefs.SetFloat("BossHealth", health.currentHealth);
-        PlayerPrefs.Save();
-
-        // 加载主场景
-        //SceneManager.LoadScene(mainSceneName);
-        DreamTransitionManager.Instance.TransitionToScene(mainSceneName);
-        isInDreamWorld = false;
-
-        Debug.Log("正在返回主世界...");
+        StartCoroutine(ReturnToMainWorldCoroutine());
     }
-
     private string GetPhaseName(int phase)
     {
         return phase switch

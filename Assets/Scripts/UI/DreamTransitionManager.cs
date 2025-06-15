@@ -22,12 +22,15 @@ public class DreamTransitionManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // 自动绑定 DissolveTransition 和 RawImage
+        // 确保组件存在
         if (dissolveTransition == null)
-            dissolveTransition = GetComponentInChildren<DissolveTransition>();
-
-        if (dissolveImage == null && dissolveTransition != null)
-            dissolveImage = dissolveTransition.dissolveImage;
+        {
+            dissolveTransition = gameObject.AddComponent<DissolveTransition>();
+            if (dissolveImage != null)
+            {
+                dissolveTransition.dissolveImage = dissolveImage;
+            }
+        }
     }
 
     public void TransitionToScene(string sceneName)
