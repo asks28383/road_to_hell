@@ -54,9 +54,9 @@ public class LevelButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
 
     // 按钮点击事件（需绑定到Button组件的OnClick）
-    public void OnButtonClick()
-    {
-        if (isUnlocked)
-            SceneManager.LoadScene(levelKey.Replace("_Completed", ""));
-    }
+    //public void OnButtonClick()
+    //{
+    //    if (isUnlocked)
+    //        SceneManager.LoadScene(levelKey.Replace("_Completed", ""));
+    //}
 }

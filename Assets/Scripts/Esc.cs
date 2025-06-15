@@ -60,6 +60,10 @@ public class Exit : MonoBehaviour
         isPaused = false;
     }
 
+    public void Recover()
+    {
+        Time.timeScale = 1f;
+    }
     // 当场景切换时自动恢复时间
     void OnDestroy()
     {
