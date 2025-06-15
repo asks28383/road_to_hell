@@ -49,6 +49,7 @@ public class EnemyHealth : Health
             // ´¥·¢ÊÂ¼þ
             onBossDeath.Invoke();
             AchievementEvents.OnAchievementTriggered?.Invoke("DefeatBoss");
+            PlayerPrefs.SetInt("Level1_Completed", 1);
             Die();
         }
     }
