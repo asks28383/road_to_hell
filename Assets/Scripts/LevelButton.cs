@@ -21,6 +21,7 @@ public class LevelButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     void Start()
     {
         button = GetComponent<Button>();
+        isCompleted = false;
         UpdateLevelStatus();
     }
 
@@ -44,8 +45,7 @@ public class LevelButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isUnlocked && !isCompleted)
-            selectImage.SetActive(true);
+        selectImage.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
