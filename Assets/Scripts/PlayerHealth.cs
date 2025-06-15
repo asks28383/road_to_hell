@@ -117,4 +117,8 @@ public class PlayerHealth : Health
             Debug.LogWarning("Game Over UI未指定！");
         }
     }
+    //void OnDestroy()
+    //{
+    //    Time.timeScale = 1f; // 确保切换场景后时间恢复正常
+    //}
 }

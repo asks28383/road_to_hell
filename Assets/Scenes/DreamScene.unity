@@ -885,8 +885,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207718919664366468, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
       propertyPath: offset.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 207718919664366468, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: widerBar
+      value: 
+      objectReference: {fileID: 1683214877}
+    - target: {fileID: 207718919664366468, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: fillImage
+      value: 
+      objectReference: {fileID: 1190275464}
     - target: {fileID: 746146994132988344, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
       propertyPath: primaryWeapon
       value: 
@@ -1411,6 +1419,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.0000634, y: 45.625805}
   m_EdgeRadius: 0
+--- !u!114 &1190275464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6168723355208985945, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+  m_PrefabInstance: {fileID: 936278191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253350702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1713,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2494906460671585947, guid: 0885286374fb3aa4cb42148114525d42, type: 3}
   m_PrefabInstance: {fileID: 1675831134}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1683214877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2949880350357115326, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+  m_PrefabInstance: {fileID: 936278191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1697337643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3668576197591691522, guid: 9ec5c8f0e9f9f224888da4859bb3eba5, type: 3}

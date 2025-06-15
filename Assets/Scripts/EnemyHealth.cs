@@ -116,7 +116,10 @@ public class EnemyHealth : Health
             Debug.LogWarning("Victory UI未指定！");
         }
     }
-
+    //void OnDestroy()
+    //{
+    //    Time.timeScale = 1f; // 确保切换场景后时间恢复正常
+    //}
     public void Recover(float recovery)
     {
         currentHealth = Mathf.Min(currentHealth + recovery, maxHealth);

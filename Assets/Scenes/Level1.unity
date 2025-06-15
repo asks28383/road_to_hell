@@ -325,7 +325,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 985702804}
     - target: {fileID: 6796564050615896665, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: interval
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796564050615896665, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796564050615896665, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: shotSpeed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

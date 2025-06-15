@@ -14,6 +14,7 @@ public class start : MonoBehaviour
         PlayerPrefs.DeleteKey("HasTriggeredFirstDream");
         PlayerPrefs.DeleteKey("HasTriggeredFirstDream");
         PlayerPrefs.DeleteKey("HasTriggeredSecondDream");
+        PlayerPrefs.DeleteKey("CurrentWeapon");
         //SceneManager.LoadScene("zx");
     }
 

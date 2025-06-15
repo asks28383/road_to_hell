@@ -56,6 +56,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        
+        // 确保 Player 不会在场景切换时被销毁
         playerHealth = GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody2D>();
         playerMovement = GetComponent<MovementController>(); // 获取移动组件
@@ -69,8 +71,16 @@ public class Player : MonoBehaviour
 
         UpdateCooldownUI();
         SetWeaponActive(true);
+        // 加载武器状态
+        int weaponState = PlayerPrefs.GetInt("CurrentWeapon", 1); // 默认主武器
+        SetWeaponActive(weaponState == 1);
     }
-
+    void OnDestroy()
+    {
+        // 切换场景前保存武器状态
+        PlayerPrefs.SetInt("CurrentWeapon", primaryWeapon.activeSelf ? 1 : 0);
+        PlayerPrefs.Save();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab)) SwitchWeapon();
