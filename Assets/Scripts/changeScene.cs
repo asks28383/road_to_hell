@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class changeScene : MonoBehaviour
 {
+    //public DissolveTransition transition;
+
     [System.Serializable]
     public class SceneButton
     {
@@ -21,7 +23,10 @@ public class changeScene : MonoBehaviour
             sceneButton.button.onClick.AddListener(() =>
             {
                 LoadSceneWithTransition(sceneButton.sceneName);
-                if(sceneButton.sceneName == "LevelSelectScene")
+                //DreamTransitionManager.Instance.TransitionToScene("DreamScene");
+
+                //transition.TransitionToScene(sceneButton.sceneName);
+                if (sceneButton.sceneName == "LevelSelectScene")
                 {
                     AchievementEvents.OnAchievementTriggered?.Invoke("FirstEntertheGame");
                 }

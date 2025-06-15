@@ -272,7 +272,8 @@ public class BossPhaseController : Action
         PlayerPrefs.Save();
 
         // 加载梦境场景
-        SceneManager.LoadScene(dreamSceneName);
+        //SceneManager.LoadScene(dreamSceneName);
+        DreamTransitionManager.Instance.TransitionToScene(dreamSceneName);
         isInDreamWorld = true;
         AchievementEvents.OnAchievementTriggered?.Invoke("EnterDreamWorld");
         Debug.Log("正在进入梦境世界...");
@@ -288,7 +289,8 @@ public class BossPhaseController : Action
         PlayerPrefs.Save();
 
         // 加载主场景
-        SceneManager.LoadScene(mainSceneName);
+        //SceneManager.LoadScene(mainSceneName);
+        DreamTransitionManager.Instance.TransitionToScene(mainSceneName);
         isInDreamWorld = false;
 
         Debug.Log("正在返回主世界...");
