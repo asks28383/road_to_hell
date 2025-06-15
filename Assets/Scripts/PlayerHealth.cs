@@ -87,6 +87,7 @@ public class PlayerHealth : Health
 
     protected override void Die()
     {
+        Debug.Log("die");
         base.Die();
         StartCoroutine(ShowGameOverUI());
 
@@ -109,16 +110,16 @@ public class PlayerHealth : Health
             gameOverUI.SetActive(true);
 
             Destroy(gameObject);
-            //// 暂停游戏（可选）
-            //Time.timeScale = 0f;
+            // 暂停游戏（可选）
+            Time.timeScale = 0f;
         }
         else
         {
             Debug.LogWarning("Game Over UI未指定！");
         }
     }
-    //void OnDestroy()
-    //{
-    //    Time.timeScale = 1f; // 确保切换场景后时间恢复正常
-    //}
+    void OnDestroy()
+    {
+        Time.timeScale = 1f; // 确保切换场景后时间恢复正常
+    }
 }
