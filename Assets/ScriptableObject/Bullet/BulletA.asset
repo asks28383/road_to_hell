@@ -18,13 +18,13 @@ MonoBehaviour:
   LifeTime: 4
   CdTime: 1
   Speed: 10
-  Angle: 5
+  Angle: 10
   Distance: 1
   CenterDis: 0
   SelfRotation: 0
   AddRotation: 0
   directionMode: 1
   prefab: {fileID: 7404709760281635850, guid: a12669a4cf04c1844aec3b868c034d83, type: 3}
-  TempShootTime: 16.32
+  TempShootTime: 58.5
   TempRotation: {x: 0, y: 0, z: 0, w: 1}
   TempSelfRotation: 0
