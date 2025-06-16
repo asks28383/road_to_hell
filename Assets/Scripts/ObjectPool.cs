@@ -1,92 +1,179 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectPool
 {
+    // 单例实现
     private static ObjectPool instance;
     private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();
     private GameObject pool;
 
-    // 新增：静态构造函数确保单例初始化
+    // 场景关联管理
+    private class SceneLinkedObject
+    {
+        public GameObject obj;
+        public string sceneName;
+    }
+    private static List<SceneLinkedObject> sceneLinkedObjects = new List<SceneLinkedObject>();
+
+    // 静态构造函数初始化
     static ObjectPool()
     {
         instance = new ObjectPool();
-        // 立即创建持久化的pool对象
         instance.pool = new GameObject("ObjectPool");
-        GameObject.DontDestroyOnLoad(instance.pool);
+        Object.DontDestroyOnLoad(instance.pool);
+
+        SceneManager.sceneLoaded += OnSceneChanged;
     }
 
+    // 场景切换回调
+    private static void OnSceneChanged(Scene scene, LoadSceneMode mode)
+    {
+        CleanupSceneObjects(scene.name);
+    }
+
+    // 清理非当前场景的对象
+    private static void CleanupSceneObjects(string currentSceneName)
+    {
+        for (int i = sceneLinkedObjects.Count - 1; i >= 0; i--)
+        {
+            var item = sceneLinkedObjects[i];
+
+            // 清理无效引用
+            if (item.obj == null)
+            {
+                sceneLinkedObjects.RemoveAt(i);
+                continue;
+            }
+
+            // 销毁非当前场景的非持久化对象
+            if (item.sceneName != currentSceneName && !IsPersistentObject(item.obj.name))
+            {
+                if (item.obj.activeInHierarchy)
+                {
+                    Object.Destroy(item.obj);
+                }
+                sceneLinkedObjects.RemoveAt(i);
+
+                // 从对象池队列中也移除
+                string cleanName = item.obj.name.Replace("(Clone)", "");
+                if (instance.objectPool.ContainsKey(cleanName))
+                {
+                    var queue = instance.objectPool[cleanName];
+                    while (queue.Contains(item.obj))
+                    {
+                        queue.Dequeue();
+                    }
+                }
+            }
+        }
+    }
+
+    // 单例访问器
     public static ObjectPool Instance
     {
         get
         {
-            // 确保pool对象存在
             if (instance.pool == null)
             {
                 instance.pool = new GameObject("ObjectPool");
-                GameObject.DontDestroyOnLoad(instance.pool);
+                Object.DontDestroyOnLoad(instance.pool);
             }
             return instance;
         }
     }
 
+    // 获取对象（接口不变）
     public GameObject GetObject(GameObject prefab)
     {
-        GameObject _object;
-        string cleanName = prefab.name.Replace("(Clone)", string.Empty);
+        string cleanName = prefab.name.Replace("(Clone)", "");
 
-        if (!objectPool.ContainsKey(cleanName) || objectPool[cleanName].Count == 0)
+        if (!objectPool.ContainsKey(cleanName))
         {
-            _object = GameObject.Instantiate(prefab);
-            PushObject(_object);
-
-            // 确保子池存在且持久化
-            Transform childPool = pool.transform.Find(cleanName + "Pool");
-            if (childPool == null)
-            {
-                childPool = new GameObject(cleanName + "Pool").transform;
-                childPool.SetParent(pool.transform);
-            }
+            objectPool[cleanName] = new Queue<GameObject>();
         }
 
-        _object = objectPool[cleanName].Dequeue();
-        _object.SetActive(true);
-        _object.transform.SetParent(null); // 取出时解除父子关系
-        return _object;
+        GameObject obj;
+        if (objectPool[cleanName].Count == 0)
+        {
+            obj = Object.Instantiate(prefab);
+            obj.name = cleanName; // 统一名称
+        }
+        else
+        {
+            obj = objectPool[cleanName].Dequeue();
+        }
+
+        obj.SetActive(true);
+        obj.transform.SetParent(null);
+
+        // 记录非持久化对象的场景关联
+        if (!IsPersistentObject(cleanName))
+        {
+            sceneLinkedObjects.Add(new SceneLinkedObject
+            {
+                obj = obj,
+                sceneName = SceneManager.GetActiveScene().name
+            });
+        }
+
+        return obj;
     }
 
-    public void PushObject(GameObject prefab)
+    // 归还对象（接口不变）
+    public void PushObject(GameObject obj)
     {
-        string _name = prefab.name.Replace("(Clone)", string.Empty);
+        if (obj == null) return;
 
-        if (!objectPool.ContainsKey(_name))
-            objectPool.Add(_name, new Queue<GameObject>());
+        string cleanName = obj.name.Replace("(Clone)", "");
 
-        // 确保对象回到正确的子池
-        Transform childPool = pool.transform.Find(_name + "Pool");
+        if (!objectPool.ContainsKey(cleanName))
+        {
+            objectPool[cleanName] = new Queue<GameObject>();
+        }
+
+        obj.SetActive(false);
+        StoreObject(obj, cleanName);
+
+        // 移除场景关联记录
+        sceneLinkedObjects.RemoveAll(x => x.obj == obj);
+    }
+
+    // 存储对象到子池
+    private void StoreObject(GameObject obj, string poolName)
+    {
+        Transform childPool = pool.transform.Find(poolName + "Pool");
         if (childPool == null)
         {
-            childPool = new GameObject(_name + "Pool").transform;
+            childPool = new GameObject(poolName + "Pool").transform;
             childPool.SetParent(pool.transform);
         }
-        prefab.transform.SetParent(childPool);
-
-        prefab.SetActive(false);
-        objectPool[_name].Enqueue(prefab);
+        obj.transform.SetParent(childPool);
+        objectPool[poolName].Enqueue(obj);
     }
 
-    public bool HasPool(string prefabName)
+    // 判断是否持久化对象
+    private static bool IsPersistentObject(string prefabName)
     {
-        return objectPool.ContainsKey(prefabName) && objectPool[prefabName].Count > 0;
+        // 在此配置需要跨场景保留的对象名称规则
+        return 
+               prefabName.Contains("Bullet") ||
+               prefabName.Contains("Slash");
     }
 
+    // 预暖对象池（接口不变）
     public void PrewarmPool(GameObject prefab, int count)
     {
-        string cleanName = prefab.name.Replace("(Clone)", string.Empty);
+        string cleanName = prefab.name.Replace("(Clone)", "");
+
+        if (!objectPool.ContainsKey(cleanName))
+        {
+            objectPool[cleanName] = new Queue<GameObject>();
+        }
 
         // 确保子池存在
-        if (!pool.transform.Find(cleanName + "Pool"))
+        if (pool.transform.Find(cleanName + "Pool") == null)
         {
             GameObject childPool = new GameObject(cleanName + "Pool");
             childPool.transform.SetParent(pool.transform);
@@ -94,35 +181,14 @@ public class ObjectPool
 
         for (int i = 0; i < count; i++)
         {
-            GameObject obj = GameObject.Instantiate(prefab);
+            GameObject obj = Object.Instantiate(prefab);
             PushObject(obj);
         }
     }
 
-    // 新增私有方法：清理无效引用（不改变原有接口）
-    private void CleanInvalidReferences()
+    // 检查对象池是否存在（接口不变）
+    public bool HasPool(string prefabName)
     {
-        List<string> keysToRemove = new List<string>();
-
-        foreach (var pair in objectPool)
-        {
-            // 移除null引用
-            while (pair.Value.Count > 0 && pair.Value.Peek() == null)
-            {
-                pair.Value.Dequeue();
-            }
-
-            // 标记空队列
-            if (pair.Value.Count == 0)
-            {
-                keysToRemove.Add(pair.Key);
-            }
-        }
-
-        // 移除空队列
-        foreach (var key in keysToRemove)
-        {
-            objectPool.Remove(key);
-        }
+        return objectPool.ContainsKey(prefabName) && objectPool[prefabName].Count > 0;
     }
 }

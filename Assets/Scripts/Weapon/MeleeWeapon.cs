@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,11 +34,30 @@ public class MeleeWeapon : Weapon
     private bool isSwinging = false;
     private float swingTimer = 0f;
 
+    [Header("近战武器武器攻击音效设置")]
+    public AudioClip AttackClip;//挥刀音效
+    private AudioSource audioSource;
+
+    [Header("蓄力攻击音效设置")]
+    public AudioClip chargingClip;          // 蓄力过程循环音效
+    public AudioClip perfectChargeClip;     // 完美蓄力提示音
+    public AudioClip chargeReleaseClip;     // 蓄力释放音效
+    public AudioClip normalSlashClip;       // 普通剑气音效
+    public AudioClip poweredSlashClip;      // 强力剑气音效
+
+    private AudioSource chargingAudioSource; // 专门用于蓄力音效的AudioSource
+
     public bool get_isHolding() => isHolding;
     public float get_holdTime() => holdTimer;
 
     protected override void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        // 专门为蓄力音效创建独立的AudioSource
+        chargingAudioSource = gameObject.AddComponent<AudioSource>();
+        chargingAudioSource.loop = true; // 蓄力音效需要循环播放
+        chargingAudioSource.volume = 0.5f;
         base.Start();
         slashPoint = transform.Find("slashpoint");
         if (swordTransform != null)
@@ -61,7 +81,7 @@ public class MeleeWeapon : Weapon
     protected override void Update()
     {
         base.Update();
-
+        UpdateChargingSound(); // 更新蓄力音效
         // 更新攻击冷却
         if (!canAttack)
         {
@@ -88,6 +108,12 @@ public class MeleeWeapon : Weapon
             isHolding = true;
             holdTimer = 0f;
             isInPerfectWindow = false;
+            // 开始播放蓄力音效
+            chargingAudioSource.clip = chargingClip;
+            chargingAudioSource.Play();
+
+            // 渐入效果
+            StartCoroutine(FadeAudio(chargingAudioSource, 0.5f, 0.1f));
         }
 
         if (Input.GetButton("Fire1") && isHolding)
@@ -101,6 +127,7 @@ public class MeleeWeapon : Weapon
             {
                 isInPerfectWindow = true;
                 // 可以在这里添加进入完美蓄力的视觉效果
+                audioSource.PlayOneShot(perfectChargeClip); // 播放完美蓄力提示音
             }
             // 检查是否已经超过完美蓄力窗口
             else if (isInPerfectWindow && holdTimer > holdTimeForRanged + perfectChargeThreshold)
@@ -112,6 +139,8 @@ public class MeleeWeapon : Weapon
 
         if (Input.GetButtonUp("Fire1") && isHolding)
         {
+            // 停止蓄力音效（带渐出效果）
+            StartCoroutine(FadeAudio(chargingAudioSource, 0f, 0.2f, true));
             if (holdTimer >= holdTimeForRanged) // 达到蓄力要求
             {
                 Debug.Log("达到蓄力要求");
@@ -133,7 +162,39 @@ public class MeleeWeapon : Weapon
             cooldownTimer = attackCooldown;
         }
     }
+    // 音频淡入淡出效果
+    private IEnumerator FadeAudio(AudioSource source, float targetVolume, float duration, bool stopAfterFade = false)
+    {
+        float startVolume = source.volume;
+        float time = 0f;
 
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
+            yield return null;
+        }
+
+        if (stopAfterFade && targetVolume <= 0f)
+        {
+            source.Stop();
+        }
+    }
+
+    // 动态调整蓄力音效音调（随蓄力时间变化）
+    private void UpdateChargingSound()
+    {
+        if (isHolding)
+        {
+            // 随着蓄力时间增加音调
+            float pitch = Mathf.Lerp(0.8f, 1.2f, holdTimer / (holdTimeForRanged + perfectChargeThreshold));
+            chargingAudioSource.pitch = pitch;
+
+            // 随着蓄力时间增加音量
+            float volume = Mathf.Lerp(0.3f, 0.8f, holdTimer / (holdTimeForRanged + perfectChargeThreshold));
+            chargingAudioSource.volume = volume;
+        }
+    }
     void StartSwordSwing()
     {
         if (swordTransform == null) return;
@@ -185,15 +246,24 @@ public class MeleeWeapon : Weapon
     protected virtual void PerformMeleeAttack()
     {
         TriggerAttackAnimation("Melee");
+        audioSource.PlayOneShot(AttackClip);
         StartSwordSwing();
     }
 
     protected virtual void ReleaseRangedSlash(bool isPerfect)
     {
+        // 停止蓄力音效
+        chargingAudioSource.Stop();
+
+        // 播放蓄力释放音效
+        audioSource.PlayOneShot(chargeReleaseClip);
+
         TriggerAttackAnimation("Melee");
         StartSwordSwing();
+
         GameObject slashPrefab = isPerfect ? poweredSlashPrefab : rangedSlashPrefab;
-        
+        AudioClip slashClip = isPerfect ? poweredSlashClip : normalSlashClip;
+
         GameObject slash = ObjectPool.Instance.GetObject(slashPrefab);
         if (slash == null)
         {
@@ -202,6 +272,9 @@ public class MeleeWeapon : Weapon
         slash.transform.position = slashPoint.position;
         slash.GetComponent<Bullet>().SetSpeed(direction);
         slash.transform.right = direction;
+
+        // 播放剑气音效
+        AudioSource.PlayClipAtPoint(slashClip, slashPoint.position);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

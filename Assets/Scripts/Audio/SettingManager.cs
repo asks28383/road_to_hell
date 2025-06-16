@@ -44,11 +44,26 @@ public class SettingsManager : MonoBehaviour
     {
         if (audioMixer != null)
         {
-            // 将线性0-1值转换为对数dB值（AudioMixer使用对数刻度）
-            audioMixer.SetFloat("MasterVol", Mathf.Log10(masterVol) * 20);
-            audioMixer.SetFloat("MusicVol", Mathf.Log10(musicVol) * 20);
-            audioMixer.SetFloat("SFXVol", Mathf.Log10(sfxVol) * 20);
+            // 优化后的音量转换曲线
+            audioMixer.SetFloat("MasterVol", LinearToDecibel(masterVol));
+            audioMixer.SetFloat("MusicVol", LinearToDecibel(musicVol));
+            audioMixer.SetFloat("SFXVol", LinearToDecibel(sfxVol));
         }
+    }
+
+    // 线性值(0-1)转分贝值(-80dB到0dB)的优化方法
+    private float LinearToDecibel(float linear)
+    {
+        // 安全保护：确保值在0-1范围内
+        linear = Mathf.Clamp01(linear);
+
+        // 优化后的转换曲线：
+        // - 0 → -80dB (完全静音)
+        // - 0.3 → -20dB (低音量)
+        // - 0.6 → -10dB (中等音量)
+        // - 1 → 0dB (最大音量)
+        if (linear <= 0.0001f) return -80f; // 完全静音
+        return Mathf.Log10(linear*1.5f) * 20f; // 优化后的曲线
     }
 
     // 加载保存的设置

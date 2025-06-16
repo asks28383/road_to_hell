@@ -17,11 +17,16 @@ public class RangedWeapon : Weapon
     public Renderer weaponRenderer;
     public Color normalColor = Color.white;
     public Color overheatColor = Color.red;
+
+    [Header("远程武器攻击音效设置")]
+    public AudioClip AttackClip; // 轻攻击音效数组
+    private AudioSource audioSource;
     // 私有状态变量
     private bool isOverheated = false;
 
     protected override void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         base.Start();
         muzzlePos = transform.Find("Muzzle");
 
@@ -70,6 +75,7 @@ public class RangedWeapon : Weapon
     private void Fire()
     {
         // 射击逻辑
+        audioSource.PlayOneShot(AttackClip);
         GameObject bullet = ObjectPool.Instance.GetObject(bulletPrefab);
         bullet.transform.position = muzzlePos.position;
 
