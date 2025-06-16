@@ -899,7 +899,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
+      - m_Target: {fileID: 4427286061713464025, guid: 203acae5f3f36c14ca829768c30b5078, type: 3}
         m_TargetAssemblyTypeName: ButtonSoundHelper, Assembly-CSharp
         m_MethodName: PlayClickSound
         m_Mode: 1

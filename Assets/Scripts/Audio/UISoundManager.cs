@@ -2,7 +2,31 @@ using UnityEngine;
 
 public class UISoundManager : MonoBehaviour
 {
-    public static UISoundManager Instance;
+    private static UISoundManager _instance;
+    public static UISoundManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                // 动态加载 Resources 中的预制体
+                GameObject prefab = Resources.Load<GameObject>("UISoundManager");
+                if (prefab == null)
+                {
+                    Debug.LogError("UISoundManager prefab not found in Resources!");
+                    return null;
+                }
+
+                GameObject go = Instantiate(prefab);
+                _instance = go.GetComponent<UISoundManager>();
+
+                if (_instance == null)
+                    Debug.LogError("UISoundManager script missing on prefab!");
+            }
+
+            return _instance;
+        }
+    }
 
     [Header("Button Sounds")]
     public AudioClip buttonHoverSound;
@@ -11,14 +35,14 @@ public class UISoundManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-    void Awake()
+    private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }
@@ -28,11 +52,13 @@ public class UISoundManager : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        audioSource.PlayOneShot(buttonClickSound);
+        if (audioSource && buttonClickSound)
+            audioSource.PlayOneShot(buttonClickSound);
     }
 
     public void PlayButtonHover()
     {
-        audioSource.PlayOneShot(buttonHoverSound);
+        if (audioSource && buttonHoverSound)
+            audioSource.PlayOneShot(buttonHoverSound);
     }
 }

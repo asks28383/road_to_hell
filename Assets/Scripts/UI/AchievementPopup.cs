@@ -1,26 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using System.Collections;
 
 public class AchievementPopup : MonoBehaviour
 {
+    public static AchievementPopup Instance { get; private set; } // 添加 Singleton 引用
+
     public GameObject popupUI;
     public Text titleText;
     public Text descriptionText;
     public Image iconImage;
 
-    public float moveDistance = 50f;      // 向下移动的距离
-    public float moveSpeed = 100f;        // 移动速度（像素/秒）
-    public float showDuration = 3f;       // 停留时间
+    public float moveDistance = 50f;
+    public float moveSpeed = 100f;
+    public float showDuration = 3f;
 
     private Vector3 originalPosition;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);  // 已有实例则销毁当前对象
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
         AchievementManager.Instance.onAchievementUnlocked.AddListener(ShowPopup);
         originalPosition = popupUI.transform.localPosition;
-        DontDestroyOnLoad(this.gameObject);
-
     }
 
     public void ShowPopup(Achievement achievement)
@@ -29,7 +42,7 @@ public class AchievementPopup : MonoBehaviour
         descriptionText.text = achievement.description;
         iconImage.sprite = achievement.icon;
 
-        StopAllCoroutines();  // 确保不会有多个动画叠加
+        StopAllCoroutines();
         StartCoroutine(AnimatePopup());
     }
 
@@ -40,16 +53,9 @@ public class AchievementPopup : MonoBehaviour
         Vector3 targetDown = originalPosition + new Vector3(0, -moveDistance, 0);
         Vector3 targetUp = originalPosition;
 
-        // 初始回到原始位置（避免反复移动产生位移误差）
         popupUI.transform.localPosition = targetUp;
-
-        // 向下移动
         yield return StartCoroutine(MoveTo(targetDown));
-
-        // 停留时间
         yield return new WaitForSeconds(showDuration);
-
-        // 向上回到原位
         yield return StartCoroutine(MoveTo(targetUp));
 
         popupUI.SetActive(false);

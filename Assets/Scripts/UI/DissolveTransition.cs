@@ -6,16 +6,26 @@ using System.Collections;
 
 public class DissolveTransition : MonoBehaviour
 {
+    public static DissolveTransition Instance { get; private set; }
+
     public RawImage dissolveImage;
     private Material dissolveMat;
 
     private void Awake()
     {
-        dissolveMat = Instantiate(dissolveImage.material); // 每个实例独立控制
-        dissolveImage.material = dissolveMat;
-        // Awake 中设置
-        dissolveMat.SetFloat("_DissolveThreshold", 1f);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // 若已有实例，则销毁当前重复对象
+            return;
+        }
+
+        Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // 确保每个实例有独立材质
+        dissolveMat = Instantiate(dissolveImage.material);
+        dissolveImage.material = dissolveMat;
+        dissolveMat.SetFloat("_DissolveThreshold", 1f);
     }
 
     public void TransitionToScene(string sceneName)
@@ -27,21 +37,19 @@ public class DissolveTransition : MonoBehaviour
     {
         dissolveImage.enabled = true;
 
-        // 淡入（遮挡当前场景）
+        // 淡入：盖住旧画面
         dissolveMat.SetFloat("_DissolveThreshold", 1f);
         yield return dissolveMat
             .DOFloat(0f, "_DissolveThreshold", 1.5f)
             .SetEase(Ease.InOutSine)
             .WaitForCompletion();
 
-        // 同步加载场景（确保数据一致性）
         SceneManager.LoadScene(sceneName);
 
-        // 等待场景完全加载
-        yield return null;
+        yield return null; // 等下一帧新场景加载完成
         yield return null;
 
-        // 淡出（显示新场景）
+        // 淡出：展示新画面
         dissolveMat.SetFloat("_DissolveThreshold", 0f);
         yield return dissolveMat
             .DOFloat(1f, "_DissolveThreshold", 1.5f)
@@ -50,6 +58,4 @@ public class DissolveTransition : MonoBehaviour
 
         dissolveImage.enabled = false;
     }
-
-
 }
