@@ -415,6 +415,14 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6796564050615896665, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: outputMixerGroup
+      value: 
+      objectReference: {fileID: -4073488800006316514, guid: 1516ca625db0bce4cb70aef1d6fd37bb, type: 2}
+    - target: {fileID: 6824513558835774189, guid: 302253612631f8e4b90ae59df69b20f9, type: 3}
+      propertyPath: outputMixerGroup
+      value: 
+      objectReference: {fileID: -4073488800006316514, guid: 1516ca625db0bce4cb70aef1d6fd37bb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -702,7 +710,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
+      - m_Target: {fileID: 4427286061713464025, guid: 203acae5f3f36c14ca829768c30b5078, type: 3}
         m_TargetAssemblyTypeName: ButtonSoundHelper, Assembly-CSharp
         m_MethodName: PlayClickSound
         m_Mode: 1
@@ -1969,7 +1977,7 @@ PrefabInstance:
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
+      objectReference: {fileID: 4427286061713464025, guid: 203acae5f3f36c14ca829768c30b5078, type: 3}
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2109,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
+      objectReference: {fileID: 4427286061713464025, guid: 203acae5f3f36c14ca829768c30b5078, type: 3}
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

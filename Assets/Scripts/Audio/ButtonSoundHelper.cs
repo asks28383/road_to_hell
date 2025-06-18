@@ -13,6 +13,7 @@ public class ButtonSoundHelper : MonoBehaviour, IPointerEnterHandler
 
     public void PlayClickSound()
     {
+        Debug.Log("Button clicked: " + gameObject.name);
         UISoundManager.Instance.PlayButtonClick();
     }
 }

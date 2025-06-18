@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PressableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public RectTransform childTransform;    // 文字的RectTransform
+    private RectTransform childTransform;    // 文字的RectTransform
     public float pressDepth = 5f;          // 按下时的偏移量
-    public GameObject child;
+    private GameObject child;
 
     private Vector3 originalPos;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class MeleeWeapon : Weapon
@@ -44,7 +45,8 @@ public class MeleeWeapon : Weapon
     public AudioClip chargeReleaseClip;     // 蓄力释放音效
     public AudioClip normalSlashClip;       // 普通剑气音效
     public AudioClip poweredSlashClip;      // 强力剑气音效
-
+    [Header("音频混合设置")]
+    public AudioMixerGroup outputMixerGroup; // 新增这个变量
     private AudioSource chargingAudioSource; // 专门用于蓄力音效的AudioSource
 
     public bool get_isHolding() => isHolding;
@@ -56,6 +58,7 @@ public class MeleeWeapon : Weapon
 
         // 专门为蓄力音效创建独立的AudioSource
         chargingAudioSource = gameObject.AddComponent<AudioSource>();
+        chargingAudioSource.outputAudioMixerGroup = outputMixerGroup; // 设置Mixer Group
         chargingAudioSource.loop = true; // 蓄力音效需要循环播放
         chargingAudioSource.volume = 0.5f;
         base.Start();

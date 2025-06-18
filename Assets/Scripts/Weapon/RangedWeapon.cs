@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RangedWeapon : Weapon
 {
@@ -21,12 +22,15 @@ public class RangedWeapon : Weapon
     [Header("远程武器攻击音效设置")]
     public AudioClip AttackClip; // 轻攻击音效数组
     private AudioSource audioSource;
+    [Header("音频混合设置")]
+    public AudioMixerGroup outputMixerGroup; // 新增这个变量
     // 私有状态变量
     private bool isOverheated = false;
 
     protected override void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = outputMixerGroup; // 设置Mixer Group
         base.Start();
         muzzlePos = transform.Find("Muzzle");
 
