@@ -1,35 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
+    public float BulletSpeed = 5f;
 
-    public float BulletSpeed;
+    public enum MoveMode
+    {
+        straight,
+        wound,
+        rightward
+    }
 
-    public int flag=1;
-    public float lateralSpeed = 100f; // 横向位移强度
+    public MoveMode movemode = MoveMode.straight;
 
+    public float lateralSpeed = 1f; // 横向位移强度
+    public float frequency = 5f;    // 蜿蜒频率
     private float timeElapsed;
+
     private void FixedUpdate()
     {
-        if(flag==1)
-        {
-            transform.position = transform.position + transform.up * Time.fixedDeltaTime * BulletSpeed;
-        }
-        else
-        {
-            timeElapsed += Time.fixedDeltaTime;
+        timeElapsed += Time.fixedDeltaTime;
 
-            // 基础前进运动（沿当前up方向）
+        if (movemode == MoveMode.straight)
+        {
+            Debug.Log("straight bullet orbit");
+            transform.position += transform.up * Time.fixedDeltaTime * BulletSpeed;
+        }
+        else if (movemode == MoveMode.wound)
+        {
+            Debug.Log("wound bullet orbit");
+
+            // 计算向前位移
             Vector3 forwardMovement = transform.up * BulletSpeed * Time.fixedDeltaTime;
 
-            // 精确的横向位移：π/2 + sin(t)
-            float lateralOffset = Mathf.PI / 2 + Mathf.Sin(timeElapsed);
-            Vector3 sideMovement = transform.right * lateralOffset * lateralSpeed * Time.fixedDeltaTime;
+            // 计算横向蜿蜒偏移
+            float lateralOffset = Mathf.Sin(timeElapsed * frequency) * lateralSpeed * Time.fixedDeltaTime;
+            Vector3 lateralMovement = transform.right * lateralOffset;
 
-            // 组合运动
-            transform.position += forwardMovement + sideMovement;
+            // 综合移动
+            transform.position += forwardMovement + lateralMovement;
+        }
+        else if (movemode == MoveMode.rightward)
+        {
+            Debug.Log("rightward drifting bullet");
+            // 计算向前位移
+            Vector3 forwardMovement = transform.up * BulletSpeed * Time.fixedDeltaTime;
+            // 右偏移动量，cos 从 1 开始，向右偏移（可以换成 timeElapsed * timeElapsed 来增强偏移）
+            float rightOffset =  lateralSpeed * Time.fixedDeltaTime;
+            transform.position += forwardMovement + transform.right * rightOffset;
+            
         }
     }
 }

@@ -181,5 +181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 0
-  flag: 0
-  lateralSpeed: 1
+  movemode: 1
+  lateralSpeed: 10
+  frequency: 5
