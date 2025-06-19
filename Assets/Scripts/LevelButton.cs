@@ -20,9 +20,11 @@ public class LevelButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void Start()
     {
+        PlayerPrefs.DeleteKey(levelKey);
         button = GetComponent<Button>();
         isCompleted = false;
         UpdateLevelStatus();
+        
     }
 
     private void UpdateLevelStatus()

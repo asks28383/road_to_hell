@@ -25,12 +25,12 @@ public class BulletMove : MonoBehaviour
 
         if (movemode == MoveMode.straight)
         {
-            Debug.Log("straight bullet orbit");
+            //Debug.Log("straight bullet orbit");
             transform.position += transform.up * Time.fixedDeltaTime * BulletSpeed;
         }
         else if (movemode == MoveMode.wound)
         {
-            Debug.Log("wound bullet orbit");
+            //Debug.Log("wound bullet orbit");
 
             // 计算向前位移
             Vector3 forwardMovement = transform.up * BulletSpeed * Time.fixedDeltaTime;

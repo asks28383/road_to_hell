@@ -263,6 +263,7 @@ public class BossPhaseController : Action
 
     private IEnumerator TransitionToDreamWorldCoroutine()
     {
+        AchievementEvents.OnAchievementTriggered?.Invoke("EnterDreamWorld");
         // 保存关键状态
         PlayerPrefs.SetFloat("PlayerHealth", playerHealth.currentHealth);
         PlayerPrefs.SetFloat("BossHealth", health.currentHealth);
@@ -275,7 +276,7 @@ public class BossPhaseController : Action
         yield return new WaitUntil(() => SceneManager.GetActiveScene().name == dreamSceneName);
 
         isInDreamWorld = true;
-        AchievementEvents.OnAchievementTriggered?.Invoke("EnterDreamWorld");
+        
         Debug.Log("已进入梦境世界");
     }
 

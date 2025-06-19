@@ -158,7 +158,7 @@ public class ObjectPool
     {
         // 在此配置需要跨场景保留的对象名称规则
         return 
-               prefabName.Contains("Bullet") ||
+               prefabName=="Bullet" ||
                prefabName.Contains("Slash");
     }
 

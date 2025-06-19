@@ -70,9 +70,10 @@ public class RangedWeapon : Weapon
     {
         if (Input.GetButton("Fire1") && timer == 0)
         {
-            heatBar.IncreaseHeat(0.05f);
+            heatBar.IncreaseHeat(0.035f);
             timer = interval;
             Fire();
+            AchievementEvents.OnAchievementTriggered?.Invoke("firstshoot");
         }
     }
 

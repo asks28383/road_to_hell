@@ -141,7 +141,7 @@ MonoBehaviour:
   healCooldownUI: {fileID: 0}
   healAmount: 15
   healDuration: 5
-  healCooldown: 10
+  healCooldown: 2
   sprintKey: 113
   sprintSpeedMultiplier: 1.4
   sprintDuration: 3
@@ -473,6 +473,7 @@ MonoBehaviour:
   normalSlashSound: {fileID: 0}
   poweredSlashSound: {fileID: 0}
   chargeReleaseSound: {fileID: 0}
+  perfectSoundDuration: 0.5
   maxVolume: 1.5
   pitchRange: 0.8
 --- !u!58 &5749649654789501780
@@ -584,11 +585,12 @@ Transform:
   m_GameObject: {fileID: 1817234709639946394}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3399999, y: -0.14000002, z: 0}
+  m_LocalPosition: {x: 0.409, y: -0.09, z: 0}
   m_LocalScale: {x: 1.4191065, y: 1.43689, z: 0.82686996}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3387882721065705113}
+  - {fileID: 7308366547042627395}
   m_Father: {fileID: 1130112322474235743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6814150238716792690
@@ -676,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa266f6943175dd429ffe0e047ffa29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0.25
+  interval: 0.15
   damage: 0
   bulletPrefab: {fileID: 7030544447906469049, guid: 7a374c9eb32d6a946990c1beb0fb76fd, type: 3}
   shotSpeed: 1
@@ -1310,6 +1312,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6792842346677438807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7308366547042627395}
+  m_Layer: 0
+  m_Name: Muzzle2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7308366547042627395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792842346677438807}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.196, y: -0.049, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4986095858393796235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8391071026408290116
 GameObject:
   m_ObjectHideFlags: 0

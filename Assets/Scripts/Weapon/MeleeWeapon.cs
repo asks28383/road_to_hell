@@ -15,7 +15,7 @@ public class MeleeWeapon : Weapon
     public GameObject rangedSlashPrefab;
     public GameObject poweredSlashPrefab;
     public float holdTimeForRanged = 2f;
-    public float perfectChargeThreshold = 0.8f;
+    public float perfectChargeThreshold = 0.15f;
     public float meleeRange = 1.5f;
     public string bulletTag = "BossBullet";
 
@@ -170,6 +170,7 @@ public class MeleeWeapon : Weapon
     }
     private IEnumerator PlayPerfectSoundWithDuration()
     {
+        yield return new WaitForSeconds(0.8f);
         specialSource.PlayOneShot(perfectChargeSound);
         yield return new WaitForSeconds(perfectSoundDuration);
         specialSource.Stop(); // Í£Ö¹²¥·Å

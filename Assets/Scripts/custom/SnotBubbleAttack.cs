@@ -31,11 +31,11 @@ public class SnotBubbleAttack : Action
         attackTimer = 0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // 确保对象池初始化
-        if (!ObjectPool.Instance.HasPool(bubblePrefab.name))
-        {
-            PrewarmPool();
-        }
+        //// 确保对象池初始化
+        //if (!ObjectPool.Instance.HasPool(bubblePrefab.name))
+        //{
+        //    PrewarmPool();
+        //}
     }
 
     private void PrewarmPool()

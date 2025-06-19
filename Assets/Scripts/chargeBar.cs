@@ -40,6 +40,20 @@ public class chargeBar : MonoBehaviour
 
     void Update()
     {
+        if(percent<=0.01f)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            //transform.GetChild(3).gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).gameObject.SetActive(true);
+            //transform.GetChild(3).gameObject.SetActive(true);
+        }
 
         //if (weapon.get_flag())
         //{
@@ -60,14 +74,14 @@ public class chargeBar : MonoBehaviour
                 slide.fillRect.GetComponent<Image>().sprite = oldimage;
             }
             // 新增：只在过热时检测空格键校准
-            if(canbeBonus)
+            if (canbeBonus)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     TryCalibrate();
                 }
             }
-            
+
         }
         else
         {
