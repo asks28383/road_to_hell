@@ -1554,6 +1554,8 @@ MonoBehaviour:
     sceneName: gameSetting
   - button: {fileID: 1317178831}
     sceneName: 
+  - button: {fileID: 1540164329}
+    sceneName: Achievement
 --- !u!1 &2057452496
 GameObject:
   m_ObjectHideFlags: 0
