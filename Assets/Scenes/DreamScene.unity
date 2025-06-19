@@ -233,9 +233,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
-        m_TargetAssemblyTypeName: ButtonSoundHelper, Assembly-CSharp
-        m_MethodName: PlayClickSound
+      - m_Target: {fileID: 732863267}
+        m_TargetAssemblyTypeName: Exit, Assembly-CSharp
+        m_MethodName: Recover
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -487,18 +487,18 @@ PrefabInstance:
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
+      objectReference: {fileID: 732863267}
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayClickSound
+      value: Recover
       objectReference: {fileID: 0}
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonSoundHelper, Assembly-CSharp
+      value: Exit, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5753370810729993613, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -603,18 +603,18 @@ PrefabInstance:
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4427286061713464025, guid: db55b51850502fd4ba86f4c98bdca17c, type: 3}
+      objectReference: {fileID: 732863267}
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayClickSound
+      value: Recover
       objectReference: {fileID: 0}
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonSoundHelper, Assembly-CSharp
+      value: Exit, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6814650623443358481, guid: a2e60e1dd6dfe714db3773c5649b433e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

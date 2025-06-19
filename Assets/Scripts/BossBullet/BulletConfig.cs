@@ -5,17 +5,17 @@ using UnityEngine;
 public class BulletConfig : MonoBehaviour
 {
     public BulletData[] bulletDatas;
-    BaseGameObjectPool[] Pools;
     public Transform TargetTransform;
 
     private void Start()
     {
-        Pools = new BaseGameObjectPool[bulletDatas.Length];
+        // 初始化所有子弹数据
         for (int i = 0; i < bulletDatas.Length; i++)
         {
-            Pools[i] = GameObjectPoolManager.Instance.CreatGameObjectPool<BaseGameObjectPool>(bulletDatas[i].prefab.name);
-            Pools[i].prefab = bulletDatas[i].prefab;
             bulletDatas[i].ResetTempData(transform);
+
+            // 预暖对象池
+            ObjectPool.Instance.PrewarmPool(bulletDatas[i].prefab, 10);
         }
     }
 
@@ -41,24 +41,32 @@ public class BulletConfig : MonoBehaviour
                     data.TempSelfRotation = data.TempSelfRotation % 360;
                     for (int j = 0; j < data.Count; j++)
                     {
-                        GameObject pre = Pools[i].Get(transform.position + data.P_Offset, data.LifeTime);
-                        BulletMove bullet = pre.GetComponent<BulletMove>();
+                        // 使用新的对象池获取子弹
+                        GameObject bulletObj = ObjectPool.Instance.GetObject(data.prefab);
+                        bulletObj.transform.position = transform.position + data.P_Offset;
+
+                        // 设置子弹生命周期
+                        if (data.LifeTime > 0)
+                        {
+                            StartCoroutine(ReturnBulletAfterTime(bulletObj, data.LifeTime));
+                        }
+
+                        BulletMove bullet = bulletObj.GetComponent<BulletMove>();
                         bullet.BulletSpeed = data.Speed;
-                        pre.transform.rotation = data.TempRotation * Quaternion.Euler(data.R_Offset);
+                        bulletObj.transform.rotation = data.TempRotation * Quaternion.Euler(data.R_Offset);
+
                         if (data.Count % 2 == 1)
                         {
-                            pre.transform.rotation = pre.transform.rotation * Quaternion.Euler(0, 0, -data.Angle * num);
-                            pre.transform.position = pre.transform.position + pre.transform.right * num * data.Distance;
+                            bulletObj.transform.rotation = bulletObj.transform.rotation * Quaternion.Euler(0, 0, -data.Angle * num);
+                            bulletObj.transform.position = bulletObj.transform.position + bulletObj.transform.right * num * data.Distance;
                         }
                         else
                         {
-                            pre.transform.rotation = pre.transform.rotation * Quaternion.Euler(0, 0, -(data.Angle / 2 + data.Angle * (num - 1)));
-                            pre.transform.position = pre.transform.position + pre.transform.right * ((num - 1) * data.Distance + data.Distance / 2);
+                            bulletObj.transform.rotation = bulletObj.transform.rotation * Quaternion.Euler(0, 0, -(data.Angle / 2 + data.Angle * (num - 1)));
+                            bulletObj.transform.position = bulletObj.transform.position + bulletObj.transform.right * ((num - 1) * data.Distance + data.Distance / 2);
                         }
                         num--;
                     }
-
-
                 }
             }
             else if (data.directionMode == BulletData.BulletDirectionMode.TargetPosition)
@@ -80,27 +88,46 @@ public class BulletConfig : MonoBehaviour
 
                     for (int j = 0; j < data.Count; j++)
                     {
-                        GameObject pre = Pools[i].Get(transform.position + data.P_Offset, data.LifeTime);
-                        BulletMove bullet = pre.GetComponent<BulletMove>();
-                        bullet.BulletSpeed = data.Speed;
+                        // 使用新的对象池获取子弹
+                        GameObject bulletObj = ObjectPool.Instance.GetObject(data.prefab);
+                        bulletObj.transform.position = transform.position + data.P_Offset;
 
-                        pre.transform.rotation = baseRotation * Quaternion.Euler(data.R_Offset);
+                        // 设置子弹生命周期
+                        if (data.LifeTime > 0)
+                        {
+                            StartCoroutine(ReturnBulletAfterTime(bulletObj, data.LifeTime));
+                        }
+
+                        BulletMove bullet = bulletObj.GetComponent<BulletMove>();
+                        bullet.BulletSpeed = data.Speed;
+                        bulletObj.transform.rotation = baseRotation * Quaternion.Euler(data.R_Offset);
 
                         if (data.Count % 2 == 1)
                         {
-                            pre.transform.rotation = pre.transform.rotation * Quaternion.Euler(0, 0, -data.Angle * num);
-                            pre.transform.position = pre.transform.position + pre.transform.right * num * data.Distance;
+                            bulletObj.transform.rotation = bulletObj.transform.rotation * Quaternion.Euler(0, 0, -data.Angle * num);
+                            bulletObj.transform.position = bulletObj.transform.position + bulletObj.transform.right * num * data.Distance;
                         }
                         else
                         {
-                            pre.transform.rotation = pre.transform.rotation * Quaternion.Euler(0, 0, -(data.Angle / 2 + data.Angle * (num - 1)));
-                            pre.transform.position = pre.transform.position + pre.transform.right * ((num - 1) * data.Distance + data.Distance / 2);
+                            bulletObj.transform.rotation = bulletObj.transform.rotation * Quaternion.Euler(0, 0, -(data.Angle / 2 + data.Angle * (num - 1)));
+                            bulletObj.transform.position = bulletObj.transform.position + bulletObj.transform.right * ((num - 1) * data.Distance + data.Distance / 2);
                         }
                         num--;
                     }
                 }
             }
+        }
+    }
 
+    // 协程：在一段时间后归还子弹到对象池
+    private IEnumerator ReturnBulletAfterTime(GameObject bulletObj, float lifeTime)
+    {
+        yield return new WaitForSeconds(lifeTime);
+
+        // 检查子弹是否仍然存在（可能在生命周期结束前已被其他逻辑回收）
+        if (bulletObj != null && bulletObj.activeSelf)
+        {
+            ObjectPool.Instance.PushObject(bulletObj);
         }
     }
 }

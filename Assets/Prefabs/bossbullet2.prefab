@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 0
+  flag: 1
+  lateralSpeed: 1
 --- !u!114 &5287141178479485953
 MonoBehaviour:
   m_ObjectHideFlags: 0
