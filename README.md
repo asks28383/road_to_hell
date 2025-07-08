@@ -1,53 +1,72 @@
-# 苏州大学综合项目实践作业 - our_game
+# 苏州大学综合项目实践作业 - 地狱之路
 
-## 1. 需要创建的GameObject
+**地狱之路**是一款2D横版弹幕射击游戏，玩家将扮演一名失去记忆的地狱恶鬼，挑战象征人类罪恶的七宗罪BOSS，揭开隐藏在地狱深处的秘密，最终寻求救赎，登上天堂。
 
-### (1) 场景主要对象
-| GameObject名称       | 作用                 | 依赖组件                              |
-|----------------------|----------------------|-------------------------------------|
-| BattleScene（根对象） | 组织战斗场景         | -                                   |
-| MainCamera           | 摄像机视角控制       | Camera, CinemachineBrain            |
-| Background           | 战斗背景             | SpriteRenderer                      |
-| Ground               | 地面碰撞             | BoxCollider2D                       |
-| Player               | 主角                 | Rigidbody2D, Animator, BoxCollider2D|
-| Boss                 | BOSS角色             | Rigidbody2D, Animator, BoxCollider2D|
-| UI                   | 血条、技能CD等UI元素 | Canvas                              |
-| BulletContainer      | 存放所有子弹         | -                                   |
+## 游戏特色
 
-### (2) 子对象
-- **Player 子对象**：
-  - AttackPoint（空物体，近战攻击检测点）
-- **Boss 子对象**：
-  - FirePoint（子弹发射位置）
+- **独特的战斗系统**：结合近战与远程武器，玩家需要灵活切换武器，应对不同阶段的BOSS攻击。
+- **动态弹幕与交互**：每个BOSS拥有独特的弹幕攻击模式，玩家需精准操作躲避弹幕，同时利用环境与技能反击。
+- **梦境与现实切换**：BOSS会将玩家拉入梦境世界，梦境中攻击方式更加诡异，玩家需适应环境变化。
+- **碎片化叙事**：击败BOSS后，玩家将逐步夺回记忆碎片，拼凑出主角的过去与真相。
+- **高难度挑战**：游戏难度较高，玩家需不断练习，熟悉BOSS攻击模式，才能取得胜利。
 
----
+## 游戏玩法
 
-## 2. 需要创建的Scripts
+- **操作方式**：
+  - **WASD**：角色上下左右移动
+  - **鼠标左键**：枪械攻击/剑攻击
+  - **鼠标右键**：闪现
+  - **E键**：治疗
+  - **Q键**：疾跑
+  - **Tab键**：切换武器
+  - **Space键**：枪过热条的校准
+  - **ESC键**：游戏暂停
 
-| 脚本文件              | 作用                      | 绑定的对象       |
-|-----------------------|--------------------------|------------------|
-| PlayerController.cs   | 控制玩家移动、跳跃、攻击 | Player          |
-| PlayerHealth.cs       | 处理玩家血量系统         | Player          |
-| Boss.cs               | 处理BOSS行为、血量、攻击 | Boss            |
-| BossAttack.cs         | 控制BOSS的攻击逻辑       | Boss            |
-| Bullet.cs             | 处理子弹运动             | BulletPrefab    |
-| HomingBullet.cs       | 处理追踪子弹             | BulletPrefab变体|
-| WaveBullet.cs         | 处理波浪弹幕             | BulletPrefab变体|
-| GameManager.cs        | 处理战斗逻辑（胜利/失败）| BattleScene     |
-| HealthBar.cs          | 更新UI血条               | UI              |
-| CameraController.cs   | 摄像机跟随               | MainCamera      |
+- **游戏目标**：
+  - 击败所有七宗罪BOSS，解锁记忆碎片，揭开主角的过去，最终抵达天堂。
 
----
+## 游戏界面
 
-## 3. 需要创建的Prefabs
+- **开始界面**：
+  - Start：开始游戏
+  - Options：设置游戏音量、音效等
+  - Exit：退出游戏
+  - 成就图标：查看游戏成就
 
-| 预制体名称            | 作用               | 绑定的脚本                  |
-|-----------------------|-------------------|----------------------------|
-| PlayerPrefab          | 预设玩家角色       | PlayerController, PlayerHealth|
-| BossPrefab            | 预设BOSS角色       | Boss, BossAttack           |
-| BulletPrefab          | 直线子弹           | Bullet                     |
-| HomingBulletPrefab    | 追踪子弹           | HomingBullet               |
-| WaveBulletPrefab      | 波浪弹幕           | WaveBullet                 |
-| HealthBarPrefab       | UI血条             | HealthBar                  |
-| ExplosionEffectPrefab | 爆炸特效           | -                          |
+- **关卡选择**：
+  - 骷髅头图标代表关卡，上锁的骷髅头表示未解锁，需完成前置关卡。
+
+- **战斗界面**：
+  - 左上角显示玩家血量与蓝量。
+  - 下方显示技能冷却条与BOSS血量。
+
+## 游戏截图
+
+![1751991863272](image/README/1751991863272.png)
+![1751991870649](image/README/1751991870649.png)
+![1751991875985](image/README/1751991875985.png)
+
+## 游戏视频
+
+<video src="image/README/1751991725226.mp4"></video>
+
+<!-- ![1751991725226](image/README/1751991725226.mp4) -->
+
+
+## 项目进度
+
+- **已完成**：
+  - 基础游戏框架搭建。
+  - 第一个BOSS战（懒惰）的设计与实现。
+  - 基础剧情推进机制。
+
+- **进行中**：
+  - 剩余BOSS战的设计与实现。
+  - 游戏美术资源的进一步完善。
+  - 游戏音效与背景音乐的优化。
+
+- **计划中**：
+  - 游戏UI与操作手感的优化。
+  - 成就系统与额外剧情的添加。
+  - 游戏性能优化与平台适配。
 
