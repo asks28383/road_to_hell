@@ -48,9 +48,7 @@
 
 ## 游戏视频
 
-<video src="image/README/1751991725226.mp4"></video>
-
-<!-- ![1751991725226](image/README/1751991725226.mp4) -->
+[![点击观看视频](image/README/1751991863272.png)](image/README/1751991725226.mp4)
 
 
 ## 项目进度
